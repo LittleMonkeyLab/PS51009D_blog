@@ -1,0 +1,210 @@
+/*-- scss:defaults --*/
+
+// Fonts
+$font-family-sans-serif: 'DM Sans', system-ui, sans-serif;
+$headings-font-family: 'Syne', sans-serif;
+$font-family-monospace: 'DM Mono', 'Fira Code', monospace;
+
+// Colours
+$body-bg: #ffffff;
+$body-color: #1a1a2e;
+$link-color: #3d5afe;
+$headings-color: #0d0d1a;
+$code-bg: #f4f4f8;
+$code-color: #c2185b;
+
+// Accents per stream (used in callouts)
+$homework-color: #3d5afe;
+$publication-color: #00897b;
+$creator-color: #d81b60;
+
+/*-- scss:rules --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── Site-wide base ── */
+body {
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+}
+
+h1 { font-size: 2.2rem; font-weight: 800; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.15rem; }
+
+/* ── Navbar ── */
+.navbar {
+  border-bottom: 2px solid #f0f0f0;
+  padding: 12px 0;
+}
+.navbar-brand {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+/* ── Stream badges ── */
+.stream-homework {
+  display: inline-block;
+  background: #e8ecff;
+  color: #3d5afe;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(61,90,254,0.25);
+}
+.stream-publication {
+  display: inline-block;
+  background: #e0f5f2;
+  color: #00695c;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,137,123,0.25);
+}
+.stream-creator {
+  display: inline-block;
+  background: #fce4ec;
+  color: #c2185b;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(216,27,96,0.25);
+}
+
+/* ── Stream callout variants ── */
+.callout-homework {
+  border-left-color: #3d5afe !important;
+  background: #f0f3ff;
+}
+.callout-publication {
+  border-left-color: #00897b !important;
+  background: #f0faf8;
+}
+.callout-creator {
+  border-left-color: #d81b60 !important;
+  background: #fff0f4;
+}
+
+/* ── Pull quote ── */
+.pullquote {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0d0d1a;
+  border-left: 4px solid #3d5afe;
+  padding: 16px 24px;
+  margin: 2em 0;
+  background: #f8f9ff;
+}
+
+/* ── TL;DR box ── */
+.tldr {
+  background: #fffbea;
+  border: 1.5px solid #f59e0b;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 2em;
+}
+.tldr::before {
+  content: "TL;DR";
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: #b45309;
+  margin-bottom: 8px;
+}
+
+/* ── Author card ── */
+.author-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: #f8f8fc;
+  border: 1px solid #e8e8f0;
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 3em;
+}
+.author-card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.author-card-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.author-card-bio { font-size: 0.9rem; color: #555; }
+
+/* ── Code ── */
+pre.sourceCode {
+  border-radius: 8px;
+  border: 1px solid #e8e8f0;
+  font-size: 0.85rem;
+}
+code { font-size: 0.88em; }
+
+/* ── TOC ── */
+#TOC {
+  border-left: 3px solid #f0f0f0;
+  padding-left: 16px;
+  font-size: 0.88rem;
+}
+#TOC a { color: #555; text-decoration: none; }
+#TOC a:hover { color: #3d5afe; }
+#TOC .active { color: #3d5afe; font-weight: 500; }
+
+/* ── Listing cards ── */
+.quarto-listing .list-item {
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  padding: 20px 24px;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.quarto-listing .list-item:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+/* ── Footer ── */
+.nav-footer {
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.85rem;
+  color: #999;
+  padding: 20px 0;
+}
+
+/* ── Responsive tweaks ── */
+@media (max-width: 768px) {
+  h1 { font-size: 1.7rem; }
+  .pullquote { font-size: 1.2rem; }
+}

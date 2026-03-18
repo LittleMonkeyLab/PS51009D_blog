@@ -1,0 +1,624 @@
+---
+title: "How to Format Your Blog Post: A Complete Quarto Guide"
+author: "Gordon Wright"
+date: "2026-03-18"
+description: "Everything you need to write, cite, and format a science communication post on this site — with source code for every feature."
+categories: [guide]
+bibliography: references.bib
+toc: true
+toc-depth: 3
+---
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     This post is a FORMATTING GUIDE, not a science communication piece.
+     Its purpose is to teach you how to use Quarto's features by showing
+     you the source code alongside the rendered result.
+
+     Keep this page open in one tab while writing your own post in another.
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+This page shows you every formatting feature available for your blog post, with the exact source code used to produce each one. You do not need to use all of these features — a well-written post with clear prose and a good visual aid is entirely sufficient. But if you want to go further, everything here is copy-paste ready.
+
+::: {.callout-important}
+## How to use this guide
+Read through the page once to get an overview. When you are writing your own post, come back to the specific section you need and copy the code block into your own `.qmd` file.
+:::
+
+---
+
+## 1. The YAML header
+
+Every post starts with a YAML header — the block between the two `---` lines at the very top of your file. This controls your title, author name, date, description, and more.
+
+**Source code:**
+
+```yaml
+---
+title: "Your Post Title Here"
+author: "Your Name"
+date: "2025-04-15"
+description: "One sentence that appears in the post listing. Make it good."
+categories: [meditation]
+image: "images/cover.jpg"
+bibliography: references.bib
+toc: true
+---
+```
+
+**What each line does:**
+
+| Field | Required | What it does |
+|-------|----------|-------------|
+| `title` | Yes | The headline of your post |
+| `author` | Yes | Your name as it appears on the post |
+| `date` | Yes | Must be in `YYYY-MM-DD` format exactly |
+| `description` | Yes | The one-line summary shown in the post listing |
+| `categories` | Yes | Choose from the module topic list (see below) |
+| `image` | No | A cover image shown in the listing grid |
+| `bibliography` | Yes, if citing | Path to your `.bib` file |
+| `toc` | No | Adds a table of contents on the right |
+
+**Categories for this module:**
+
+```yaml
+categories: [human-AI interaction]
+categories: [meditation]
+categories: [individual differences]
+categories: [neuropsychology]
+categories: [music psychology]
+categories: [expert performance]
+categories: [eyewitness testimony]
+categories: [stalking]
+```
+
+::: {.callout-warning}
+## Date format matters
+Use `YYYY-MM-DD` exactly. Writing `15 April 2025` or `April 15, 2025` will cause the site to fail to build. If in doubt, copy `2025-04-15` and change the numbers.
+:::
+
+---
+
+## 2. Basic writing in Markdown
+
+Quarto uses Markdown for formatting. If you have used Notion, Discord, or Reddit, you have already used Markdown.
+
+### Headings
+
+```markdown
+## A section heading (H2)
+
+### A subsection heading (H3)
+```
+
+Use `##` for your main sections and `###` for subsections. Do not use `#` (that is reserved for the document title). Do not skip levels.
+
+### Emphasis
+
+```markdown
+This word is **bold**.
+This word is *italic*.
+This word is ***bold and italic***.
+```
+
+This word is **bold**. This word is *italic*. This word is ***bold and italic***.
+
+### Lists
+
+**Unordered list:**
+
+```markdown
+- First item
+- Second item
+- Third item
+```
+
+- First item
+- Second item
+- Third item
+
+**Ordered list:**
+
+```markdown
+1. First step
+2. Second step
+3. Third step
+```
+
+1. First step
+2. Second step
+3. Third step
+
+### Horizontal rule
+
+```markdown
+---
+```
+
+Produces a dividing line like the one below.
+
+---
+
+### Links
+
+```markdown
+Read more at [The Conversation](https://theconversation.com).
+```
+
+Read more at [The Conversation](https://theconversation.com).
+
+---
+
+## 3. Citations and references
+
+This is the feature most students find confusing at first, but it is straightforward once you understand the three parts: the `.bib` file, the in-text citation, and the reference list.
+
+### Part 1 — The `.bib` file
+
+A `.bib` file is a plain text file that contains structured information about each source. You create one file called `references.bib` and save it in your post folder alongside `index.qmd`.
+
+Each entry in a `.bib` file looks like this:
+
+```bibtex
+@article{condon2013,
+  author  = {Condon, Paul and Desbordes, Gaëlle and Miller, Willa B. and DeSteno, David},
+  year    = {2013},
+  title   = {Meditation increases compassionate responses to suffering},
+  journal = {Psychological Science},
+  volume  = {24},
+  number  = {10},
+  pages   = {2125--2127},
+  doi     = {10.1177/0956797613485603}
+}
+```
+
+The first line, `condon2013`, is the **citation key** — the short label you use in your text to refer to this source. You invent this key yourself; the convention is `firstauthorYear`.
+
+::: {.callout-tip}
+## Getting .bib entries from Zotero (recommended)
+
+Zotero is free reference management software. If you use it:
+
+1. Find your source in your Zotero library
+2. Select it, then go to **File → Export Items**
+3. Choose format: **BibTeX**
+4. Save the file as `references.bib` in your post folder
+
+Alternatively, right-click any item in Zotero → **Export Item** → BibTeX → copy and paste into your `references.bib` file.
+
+Download Zotero free at [zotero.org](https://www.zotero.org).
+:::
+
+::: {.callout-tip}
+## Getting .bib entries from Google Scholar
+
+1. Search for your paper on [scholar.google.com](https://scholar.google.com)
+2. Click the **"** (Cite) icon under the result
+3. Click **BibTeX** at the bottom of the popup
+4. Copy the text and paste it into your `references.bib` file
+
+Check the entry carefully — Google Scholar sometimes has errors in author names or missing fields.
+:::
+
+### Part 2 — In-text citations
+
+Once your `.bib` file is ready and listed in your YAML header (`bibliography: references.bib`), you cite sources in your text using `[@citationkey]`.
+
+There are two patterns:
+
+**Parenthetical citation** — the author name and year appear in brackets:
+
+```markdown
+Brief meditation training increased compassionate behaviour towards strangers [@condon2013].
+```
+
+Brief meditation training increased compassionate behaviour towards strangers [@condon2013].
+
+**Narrative citation** — you name the authors in your sentence and put only the year in brackets. Use this when the authors are the grammatical subject of your sentence:
+
+```markdown
+Condon and colleagues [-@condon2013] found that even a short meditation course
+changed how participants responded to someone in pain.
+```
+
+Condon and colleagues [-@condon2013] found that even a short meditation course changed how participants responded to someone in pain.
+
+::: {.callout-note}
+## Which pattern to use?
+Use **narrative** when you are specifically talking about what the researchers did: "Smith and Jones (2020) found that..."
+
+Use **parenthetical** when the finding is the focus and the authors are secondary: "Meditation has been linked to reduced anxiety (Hofmann et al., 2011)."
+
+Both are correct APA style. Vary them to avoid monotony.
+:::
+
+**Multiple sources in one citation:**
+
+```markdown
+Mindfulness-based interventions have shown consistent benefits for anxiety and depression
+[@hofmann2011; @klimecki2014].
+```
+
+Mindfulness-based interventions have shown consistent benefits for anxiety and depression [@hofmann2011; @klimecki2014].
+
+### Part 3 — The reference list
+
+At the end of your post, add a `## References` heading followed by a special block. Quarto will automatically populate it with all the sources you cited, formatted in APA style:
+
+```markdown
+## References
+
+::: {#refs}
+:::
+```
+
+That is all you need. Do not type out your references by hand — Quarto does it automatically from your `.bib` file.
+
+---
+
+## 4. Callout boxes
+
+Callout boxes draw attention to important information. There are four types, each with a different colour and icon.
+
+### Note (blue) — define terms, add context
+
+```markdown
+::: {.callout-note}
+## What is compassion fatigue?
+**Compassion fatigue** is the gradual reduction in a person's ability to feel
+empathy for others, often experienced by healthcare workers exposed to
+repeated suffering.
+:::
+```
+
+::: {.callout-note}
+## What is compassion fatigue?
+**Compassion fatigue** is the gradual reduction in a person's ability to feel empathy for others, often experienced by healthcare workers exposed to repeated suffering.
+:::
+
+### Tip (green) — your take, a helpful aside
+
+```markdown
+::: {.callout-tip}
+## My take
+This finding is worth reading alongside the broader literature on prosocial
+behaviour — the effect seems small, but small nudges in real social settings
+can accumulate.
+:::
+```
+
+::: {.callout-tip}
+## My take
+This finding is worth reading alongside the broader literature on prosocial behaviour — the effect seems small, but small nudges in real social settings can accumulate.
+:::
+
+### Warning (orange) — flag a limitation or caveat
+
+```markdown
+::: {.callout-warning}
+## Limitation to note
+The study used a staged scenario in a waiting room — it is unclear whether
+the same effect would appear in higher-stakes situations such as a hospital ward.
+:::
+```
+
+::: {.callout-warning}
+## Limitation to note
+The study used a staged scenario in a waiting room — it is unclear whether the same effect would appear in higher-stakes situations such as a hospital ward.
+:::
+
+### Important (red) — critical information the reader must not miss
+
+```markdown
+::: {.callout-important}
+## Before you cite this
+Check the replication status of any study you rely on. Condon et al. (2013)
+has not been directly replicated at scale.
+:::
+```
+
+::: {.callout-important}
+## Before you cite this
+Check the replication status of any study you rely on. Condon et al. (2013) has not been directly replicated at scale.
+:::
+
+::: {.callout-note}
+## When to use callout boxes
+Use them sparingly — two or three per post at most. Good uses:
+- Define a technical term the first time it appears
+- Flag a key limitation without interrupting your main argument
+- Clearly separate your opinion from what the research says
+:::
+
+---
+
+## 5. Pull quotes
+
+A pull quote extracts a key sentence from your post and displays it prominently. Use it for your single most quotable line — a finding, a conclusion, or a phrase that captures the essence of the piece.
+
+```markdown
+::: {.pullquote}
+"A single session of meditation was enough to change how participants responded
+to a stranger's suffering — suggesting that compassion is not a fixed trait
+but a trainable skill."
+:::
+```
+
+::: {.pullquote}
+"A single session of meditation was enough to change how participants responded to a stranger's suffering — suggesting that compassion is not a fixed trait but a trainable skill."
+:::
+
+Use one pull quote per post. Putting the sentence in quotation marks is conventional. The sentence does not have to be a direct quote from the paper — you can write your own.
+
+---
+
+## 6. TL;DR summary block
+
+The TL;DR (Too Long; Didn't Read) block appears at the very top of the post, immediately after the YAML header. It gives readers a three-bullet summary before they commit to reading.
+
+```markdown
+::: {.tldr}
+- Meditation training increased the likelihood of giving up a seat to someone
+  in pain — even after just one session
+- The effect held even when meditators had to give something up to help
+- This suggests compassion can be trained, not just observed
+:::
+```
+
+::: {.tldr}
+- Meditation training increased the likelihood of giving up a seat to someone in pain — even after just one session
+- The effect held even when meditators had to give something up to help
+- This suggests compassion can be trained, not just observed
+:::
+
+Keep each bullet to one line if possible. Think of these as the three things a reader should remember if they read nothing else.
+
+---
+
+## 7. Tabset panels
+
+Tabset panels let you organise dense information into tabs, so readers can choose what to read without having to scroll through everything. They work especially well for Method / Findings / Implications.
+
+```markdown
+::: {.panel-tabset}
+
+## Method
+
+Condon and colleagues [-@condon2013] recruited 39 participants who had no
+prior meditation experience. Half were randomly assigned to an eight-week
+meditation course; the other half joined a waitlist. At the end of the
+eight weeks, all participants visited the lab individually. In the waiting
+room, they encountered a confederate on crutches, visibly in pain, with
+no available seats.
+
+## Findings
+
+Meditators gave up their seat to the person in pain significantly more
+often than non-meditators (50% vs. 16%). Crucially, this was not simply
+because meditators were more pleasant generally — it was tested in a
+socially pressured environment where other (confederate) participants
+were deliberately ignoring the person in pain.
+
+## Implications
+
+The results suggest that compassionate behaviour is teachable, not fixed.
+They also raise interesting questions about the social context of helping:
+the meditators acted prosocially even when the social norm in the room
+was to do nothing. Whether longer or different types of meditation practice
+would produce stronger effects is an open question.
+
+:::
+```
+
+::: {.panel-tabset}
+
+## Method
+
+Condon and colleagues [-@condon2013] recruited 39 participants who had no prior meditation experience. Half were randomly assigned to an eight-week meditation course; the other half joined a waitlist. At the end of the eight weeks, all participants visited the lab individually. In the waiting room, they encountered a confederate on crutches, visibly in pain, with no available seats.
+
+## Findings
+
+Meditators gave up their seat to the person in pain significantly more often than non-meditators (50% vs. 16%). Crucially, this was not simply because meditators were more pleasant generally — it was tested in a socially pressured environment where other (confederate) participants were deliberately ignoring the person in pain.
+
+## Implications
+
+The results suggest that compassionate behaviour is teachable, not fixed. They also raise interesting questions about the social context of helping: the meditators acted prosocially even when the social norm in the room was to do nothing. Whether longer or different types of meditation practice would produce stronger effects is an open question.
+
+:::
+
+---
+
+## 8. Images and figures
+
+You must include at least one original visual aid — something you created yourself, not taken from the article. Save image files in an `images/` subfolder inside your post folder.
+
+```markdown
+![A descriptive caption explaining what this figure shows and what the reader
+should take from it. This is also what screen readers use, so make it
+meaningful.](images/your-figure.png)
+```
+
+A few rules:
+- The caption goes inside the square brackets `[ ]`
+- The file path goes inside the round brackets `( )`
+- The `!` at the start is what makes it an image (not a link)
+- You cannot use a figure taken directly from the article — create your own
+
+**Accepted file formats:** `.png`, `.jpg`, `.svg`
+
+**What counts as an original visual aid:**
+- A diagram you drew in Canva, PowerPoint, or Keynote
+- A chart or graph you made in Excel, Google Sheets, or R
+- An infographic summarising the study design
+- A table you typed out in Markdown (see below)
+
+### Tables
+
+You can create simple tables in Markdown without any image at all:
+
+```markdown
+| Condition | Gave up seat |
+|-----------|-------------|
+| Meditators | 50% |
+| Non-meditators | 16% |
+```
+
+| Condition | Gave up seat |
+|-----------|-------------|
+| Meditators | 50% |
+| Non-meditators | 16% |
+
+A well-designed table presenting key data from the study counts as your visual aid.
+
+---
+
+## 9. The author card
+
+Paste this block at the very end of your post, after the references:
+
+```markdown
+::: {.author-card}
+
+<div>
+<div class="author-card-name">Your Name</div>
+<div class="author-card-bio">
+  Psychology student at Goldsmiths, University of London.
+  Interested in [your interests here].
+</div>
+</div>
+:::
+
+*This post is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
+```
+
+::: {.author-card}
+
+<div>
+<div class="author-card-name">Your Name</div>
+<div class="author-card-bio">
+  Psychology student at Goldsmiths, University of London.
+  Interested in [your interests here].
+</div>
+</div>
+:::
+
+*This post is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
+
+---
+
+## 10. A complete post skeleton
+
+Below is everything assembled in the right order. Copy this into your `index.qmd` and replace the placeholder text.
+
+````markdown
+---
+title: "Your Post Title"
+author: "Your Name"
+date: "2025-04-15"
+description: "One sentence summary for the listing page."
+categories: [meditation]
+image: "images/cover.jpg"
+bibliography: references.bib
+toc: true
+---
+
+::: {.tldr}
+- Key finding in one line
+- Why it matters
+- What the reader should take away
+:::
+
+Your opening paragraph goes here. Start with something surprising or
+counter-intuitive. Do not start with "In this post I will discuss..."
+
+## Background
+
+::: {.callout-note}
+## Key term
+Define the central concept here.
+:::
+
+Context paragraph. Why does this area of research matter? Cite relevant
+background [@authorYear].
+
+## What the researchers did
+
+::: {.pullquote}
+"Your most quotable line goes here."
+:::
+
+::: {.panel-tabset}
+
+## Method
+What the researchers did and who the participants were.
+
+## Findings
+What they found — in plain language with specific numbers where helpful.
+
+## Implications
+What these findings mean for the real world.
+
+:::
+
+## What this means
+
+![Caption describing your original figure.](images/your-figure.png)
+
+Your discussion paragraph here. Connect the findings to the real world.
+
+::: {.callout-warning}
+## Limitation
+Every study has limits. Flag one clearly.
+:::
+
+## References
+
+::: {#refs}
+:::
+
+---
+
+::: {.author-card}
+
+<div>
+<div class="author-card-name">Your Name</div>
+<div class="author-card-bio">
+  Psychology student at Goldsmiths, University of London.
+  Interested in [your interests here].
+</div>
+</div>
+:::
+
+*This post is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
+````
+
+---
+
+## Quick reference
+
+| Feature | Code |
+|---------|------|
+| Bold | `**text**` |
+| Italic | `*text*` |
+| Heading | `## Heading` |
+| Link | `[text](url)` |
+| Image | `![caption](images/file.png)` |
+| Parenthetical cite | `[@authorYear]` |
+| Narrative cite | `[-@authorYear]` |
+| Multiple cites | `[@a2020; @b2021]` |
+| Note callout | `::: {.callout-note}` |
+| Tip callout | `::: {.callout-tip}` |
+| Warning callout | `::: {.callout-warning}` |
+| Important callout | `::: {.callout-important}` |
+| Pull quote | `::: {.pullquote}` |
+| TL;DR block | `::: {.tldr}` |
+| Tab panels | `::: {.panel-tabset}` |
+| Reference list | `::: {#refs}` |
+
+All blocks that start with `:::` must close with `:::` on its own line.
+
+---
+
+## References
+
+::: {#refs}
+:::

@@ -1,0 +1,85 @@
+---
+# ── FILL IN YOUR DETAILS ──────────────────────────────────────────────────────
+title: "Your Post Title"
+author: "Your Name"
+date: "2025-04-15"                         # YYYY-MM-DD format
+description: "One sentence. Make it good." # Appears in the post listing
+categories: [meditation]                   # Replace with your topic
+image: "images/cover.jpg"                  # Optional — delete this line if no image
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Uncomment the two lines below once you have a references.bib file:
+# bibliography: references.bib
+
+toc: true
+---
+
+<!-- DELETE THIS BLOCK before submitting ──────────────────────────────────────
+MVP TEMPLATE — just the essentials
+
+This is all you need:
+  - A clear title and author
+  - 800–1000 words of science communication (written in the third person)
+  - At least one original visual aid you created (not taken from the article)
+  - In-text citations
+  - A full APA reference list at the end
+
+Suggested structure:
+  1. Opening hook — a surprising finding or question that draws the reader in
+  2. Context — what is this area of research about?
+  3. The study — what did the researchers do, and what did they find?
+  4. What it means — why does this matter to a non-expert reader?
+  5. References
+
+Write as if explaining to a curious, intelligent friend who has not studied psychology.
+Do not start with "In this post I will...". Do not use jargon without explaining it.
+──────────────────────────────────────────────────────────────────────────── -->
+
+
+## Your opening
+
+Start with something that pulls the reader in. A surprising finding, a counter-intuitive claim, a question worth asking.
+
+Write naturally, in the third person. Describe what the researchers found — not what "we" found.
+
+
+## Background
+
+What is this area of research about? Give the reader enough context to understand why the study matters.
+
+Cite your sources inline: [@authorYear] or [@firstAuthor2020; @secondAuthor2021].
+
+
+## The study
+
+Describe the specific article you chose. What was the research question? How was the study designed? What did the researchers find?
+
+Keep it concrete. Avoid passive constructions like "it was found that". Instead: "Smith and colleagues found that..."
+
+
+## What does this mean?
+
+Connect the findings to the real world. Why should a non-expert care about this research?
+
+![A clear, descriptive caption explaining what this figure shows. Replace this with your own visual.](images/your-figure.png)
+
+
+## References
+
+::: {#refs}
+:::
+
+---
+
+::: {.author-card}
+
+<div>
+<div class="author-card-name">Your Name</div>
+<div class="author-card-bio">
+  Psychology student at Goldsmiths, University of London.
+  Write one sentence about your interests here.
+</div>
+</div>
+:::
+
+*This post is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*

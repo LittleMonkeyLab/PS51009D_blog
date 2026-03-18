@@ -1,0 +1,422 @@
+---
+title: "PS51009D — Science Communication Assessment"
+subtitle: "Applications of Psychological Research"
+author: "Dr Gordon Wright & Dr Bence Palfi"
+institute: "Department of Psychology, Goldsmiths, University of London"
+date: "2025–26"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    progress: true
+    history: true
+    logo: assets/favicon.png
+    footer: "PS51009D Applications of Psychological Research — Goldsmiths"
+    transition: fade
+    background-transition: fade
+    highlight-style: github
+    link-external-newwindow: true
+    chalkboard: false
+---
+
+## Overview {.center}
+
+This deck covers everything you need to know about the science communication assessment for PS51009D.
+
+<br>
+
+| | |
+|--|--|
+| **Blog and resources** | [ps51009d-blog](#) |
+| **Assessment brief** | [assessment.qmd](assessment.qmd) |
+| **How to publish** | [contributing.qmd](contributing.qmd) |
+| **Example post** | [posts/example-post](posts/example-post/index.qmd) |
+| **Formatting guide** | [posts/formatting-guide](posts/formatting-guide/index.qmd) |
+| **Submit your work** | [Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744) |
+
+---
+
+## The assessment at a glance
+
+Two components, one deadline: **Monday 11 May, 12 noon**
+
+<br>
+
+| Component | Format | Weight |
+|-----------|--------|--------|
+| Science communication piece | Blog post (800–1000 words) or video recording (4–5 min) | **90%** |
+| Reflection piece | Written (480–600 words) or recording (2.5–3 min) | **10%** |
+
+<br>
+
+::: {.callout-important}
+Both components are submitted via **[Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**. Submissions not received via Moodle will not be marked.
+:::
+
+---
+
+## Component 1 — Science Communication (90%)
+
+Choose **one** target article and communicate the research to a **non-expert audience**.
+
+<br>
+
+You must:
+
+- Summarise the research question, method, findings, and conclusions
+- Write in the **third person** (you did not run the study)
+- Create at least **one original visual aid** — you cannot reuse a figure from the article
+- Include **in-text citations** and a full **APA reference list**
+
+---
+
+## Target articles
+
+| Week | Topic | Authors |
+|------|-------|---------|
+| 16 | Human-AI Interactions | Pálfi, Arora & Kostopoulou (2022) |
+| 17 | Meditation Research | Condon, Desbordes, Miller & DeSteno (2013) |
+| 18 | Individual Differences | Bremner et al. (2013) |
+| 19 | Neuropsychology | Cocchini et al. (2010) |
+| — | Music Psychology | McDermott et al. (2016) |
+| — | Expert Performance | Li et al. (2020) |
+| — | Eyewitness Testimony | Gabbert, Hope & Fisher (2009) |
+| — | Stalking | Scott, Stathi & Burniak (2022) |
+
+Full references and DOIs are on the [Assessment page](assessment.qmd).
+
+Week 20 (tutorial week) has no target article.
+
+---
+
+## What good looks like
+
+Upper second and first class work clearly communicates all four of:
+
+<br>
+
+:::: {.columns}
+::: {.column width="50%"}
+**The content**
+
+1. The research question
+2. The study method and procedure
+3. The findings
+4. The conclusions
+:::
+::: {.column width="50%"}
+**The style**
+
+- Written for a curious general reader
+- Not for other psychologists
+- Think: *The Conversation*, *The Guardian* science section
+- Visual aids that earn their place — not decoration
+:::
+::::
+
+---
+
+## The target style
+
+Read examples from [The Conversation](https://theconversation.com) — written by academics, for general audiences.
+
+> "Goosebumps, tears and tenderness: what it means to be moved"
+
+> "Memory and sense of self may play more of a role in autism than we thought"
+
+<br>
+
+Science writing in *The Times* or *The Guardian* also gives a good sense of the required register.
+
+<br>
+
+See the full list of style examples on the [Assessment page](assessment.qmd).
+
+---
+
+## Component 2 — Reflection Piece (10%)
+
+Reflect on your experience creating your blog using **Bain's 5Rs model**.
+
+<br>
+
+| R | Focus |
+|---|-------|
+| **Reporting** | What did you do? What did you choose, and why? |
+| **Responding** | How did you feel? What changed over the assignment? |
+| **Relating** | How does this connect to previous experiences? |
+| **Reasoning** | What factors shaped your experience, and why? |
+| **Reconstructing** | What will you carry forward? |
+
+<br>
+
+Respond to at least **one prompt per R**. Full prompt list on the [Assessment page](assessment.qmd).
+
+---
+
+## Submitting for marking
+
+::: {.callout-important}
+## All submissions go via Moodle
+Work not submitted to Moodle will not be marked — regardless of whether it is on the blog.
+:::
+
+<br>
+
+**[Submit here: Moodle submission page](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**
+
+<br>
+
+- Blog post: submit as a **Word doc or PDF**
+- Video: submit as a **PowerPoint file** (with recorded audio)
+- Reflection: same submission page, same deadline
+
+---
+
+## Publishing on the blog (optional)
+
+Publishing here is not required for the assessment. It is an opportunity to have your work read by a real audience.
+
+<br>
+
+If you want to publish:
+
+1. Upload a copy to the **[OneDrive folder](https://goldsmithscollege-my.sharepoint.com/:f:/g/personal/gwrig002_campus_goldsmiths_ac_uk/IgARGfnH7ojgRqhRM7PF7HR_AbRQbdcJ_jeRtykPpkMi2E8?e=4m1SIt)**
+2. Gordon will review and publish it
+
+You still need to submit your work via Moodle separately.
+
+Full instructions: [How to Publish](contributing.qmd)
+
+---
+
+## The blog site
+
+The blog is built with Quarto and hosted on GitHub Pages.
+
+<br>
+
+**Pages on the site:**
+
+| Page | Purpose |
+|------|---------|
+| [Posts](index.qmd) | Published student work |
+| [Assessment](assessment.qmd) | Full brief, target articles, marking guidance |
+| [How to Publish](contributing.qmd) | Step-by-step publishing guide |
+| [Example post](posts/example-post/index.qmd) | A complete example of the required style |
+| [Formatting guide](posts/formatting-guide/index.qmd) | Quarto features with source code |
+| [About](about.qmd) | Module and site information |
+
+---
+
+## The example post
+
+An example science communication post is available on the site.
+
+It covers: **"Eyebrows cue grandiose narcissism"** (Giacomin & Rule, 2019, *Journal of Personality*)
+
+<br>
+
+The post demonstrates:
+
+- The required style and length
+- How to cite sources inline
+- How to use visual aids effectively
+- The complete post structure from title to reference list
+
+**[Read the example post](posts/example-post/index.qmd)**
+
+---
+
+## Writing in Quarto — key features
+
+The [Formatting guide](posts/formatting-guide/index.qmd) shows source code for every feature below.
+
+<br>
+
+:::: {.columns}
+::: {.column width="50%"}
+**Structure**
+
+- YAML header (title, author, date)
+- Headings with `##` and `###`
+- TL;DR summary block
+- Author card
+:::
+::: {.column width="50%"}
+**Features**
+
+- Callout boxes (note, tip, warning, important)
+- Pull quotes
+- Tabset panels (Method / Findings / Implications)
+- Images with captions
+- Tables
+:::
+::::
+
+---
+
+## Citations and references
+
+Quarto handles citations automatically from a `.bib` file.
+
+<br>
+
+**In your YAML:**
+```yaml
+bibliography: references.bib
+```
+
+**In your text:**
+```markdown
+Condon and colleagues [-@condon2013] found that meditation...
+
+...consistent with previous findings [@hofmann2011; @klimecki2014].
+```
+
+**At the end of your post:**
+```markdown
+## References
+::: {#refs}
+:::
+```
+
+Quarto formats the reference list in **APA style** automatically.
+
+---
+
+## Getting .bib entries from Zotero
+
+Zotero is free reference management software at [zotero.org](https://www.zotero.org).
+
+<br>
+
+1. Add the paper to your Zotero library
+2. **Right-click** the item → Export Item → Format: **BibTeX**
+3. Copy the entry into your `references.bib` file
+4. Note the **citation key** (e.g. `condon2013`) — this is what you use in the text
+
+<br>
+
+Alternatively: Google Scholar → Cite → BibTeX → copy and paste.
+
+Full instructions in the [Formatting guide](posts/formatting-guide/index.qmd).
+
+---
+
+## Callout boxes
+
+Use callouts to define terms, flag limitations, or separate your view from the evidence.
+
+<br>
+
+```markdown
+::: {.callout-note}
+## Key term
+Define the concept here in plain language.
+:::
+
+::: {.callout-warning}
+## Limitation
+Flag a methodological caveat here.
+:::
+```
+
+<br>
+
+Four types: `callout-note` (blue), `callout-tip` (green), `callout-warning` (orange), `callout-important` (red).
+
+---
+
+## Pull quotes and TL;DR
+
+**Pull quote** — one quotable sentence displayed prominently:
+
+```markdown
+::: {.pullquote}
+"Your most important finding in one sentence."
+:::
+```
+
+<br>
+
+**TL;DR block** — three-bullet summary at the top of the post:
+
+```markdown
+::: {.tldr}
+- Key finding
+- Why it matters
+- What to take away
+:::
+```
+
+---
+
+## Tabset panels
+
+Organise dense content into tabs so readers can navigate:
+
+```markdown
+::: {.panel-tabset}
+
+## Method
+Who took part, what they did, how it was measured.
+
+## Findings
+What the results showed — with specific numbers.
+
+## Implications
+What this means beyond the lab.
+
+:::
+```
+
+---
+
+## Before you submit — checklist
+
+- [ ] 800–1000 words (blog post) or 4–5 minutes (video)
+- [ ] Written in the **third person**
+- [ ] Covers research question, method, findings, and conclusions
+- [ ] At least one **original visual aid** you created
+- [ ] **In-text citations** throughout
+- [ ] Full **APA reference list** at the end
+- [ ] Reflection piece complete (480–600 words or 2.5–3 min)
+- [ ] Both components submitted via **[Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**
+
+---
+
+## Getting help
+
+<br>
+
+| Resource | Where |
+|----------|-------|
+| Full assessment brief | [assessment.qmd](assessment.qmd) |
+| Example post | [posts/example-post](posts/example-post/index.qmd) |
+| Formatting guide | [posts/formatting-guide](posts/formatting-guide/index.qmd) |
+| Publishing guide | [contributing.qmd](contributing.qmd) |
+| Moodle submission | [learn.gold.ac.uk](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744) |
+
+<br>
+
+For questions about the assessment, post on the Moodle forum so everyone benefits from the answer.
+
+---
+
+## {.center}
+
+**PS51009D Applications of Psychological Research**
+
+Department of Psychology
+Goldsmiths, University of London
+
+<br>
+
+Dr Gordon Wright — gordon@littlemonkeylab.com
+Dr Bence Palfi
+
+<br>
+
+Submission deadline: **Monday 11 May, 12 noon**
+Submit via: **[Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**

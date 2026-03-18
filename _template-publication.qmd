@@ -1,0 +1,115 @@
+---
+# ── FILL IN YOUR DETAILS ──────────────────────────────────────────────────────
+title: "Your Post Title"
+author: "Your Name"
+date: "2025-03-01"
+description: "One sentence. Make it good."
+categories: [social psychology]
+image: "images/cover.jpg"
+stream: publication
+# ─────────────────────────────────────────────────────────────────────────────
+
+bibliography: references.bib
+toc: false
+---
+
+<!-- DELETE THIS BLOCK before submitting ──────────────────────────────────────
+STREAM: PUBLICATION
+
+This template is for a general-audience piece. Think The Conversation, Psyche,
+or New Scientist. Aim for 800–1200 words. No jargon without explanation.
+Strong hook. Clear narrative. Citations exist but don't interrupt flow.
+
+You MUST include:
+  - TL;DR box (below the image)
+  - At least one pull quote
+  - At least one tabset
+  - A share link at the bottom
+
+Suggested structure:
+  1. Cover image with lede caption
+  2. TL;DR box
+  3. Opening paragraphs (hook + stakes)
+  4. Main argument in tabset sections
+  5. Pull quote
+  6. Closing section
+  7. Share link + author card
+
+──────────────────────────────────────────────────────────────────────────── -->
+
+
+<!-- Cover image. Find something on Unsplash (free, no attribution needed for web). -->
+![Replace this with a compelling image related to your topic.
+*(Photo: [Unsplash](https://unsplash.com))*](images/cover.jpg)
+
+
+::: {.tldr}
+- First key point — the surprising finding or claim
+- Second key point — why it matters or what the evidence shows
+- Third key point — the takeaway or implication
+:::
+
+
+## Your opening hook
+
+Don't start with "In this essay..." Start with something that makes the reader want to keep going. A scene. A statistic that surprises them. A question they hadn't thought to ask.
+
+Give the stakes here. Why should a non-psychologist care about this? What does this topic connect to in real life?
+
+
+::: {.panel-tabset}
+
+## The research
+
+Explain the science here in plain language. What do studies actually show?
+You can cite in-line [@authorYear] but keep citations light — one or two is enough.
+
+## What it means
+
+The so-what. Connect the research to something the reader can feel or apply.
+Concrete examples work better than abstractions here.
+
+## The honest caveats
+
+What doesn't the research tell us? What should readers keep in mind?
+This builds trust. Readers respect honesty about limitations.
+
+:::
+
+
+::: {.pullquote}
+"Pull out one sentence from your post that captures the whole argument.
+Make it quotable. This is the line that might get screenshot and shared."
+:::
+
+
+## Closing section
+
+Bring it home. One clear paragraph. Don't trail off or hedge — land the point.
+What do you want the reader to think, feel, or do after reading this?
+
+
+---
+
+*If this post made you think, you can [share it on Bluesky](https://bsky.app/intent/compose?text=Interesting+read+from+%40ps50blog%3A+PASTE-YOUR-URL-HERE).*
+
+---
+
+::: {.author-card}
+
+<div>
+<div class="author-card-name">Your Name</div>
+<div class="author-card-bio">
+  Psychology student at Goldsmiths, University of London.
+  One sentence about your interests.
+</div>
+</div>
+:::
+
+*This post is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
+
+
+## References
+
+::: {#refs}
+:::

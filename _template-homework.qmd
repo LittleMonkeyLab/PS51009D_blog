@@ -1,0 +1,117 @@
+---
+# ── FILL IN YOUR DETAILS ──────────────────────────────────────────────────────
+title: "Your Post Title"
+author: "Your Name"
+date: "2025-03-01"                          # YYYY-MM-DD format
+description: "One sentence. Make it good."  # Appears in the post listing
+categories: [social psychology]             # Add relevant topic tags
+image: "images/cover.jpg"                   # Optional cover image
+stream: homework
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Citation setup — add a references.bib file to this folder and uncomment:
+# bibliography: references.bib
+# csl: apa.csl   # optional — APA style is default
+
+toc: true
+---
+
+<!-- DELETE THIS BLOCK before submitting ──────────────────────────────────────
+STREAM: HOMEWORK
+
+This template is for a well-structured academic post. Aim for 800–1200 words
+of main content. Use proper citations. Write clearly enough for a thoughtful
+non-psychologist to follow.
+
+Suggested structure:
+  1. Opening hook (1–2 paragraphs)
+  2. Background / what the research says (2–3 paragraphs)
+  3. A key study or finding in detail (1–2 paragraphs)
+  4. Critical evaluation (1 paragraph)
+  5. So what / takeaway (1 paragraph)
+  6. References
+
+──────────────────────────────────────────────────────────────────────────── -->
+
+
+## Your opening section heading
+
+Start with something that pulls the reader in. A surprising finding, a counter-intuitive claim, a question worth asking. Don't start with "In this post I will...".
+
+Write naturally. You know this topic — write as if you're explaining it to a curious friend who hasn't studied psychology.
+
+
+## Background
+
+::: {.callout-note}
+## Key concept
+Define your central concept here clearly, in plain language.
+:::
+
+Continue with the background. What does the field say about this?
+Cite your sources inline like this [@authorYear].
+
+Multiple citations work like this [@firstAuthor2020; @secondAuthor2021].
+
+
+## A study in focus
+
+Go deeper on one specific study or line of research. What was the design? What did they find? Why does it matter?
+
+
+::: {.callout-tip}
+## My take
+Use this box to clearly separate your opinion from the evidence.
+This is good academic practice: claim ownership of your interpretations.
+:::
+
+
+## Critical evaluation
+
+No study is perfect. What are the methodological limitations? What would you want to know that this research doesn't tell you?
+
+::: {.callout-warning}
+## Limitation to flag
+Use this box to highlight a specific caveat — sampling, measurement, replication, etc.
+:::
+
+
+## Takeaway
+
+What should the reader walk away thinking? One clear paragraph. Make it land.
+
+
+## References
+
+::: {#refs}
+:::
+
+<!-- Paste your BibTeX references into a file called references.bib
+     in this folder. Example entry:
+
+@article{loftus1974,
+  author  = {Loftus, Elizabeth F. and Palmer, John C.},
+  year    = {1974},
+  title   = {Reconstruction of automobile destruction},
+  journal = {Journal of Verbal Learning and Verbal Behavior},
+  volume  = {13},
+  number  = {5},
+  pages   = {585--589},
+  doi     = {10.1016/S0022-5371(74)80011-3}
+}
+-->
+
+---
+
+::: {.author-card}
+
+<div>
+<div class="author-card-name">Your Name</div>
+<div class="author-card-bio">
+  Psychology student at Goldsmiths, University of London.
+  Write one sentence about your interests here.
+</div>
+</div>
+:::
+
+*This post is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*

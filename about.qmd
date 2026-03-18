@@ -1,0 +1,49 @@
+---
+title: "About This Blog"
+---
+
+## What is this?
+
+This blog is part of **PS51009D — Applications of Psychological Research**, a first-year undergraduate module at Goldsmiths, University of London.
+
+Instead of submitting a Word document that nobody ever reads, students here write and publish genuine science communication pieces on the open web — blog posts (or video recordings) aimed at a real, non-expert audience. The posts cover topics from across the module: human-AI interaction, meditation, individual differences, neuropsychology, music psychology, expert performance, eyewitness testimony, and stalking.
+
+Every post is written, submitted, reviewed, and published through GitHub — the same platform professional researchers and developers use to collaborate.
+
+## The assessment
+
+Students choose one of two formats:
+
+| Format | Description |
+|--------|-------------|
+| **Written blog post** | 800–1000 words, with at least one original visual aid (infographic, figure, or table) |
+| **Video recording** | 4–5 minutes, with slides and visual aids |
+
+Both formats summarise one nominated research paper for a non-academic audience, drawing on relevant content from the module to provide context.
+
+The science communication piece is worth **90%** of the final module grade. A separate reflection piece (500 words) is worth **10%**.
+
+**Submission deadline: Monday 11 May, 12 noon**
+
+For the full brief, target articles, and marking guidance, see the [Assessment](assessment.qmd) page.
+
+## MVP and flourishes
+
+This site is built with Quarto and can support anything from a simple, clean post to something with interactive charts, embedded video, and tabbed sections. You don't need any of that to do well — but it's there if you want it.
+
+Think of it in two layers:
+
+**MVP (minimum viable post)** — what you need to submit a properly formatted piece on this site: a title, your name, a date, your written content, citations, a reference list, and at least one visual. That's it. A clean, well-written MVP post is entirely sufficient.
+
+**Flourishes** — optional enhancements that can make your post more engaging: pull quotes, tabbed sections, callout boxes, a hero image, an embedded video. These aren't required, but if you're comfortable with the basics and want to go further, the [How to Publish](contributing.qmd) guide explains how.
+
+## Module information
+
+- **Module:** PS51009D Applications of Psychological Research
+- **Level:** First Year Undergraduate
+- **Department:** Psychology, Goldsmiths, University of London
+- **Lecturers:** Dr Bence Palfi and Dr Gordon Wright
+
+## Licence
+
+Unless stated otherwise, posts on this blog are published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — you can share and adapt them with attribution.

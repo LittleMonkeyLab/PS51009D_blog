@@ -1,0 +1,116 @@
+---
+# ── FILL IN YOUR DETAILS ──────────────────────────────────────────────────────
+title: "Your Post Title"
+author: "Your Name"
+date: "2026-03-18"                         # YYYY-MM-DD format
+description: "One sentence. Make it good." # Appears in the post listing
+categories: [meditation]                   # Replace with your topic
+image: "images/cover.jpg"                  # Optional — delete if no image
+bibliography: references.bib
+# ─────────────────────────────────────────────────────────────────────────────
+toc: true
+---
+
+<!-- DELETE THIS BLOCK before submitting ──────────────────────────────────────
+FULL TEMPLATE — all optional features included
+
+This template demonstrates all available flourishes. Use the ones that help
+your post — delete the ones that don't. None of them are required.
+
+The only things you must have:
+  - 800–1000 words of science communication in the third person
+  - At least one original visual aid you created
+  - In-text citations
+  - A full APA reference list at the end
+──────────────────────────────────────────────────────────────────────────── -->
+
+
+::: {.tldr}
+- Key point one — the most surprising or important finding
+- Key point two — why it matters
+- Key point three — what the reader should take away
+:::
+
+
+## Your opening
+
+![A large image at the top with a caption that sets the scene. Replace with your own.
+*(Photo: [Unsplash](https://unsplash.com))*](images/cover.jpg)
+
+Start with something that pulls the reader in. A surprising finding, a counter-intuitive claim, a question worth asking.
+
+Write in the third person. Describe what the researchers found — not what "we" found.
+
+
+## Background
+
+::: {.callout-note}
+## Key concept
+Define your central concept here clearly, in plain language.
+:::
+
+What is this area of research about? Give the reader enough context to understand why the study matters.
+
+Cite your sources inline: [@authorYear] or [@firstAuthor2020; @secondAuthor2021].
+
+
+## The study
+
+::: {.pullquote}
+"A key sentence from the article or your post — something quotable that captures the core finding."
+:::
+
+Describe the specific article you chose. What was the research question? How was the study designed?
+
+::: {.panel-tabset}
+
+## Method
+What the researchers did. Who were the participants? What was the procedure?
+
+## Findings
+What they found — in plain language. Specific numbers help: "X% of participants..."
+
+## Implications
+What these findings mean. Are they in line with other research? What questions remain?
+
+:::
+
+
+## What does this mean?
+
+![A clear, descriptive caption for your original visual aid.](images/your-figure.png)
+
+Connect the findings to the real world. Why should a non-expert care about this research?
+
+::: {.callout-tip}
+## My take
+Use this box to clearly separate your interpretation from the evidence.
+:::
+
+::: {.callout-warning}
+## Limitation to note
+Every study has limits. Flag one — sampling, measurement, replication, and so on.
+:::
+
+
+## References
+
+::: {#refs}
+:::
+
+---
+
+
+
+::: {.author-card}
+
+<div>
+<div class="author-card-name">Your Name</div>
+<div class="author-card-bio">
+  Psychology student at Goldsmiths, University of London.
+  Write one sentence about your interests here.
+</div>
+</div>
+:::
+
+*This post is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*

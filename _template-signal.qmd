@@ -1,0 +1,166 @@
+---
+# ── FILL IN YOUR DETAILS ──────────────────────────────────────────────────────
+title: "Your Post Title"
+author: "Your Name"
+date: "2025-03-01"
+description: "One sentence. Make it good."
+categories: [social psychology]
+image: "images/cover.jpg"
+stream: signal
+# ─────────────────────────────────────────────────────────────────────────────
+
+bibliography: references.bib
+toc: true
+
+# WebR setup — remove the next two lines if you're not using interactive R
+filters:
+  - webr
+webr:
+  packages: ['ggplot2', 'dplyr']
+  show-startup-message: false
+---
+
+<!-- DELETE THIS BLOCK before submitting ──────────────────────────────────────
+STREAM: SIGNAL
+
+This template is for content built to be shared. It should have at least ONE
+of: interactive R (WebR), an OJS chart, or an embedded video.
+
+Aim for 600–1000 words of prose, but the interactive elements do a lot of work.
+Write with a strong personal voice. You can be funny. You can be direct.
+
+You MUST include at least one of:
+  - A WebR interactive code block
+  - An Observable JS chart
+  - An embedded video
+
+──────────────────────────────────────────────────────────────────────────── -->
+
+
+::: {.tldr}
+- Your first key point
+- Your second key point
+- Something the reader can actually do with this
+:::
+
+
+## Your opening
+
+Strong voice. Don't be boring. This stream is for writers who want to be read.
+
+State the thing you're going to show, analyse, or argue — and make it sound worth reading.
+
+
+## The data / the argument
+
+<!-- ── OPTION A: WebR interactive chart ──────────────────────────────────── -->
+<!-- Use this if you want readers to run and edit R code in the browser.       -->
+
+```{webr-r}
+#| context: setup
+#| autorun: true
+# Setup code — hidden from readers, runs first
+# Put your data here
+
+set.seed(42)
+n <- 100
+my_data <- data.frame(
+  condition = rep(c("Group A", "Group B"), each = n/2),
+  score     = c(rnorm(n/2, mean = 54, sd = 8),
+                rnorm(n/2, mean = 61, sd = 9))
+)
+```
+
+Here's the data. Try changing the numbers and clicking Run to see what happens:
+
+```{webr-r}
+#| fig-width: 7
+#| fig-height: 4
+library(ggplot2)
+
+ggplot(my_data, aes(x = condition, y = score, fill = condition)) +
+  geom_boxplot(alpha = 0.75, outlier.shape = NA) +
+  geom_jitter(width = 0.15, alpha = 0.35, size = 1.5) +
+  scale_fill_manual(values = c("Group A" = "#3d5afe", "Group B" = "#d81b60")) +
+  labs(
+    title = "Replace with your chart title",
+    x = NULL, y = "Score"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "none")
+```
+
+<!-- ── OPTION B: Observable JS chart ─────────────────────────────────────── -->
+<!-- Use this for slick interactive charts without any R setup.                -->
+<!-- Delete the WebR blocks above if you use this instead.                     -->
+
+<!--
+```{ojs}
+// Your data as a JavaScript array
+data = [
+  {label: "Group A", value: 54},
+  {label: "Group B", value: 61},
+  {label: "Group C", value: 49}
+]
+
+Plot.plot({
+  marks: [
+    Plot.barY(data, {x: "label", y: "value", fill: "#3d5afe"}),
+    Plot.ruleY([50], {stroke: "#d81b60", strokeDasharray: "4,4"})
+  ],
+  y: {label: "Score (%)"},
+  width: 640,
+  height: 320
+})
+```
+-->
+
+
+## What you make of it
+
+This is the analysis section. What does the data or research actually mean?
+Don't just describe — interpret. What would you change if you ran this study?
+What question does this raise for you?
+
+
+## Embedded video (optional but recommended)
+
+<!-- Record 60–90 seconds explaining your main point. Loom is free for students.
+     Replace the URL below with your own video link.                           -->
+
+<!-- YouTube:  {{< video https://www.youtube.com/watch?v=YOUR_ID >}}           -->
+<!-- Vimeo:    {{< video https://vimeo.com/YOUR_ID >}}                         -->
+<!-- Loom:     embed the iframe Loom gives you                                 -->
+<!-- Local:    {{< video images/my-video.mp4 >}}                               -->
+
+
+## Takeaway
+
+Short and punchy. What do you want the reader to remember?
+One paragraph. Make it land.
+
+
+---
+
+*Share this on [Bluesky](https://bsky.app/intent/compose?text=PASTE-YOUR-URL-HERE) — or copy the link and send it to someone who'd find it interesting.*
+
+---
+
+::: {.author-card}
+
+<div>
+<div class="author-card-name">Your Name</div>
+<div class="author-card-bio">
+  Psychology student at Goldsmiths, University of London.
+  One sentence about your interests.
+</div>
+</div>
+:::
+
+*This post is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
+
+
+## References
+
+::: {#refs}
+:::

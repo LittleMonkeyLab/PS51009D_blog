@@ -1,0 +1,56 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "PS51009D Science Communication Blog"
+  description: "Student science communication from PS51009D Applications of Psychological Research, Goldsmiths, University of London"
+  favicon: assets/favicon.png
+  repo-url: https://github.com/YOURNAME/ps51009d-blog
+  repo-actions: [issue]
+
+  navbar:
+    left:
+      - text: "Posts"
+        href: index.qmd
+      - text: "Assessment"
+        href: assessment.qmd
+      - text: "How to Publish"
+        href: contributing.qmd
+      - text: "Formatting Guide"
+        href: posts/formatting-guide/index.qmd
+      - text: "Slides"
+        href: slides.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/YOURNAME/ps51009d-blog
+
+  page-footer:
+    left: "PS51009D Applications of Psychological Research — Goldsmiths, University of London"
+    right: "Built with [Quarto](https://quarto.org)"
+
+citation-style: apa.csl
+
+format:
+  html:
+    theme: [flatly, custom.scss]
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    code-fold: true
+    code-tools: true
+    code-copy: true
+    smooth-scroll: true
+    highlight-style: github
+    link-external-newwindow: true
+    comments:
+      hypothesis: true
+
+# Global execution options
+execute:
+  freeze: auto
+  cache: true
+  warning: false
+  message: false

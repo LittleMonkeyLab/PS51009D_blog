@@ -1,0 +1,400 @@
+---
+title: "How to Publish Your Post"
+subtitle: "A step-by-step guide for PS51009D students — from zero to published"
+toc: true
+toc-depth: 3
+---
+
+This page is everything you need to get your science communication piece published on the blog. Read it once end-to-end before you start.
+
+1. Setting up GitHub (once only)
+2. Choosing your approach — MVP or with flourishes
+3. Writing your post
+4. Submitting for publication
+
+::: {.callout-note}
+## The blog is optional, but encouraged
+Publishing here is not a requirement for the assessment — all submissions for marking go via **[Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**. But publishing on the blog means your work is visible to a real audience, which is exactly what science communication is for. If you want Gordon to publish your piece here, upload a copy to the **[PS51009D OneDrive folder](https://goldsmithscollege-my.sharepoint.com/:f:/g/personal/gwrig002_campus_goldsmiths_ac_uk/IgARGfnH7ojgRqhRM7PF7HR_AbRQbdcJ_jeRtykPpkMi2E8?e=4m1SIt)**. See the [Assessment](assessment.qmd) page for full details.
+:::
+
+---
+
+## Before you write anything: set up GitHub
+
+GitHub is where all the posts live. Think of it like a shared Google Drive, except it tracks every change anyone ever makes, and publishing a new post is as simple as sending a pull request (explained below).
+
+You only do this setup once.
+
+### Step 1 — Create a GitHub account
+
+Go to [github.com](https://github.com) and sign up with your Goldsmiths email. Your username will be visible on your post, so pick something sensible.
+
+### Step 2 — Fork the blog repository
+
+::: {.callout-note}
+## What is a fork?
+A fork is your own personal copy of the blog. You make changes in your copy, then ask for them to be merged into the real site. This means you can't accidentally break anything for everyone else.
+:::
+
+1. Go to the blog repository at `https://github.com/YOURNAME/ps51009d-blog`
+2. Click the **Fork** button (top right)
+3. Keep all the defaults and click **Create fork**
+
+You now have your own copy at `https://github.com/YOURUSERNAME/ps51009d-blog`.
+
+### Step 3 — Install the tools you need
+
+**Quarto** — the publishing tool that turns your `.qmd` file into a webpage.
+Download from: [quarto.org/docs/get-started](https://quarto.org/docs/get-started/)
+
+**GitHub Desktop** — a simple visual interface for GitHub (recommended if you're new to this).
+Download from: [desktop.github.com](https://desktop.github.com)
+
+**RStudio** (optional) — useful for editing `.qmd` files, even if you're not writing code.
+Download from: [posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop/)
+
+### Step 4 — Clone your fork to your computer
+
+In GitHub Desktop:
+
+1. Click **File → Clone repository**
+2. Find your fork (`YOURUSERNAME/ps51009d-blog`)
+3. Choose a folder on your computer
+4. Click **Clone**
+
+You now have the whole site on your machine. Your post file will live in the `posts/` folder.
+
+---
+
+## Choose your approach {#approach}
+
+There is no requirement to do anything technically impressive. A clear, well-written piece with a good visual aid is all you need.
+
+Think of your post in two layers:
+
+### MVP — get it submitted
+
+The MVP (minimum viable post) is everything you need and nothing you don't:
+
+- A title, your name, and a date
+- Your written content (800–1000 words)
+- At least one original visual aid (image, infographic, or figure you created)
+- Citations in the text and a reference list at the end
+
+A well-written MVP is entirely sufficient. Use `_template-mvp.qmd`.
+
+### Flourishes — if you want to go further
+
+Flourishes are optional features that can make your post more engaging. None of them are required for the assessment, but they're available if you're comfortable with the basics and want to push further:
+
+| Flourish | What it does |
+|----------|-------------|
+| Callout boxes | Highlight key concepts, flag caveats, add your own take |
+| Pull quotes | Extract a key sentence and display it large |
+| Tabset panels | Organise dense content into tabs (e.g. Method / Findings / Implications) |
+| Hero image | Large image at the top with a descriptive caption |
+| Embedded video | If you recorded a video, embed it directly in the page |
+| Author bio | A short bio and photo at the bottom |
+
+All of these are explained with copy-paste examples below. Use `_template-full.qmd` if you want a starting point that includes them.
+
+---
+
+## Create your post file {#create}
+
+### The file structure
+
+Your post needs to live inside a subfolder of `posts/`. The folder name becomes part of the URL. For example:
+
+```
+posts/
+  your-name-topic/
+    index.qmd          ← your post
+    images/            ← any images or figures
+    references.bib     ← your reference list (optional but recommended)
+```
+
+Create a new folder inside `posts/` named with your surname and a short topic slug, like:
+`posts/wright-meditation/`
+
+### Copy the right template
+
+Two template files are included in the repo root:
+
+| Template | Use when |
+|----------|---------|
+| `_template-mvp.qmd` | You want a clean, minimal starting point — just the essentials |
+| `_template-full.qmd` | You want to see all the available features and pick the ones you want |
+
+Copy the one you want into your folder and rename it `index.qmd`.
+
+Open `index.qmd` in RStudio or any text editor and start writing.
+
+---
+
+## Writing your post {#writing}
+
+### The YAML header (everyone)
+
+The very top of your `.qmd` file is the YAML header — this controls how your post appears on the site. It must start and end with `---`.
+
+```yaml
+---
+title: "The title of your post"
+author: "Your Name"
+date: "2025-04-15"
+description: "One sentence that appears in the listing. Make it good."
+categories: [human-AI interaction, clinical judgement]
+image: "images/cover.jpg"        # optional but recommended
+bibliography: references.bib     # if using .bib file for citations
+---
+```
+
+::: {.callout-warning}
+## Date format
+Use `YYYY-MM-DD` format exactly. Other formats will cause the site to break.
+:::
+
+Choose your categories from the module topics: `human-AI interaction`, `meditation`, `individual differences`, `neuropsychology`, `music psychology`, `expert performance`, `eyewitness testimony`, `stalking`.
+
+---
+
+### Citations and reference list
+
+Quarto handles citations properly if you have a `.bib` file. Add this to your YAML:
+
+```yaml
+bibliography: references.bib
+```
+
+Then cite in text with `[@authorYear]`:
+
+```markdown
+The study found that meditation significantly increased compassionate behaviour [@condon2013].
+
+Multiple sources converge on this finding [@condon2013; @lutz2008].
+```
+
+At the end of your post, add:
+
+```markdown
+## References
+
+::: {#refs}
+:::
+```
+
+Quarto automatically formats the reference list in APA style.
+
+::: {.callout-tip}
+## Getting .bib files from Zotero
+In Zotero: select your sources → right-click → Export Items → Format: BibTeX → Save as `references.bib` in your post folder.
+
+Alternatively, Google Scholar shows a "Cite" link under each result — click it, then BibTeX, and copy the entry into your `references.bib` file.
+:::
+
+---
+
+### Your visual aid
+
+You are required to create at least one original visual aid. This could be:
+
+- A diagram or infographic you made in Canva, PowerPoint, or any drawing tool
+- A chart or figure you created (even in Excel)
+- A table summarising key findings
+
+You cannot use a figure taken directly from the article.
+
+Save your image file in your post's `images/` subfolder and include it like this:
+
+```markdown
+![A clear, descriptive caption that explains what the figure shows.](images/your-figure.png)
+```
+
+For accessibility, the caption should describe the content of the image for someone who cannot see it.
+
+---
+
+## Optional flourishes {#flourishes}
+
+Everything below is optional. Use what helps your post — skip what doesn't.
+
+### Callout boxes
+
+Use callout boxes to highlight key ideas, define terms, flag caveats, or clearly separate your opinion from the evidence.
+
+```markdown
+::: {.callout-note}
+## Key concept
+**Anosognosia** is the lack of awareness of one's own neurological deficit.
+It is distinct from denial — the patient genuinely does not perceive the impairment.
+:::
+
+::: {.callout-tip}
+## My take
+I find this distinction important because it changes how we think about patient
+communication in rehabilitation settings.
+:::
+
+::: {.callout-warning}
+## Methodological caveat
+The sample size here is small (n = 12), which limits how far the findings can
+be generalised.
+:::
+```
+
+**Callout types:** `callout-note` (blue), `callout-tip` (green), `callout-warning` (orange), `callout-important` (red).
+
+---
+
+### Pull quote
+
+Extract a key sentence from your post and display it prominently:
+
+```markdown
+::: {.pullquote}
+"Simply being told an algorithm was involved changed whether clinicians followed its advice — even when the advice itself was identical."
+:::
+```
+
+---
+
+### Tabset panels
+
+Use tabs to organise dense content without making readers scroll through everything:
+
+```markdown
+::: {.panel-tabset}
+
+## The research question
+What they were trying to find out, and why it matters.
+
+## Method
+How the study was designed and run.
+
+## Key findings
+What they found — in plain language.
+
+## What it means
+Implications for the real world.
+
+:::
+```
+
+---
+
+### Hero image
+
+Add a large image at the top of your post with a descriptive caption:
+
+```markdown
+![A meditating figure in a park. Condon et al. (2013) found that even brief
+meditation training increased the likelihood of offering a seat to someone in pain.
+*(Photo: [Unsplash](https://unsplash.com))*](images/cover.jpg)
+```
+
+---
+
+### Embedded video
+
+If you recorded a video for your assessment, you can embed it directly in the post.
+
+For YouTube or Vimeo:
+
+```markdown
+{{< video https://www.youtube.com/watch?v=YOUR_VIDEO_ID >}}
+```
+
+For a local video file (e.g. exported from PowerPoint):
+
+```markdown
+{{< video images/my-recording.mp4 >}}
+```
+
+::: {.callout-tip}
+## Easy screen and face recording
+**Loom** (free) lets you record your screen and face simultaneously and generates a shareable link immediately. Go to [loom.com](https://loom.com).
+:::
+
+---
+
+### Author bio
+
+Paste this at the very bottom of your post and fill in your details:
+
+```markdown
+::: {.author-card}
+
+<div>
+<div class="author-card-name">Your Name</div>
+<div class="author-card-bio">
+  Psychology student at Goldsmiths, University of London.
+  Interested in [your research interests].
+</div>
+</div>
+:::
+```
+
+---
+
+## Preview your post locally
+
+Before submitting, check it actually renders. In RStudio's terminal:
+
+```bash
+quarto preview
+```
+
+This opens the whole site in your browser. Navigate to your post and check everything looks right — no broken images, citations appear, layout is clean.
+
+---
+
+## Submit your post (pull request) {#submit}
+
+When you're happy with your post:
+
+### Step 1 — Commit your changes
+
+In GitHub Desktop:
+
+1. You'll see your new files listed on the left under "Changes"
+2. Write a short summary at the bottom: `Add post: Your Post Title`
+3. Click **Commit to main**
+
+### Step 2 — Push to your fork
+
+Click **Push origin** (the button at the top of GitHub Desktop).
+
+### Step 3 — Open a pull request
+
+1. Go to your fork on GitHub: `https://github.com/YOURUSERNAME/ps51009d-blog`
+2. You'll see a yellow banner: "This branch is 1 commit ahead of YOURNAME:main"
+3. Click **Contribute → Open pull request**
+4. Title: your post title
+5. In the description, add:
+   - Your topic (e.g. Week 17 — Meditation Research)
+   - One sentence about your post
+   - Any notes for the reviewer
+6. Click **Create pull request**
+
+That's it. You'll get a notification when it's reviewed and merged.
+
+::: {.callout-warning}
+## Before you submit, check:
+- [ ] Your post is in `posts/your-name-topic/index.qmd`
+- [ ] The YAML header has title, author, date, description, and categories
+- [ ] `quarto preview` runs without errors
+- [ ] Your visual aid is in the `images/` subfolder and displays correctly
+- [ ] Your reference list is included at the end
+- [ ] Citations are in APA style
+:::
+
+---
+
+## Getting help
+
+**Quarto documentation:** [quarto.org/docs/websites](https://quarto.org/docs/websites)
+
+**GitHub help:** [docs.github.com](https://docs.github.com)
+
+If something is broken and you can't fix it, open an Issue on the repository rather than emailing — other students may have the same problem and the answer will be visible to everyone.

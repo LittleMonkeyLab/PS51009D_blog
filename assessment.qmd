@@ -1,0 +1,207 @@
+---
+title: "Assessment Brief"
+subtitle: "PS51009D Applications of Psychological Research"
+toc: true
+toc-depth: 3
+---
+
+::: {.callout-note}
+## Download this brief
+To save a copy of this page: use **File → Print → Save as PDF** in your browser, or press **Ctrl+P** / **Cmd+P**.
+:::
+
+---
+
+## Overview
+
+| Component | Weight | Deadline |
+|-----------|--------|----------|
+| Science communication blog post or video recording | **90%** | Monday 11 May, 12 noon |
+| Reflection piece | **10%** | Monday 11 May, 12 noon |
+
+---
+
+## Component 1 — Science Communication (90%)
+
+### The task
+
+Create a written or video blog for a non-expert audience based on one of the topics of Applications of Psychological Research.
+
+You are required to produce a **science communication blog post OR a video recording**. Select **one** academic journal article from those nominated by lecturers on this module (see [Target Articles](#target-articles) below) and summarise the research paper for a non-academic, non-expert audience.
+
+The science communication should be presented in a format that will be appealing to a non-academic audience whilst still communicating the main points of the article. You are expected to use visual aids such as infographics, figures, tables, and/or pictures to support the written or recorded blog post.
+
+- **Blog post:** 800–1000 words
+- **Video recording:** 4–5 minutes
+
+The content will summarise one of the target research papers. The focus is on clear and concise communication of scientific research made accessible to a general, non-expert audience. You are also expected to cover some of the content taught in the session of your choice, to provide context to the findings.
+
+### Necessary elements
+
+- You must summarise a research paper
+- You must create and include at least one visual aid (you cannot use a visual aid from the article — you need to create one yourself)
+- You must include citations
+- You must include a full reference list at the end of your written piece or video recording (APA style), which is **not** included in the word count
+
+### Submission format
+
+::: {.callout-important}
+## Submit to Moodle for marking
+All submissions **must** be uploaded to the **[Moodle submission page](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)** to be marked. Submissions not received via Moodle will not be graded.
+:::
+
+**Blog post:** submit your written piece as a Word doc or PDF file via the Moodle link above.
+
+**Video recording:** create slides and record your audio (and video, if you wish) in PowerPoint and submit the PPT file via the Moodle link above.
+
+**Optional — publish on this blog:** if you would like Gordon to publish your piece on this site, you may also upload a copy to the **[PS51009D OneDrive folder](https://goldsmithscollege-my.sharepoint.com/:f:/g/personal/gwrig002_campus_goldsmiths_ac_uk/IgARGfnH7ojgRqhRM7PF7HR_AbRQbdcJ_jeRtykPpkMi2E8?e=4m1SIt)**. This is entirely optional and has no bearing on your mark (see [How to Publish](contributing.qmd)).
+
+---
+
+## What good looks like
+
+### Style
+
+The target style is science journalism aimed at a thoughtful general reader — curious but not an expert. A very useful reference is **The Conversation** ([theconversation.com](https://theconversation.com)), an online resource of articles written for non-expert audiences.
+
+Some examples of the required style:
+
+- [Goosebumps, tears and tenderness: what it means to be moved](https://theconversation.com/goosebumps-tears-and-tenderness-what-it-means-to-be-moved-72545)
+- [Memory and sense of self may play more of a role in autism than we thought](https://theconversation.com/memory-and-sense-of-self-may-play-more-of-a-role-in-autism-than-we-thought-63210)
+
+Science writing in broadsheet newspapers such as *The Times* or *The Guardian* also gives a good sense of the required style:
+
+- [Real art in museums stimulates the brain much more than reprints](https://www.theguardian.com/science/2024/oct/03/real-art-in-museums-stimulates-brain-much-more-than-reprints-study-finds)
+- [Bike helmet study shows appetite for danger](https://www.theguardian.com/science/2016/jan/24/bike-helmet-appetite-danger)
+
+::: {.callout-note}
+## Writing in the third person
+Note that the examples above are written from the perspective of the people who actually did the research. Because you did not run the study yourself, **write yours in the third person** — describing what the researchers found, not what "we" found.
+:::
+
+For video format, see this example for inspiration on style: [YouTube example](https://www.youtube.com/watch?v=uFcEQkO7DUI)
+
+### Marking guidance
+
+Submissions attracting marks in the upper second class and first class will very clearly and succinctly communicate:
+
+- the **research question**
+- the **study method and procedure**
+- the **findings**
+- the **conclusions** of the chosen research article
+
+Short contextual discussions are also encouraged — for example, are the findings in line with other research in the field? Visual aids (tables, infographics, pictures) that enhance readability and understanding are fully encouraged and are **necessary to achieve the highest marks**.
+
+---
+
+## Target Articles {#target-articles}
+
+Choose **one** of the following topics and its corresponding article for your science communication assignment.
+
+::: {.callout-important}
+## Week 20 — No target article
+There will be no target article for Week 20 (Tutorial on writing a blog post). You must choose from the other topics listed below.
+:::
+
+---
+
+### Week 16 — Human-AI Interactions
+
+Pálfi, B., Arora, K., & Kostopoulou, O. (2022). Algorithm-based advice taking and clinical judgement: impact of advice distance and algorithm information. *Cognitive Research: Principles and Implications, 7*(1), 70. <https://doi.org/10.1186/s41235-022-00421-6>
+
+---
+
+### Week 17 — Meditation Research
+
+Condon, P., Desbordes, G., Miller, W. B., & DeSteno, D. (2013). Meditation increases compassionate responses to suffering. *Psychological Science, 24*(10), 2125–2127. <https://doi.org/10.1177/0956797613485603>
+
+---
+
+### Week 18 — Individual Differences
+
+Bremner, A. J., Caparos, S., Davidoff, J., de Fockert, J., Linnell, K. J., & Spence, C. (2013). "Bouba" and "Kiki" in Namibia? A remote culture make similar shape–sound matches, but different shape–taste matches to Westerners. *Cognition, 126*(2), 165–172. <https://doi.org/10.1016/j.cognition.2012.09.007>
+
+---
+
+### Week 19 — Neuropsychology
+
+Cocchini, G., Beschin, N., Fotopoulou, A., & Della Sala, S. (2010). Explicit and implicit anosognosia for upper limb motor impairment. *Neuropsychologia, 48*(6), 1489–1494. <https://doi.org/10.1016/j.neuropsychologia.2010.01.019>
+
+---
+
+### Music Psychology
+
+McDermott, J. H., Schultz, A. F., Undurraga, E. A., & Godoy, R. A. (2016). Indifference to dissonance in native Amazonians reveals cultural variation in music perception. *Nature, 535*(7613), 547–550. <https://doi.org/10.1038/nature18635>
+
+---
+
+### Expert Performance
+
+Li, X., Huang, L., Li, B., Wang, H., & Han, C. (2020). Time for a true display of skill: Top players in League of Legends have better executive control. *Acta Psychologica, 204*, 103007. <https://doi.org/10.1016/j.actpsy.2019.103007>
+
+---
+
+### Eyewitness Testimony
+
+Gabbert, F., Hope, L., & Fisher, R. P. (2009). Protecting eyewitness evidence: Examining the efficacy of a self-administered interview tool. *Law and Human Behavior, 33*(4), 298–307. <https://doi.org/10.1007/s10979-008-9146-8>
+
+---
+
+### Stalking
+
+Scott, A. J., Stathi, S., & Burniak, V. (2022). Where to draw the line? The influence of prior relationship, perpetrator-target sex and perpetrator motivation on the point at which behaviour 'crosses the line' and becomes stalking. *Behavioral Sciences & the Law, 40*(5), 584–603. <https://doi.org/10.1002/bsl.2592>
+
+---
+
+## Component 2 — Reflection Piece (10%)
+
+Reflect on your experience creating your blog post for a non-expert audience, using **Bain's 5Rs reflective model**.
+
+**Format:** a written piece of 480–600 words, or a recorded piece of 2.5–3 minutes.
+
+**Deadline:** Week 10, Term 2 — see the [Moodle submission page](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744) for the exact deadline and submission link.
+
+Respond to **at least one prompt under each of the five Rs** below. You do not need to address every prompt.
+
+### Reporting
+
+- Which topic did you choose and why?
+- Which mode of communication did you choose and why?
+- Who was the target audience of your blog and why (note that there is no such thing as "the public")?
+- What was the style of your blog and why did you choose it?
+
+### Responding
+
+- How did you feel about creating a blog post before you started working on the assignment?
+- How did your emotions change from the beginning to the end of the assignment?
+- What aspects of the assignment did you find particularly interesting, engaging or challenging?
+
+### Relating
+
+- How does your experience in writing or recording this blog post relate to your previous experiences in communicating about science?
+- How does the mode of communication of your blog post relate to activities you have experience with?
+- Were there any aspects of the assignment that reminded you of other experiences?
+
+### Reasoning
+
+- What were the main factors that influenced your experience in the task?
+- Why do you think these factors influenced your experience the way they did?
+
+### Reconstructing
+
+- How can you apply what you learned from this experience in the future, including any area of your life?
+- How can you use the experience of communicating to a specific audience in your future work or studies?
+
+---
+
+## Submission deadline
+
+::: {.callout-important}
+## Both components are due Monday 11 May, 12 noon
+
+Submit both components via **Moodle**. Submissions not received via Moodle will not be marked.
+
+**[Submit here (Moodle)](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**
+
+If you also wish to have your science communication piece published on this blog, upload a copy to the **[OneDrive folder](https://goldsmithscollege-my.sharepoint.com/:f:/g/personal/gwrig002_campus_goldsmiths_ac_uk/IgARGfnH7ojgRqhRM7PF7HR_AbRQbdcJ_jeRtykPpkMi2E8?e=4m1SIt)** as well — but this is optional and does not replace the Moodle submission.
+:::
