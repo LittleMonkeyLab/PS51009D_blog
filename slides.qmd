@@ -10,7 +10,7 @@ format:
     slide-number: true
     progress: true
     history: true
-    logo: assets/favicon.png
+    logo: assets/GoldLogo.png
     footer: "PS51009D Applications of Psychological Research — Goldsmiths"
     transition: fade
     background-transition: fade
@@ -170,7 +170,7 @@ Full instructions: [How to Publish](contributing.qmd)
 
 ## The blog site
 
-The blog is built with Quarto and hosted on GitHub Pages.
+The blog is built with Quarto and published online.
 
 **Pages on the site:**
 
