@@ -6,7 +6,7 @@ website:
   title: "PS51009D Science Communication Blog"
   description: "Student science communication from PS51009D Applications of Psychological Research, Goldsmiths, University of London"
   favicon: assets/favicon.png
-  repo-url: https://github.com/YOURNAME/ps51009d-blog
+  repo-url: https://github.com/LittleMonkeyLab/ps51009d-blog
   repo-actions: [issue]
 
   navbar:
@@ -25,7 +25,7 @@ website:
         href: about.qmd
     right:
       - icon: github
-        href: https://github.com/YOURNAME/ps51009d-blog
+        href: https://github.com/LittleMonkeyLab/ps51009d-blog
 
   page-footer:
     left: "PS51009D Applications of Psychological Research — Goldsmiths, University of London"
