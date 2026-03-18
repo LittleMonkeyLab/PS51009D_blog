@@ -18,13 +18,12 @@ format:
     link-external-newwindow: true
     chalkboard: false
     scrollable: true
+    smaller: true
 ---
 
 ## Overview {.center}
 
 This deck covers everything you need to know about the science communication assessment for PS51009D.
-
-<br>
 
 | | |
 |--|--|
@@ -41,14 +40,10 @@ This deck covers everything you need to know about the science communication ass
 
 Two components, one deadline: **Monday 11 May, 12 noon**
 
-<br>
-
 | Component | Format | Weight |
 |-----------|--------|--------|
 | Science communication piece | Blog post (800–1000 words) or video recording (4–5 min) | **90%** |
 | Reflection piece | Written (480–600 words) or recording (2.5–3 min) | **10%** |
-
-<br>
 
 ::: {.callout-important}
 Both components are submitted via **[Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**. Submissions not received via Moodle will not be marked.
@@ -59,8 +54,6 @@ Both components are submitted via **[Moodle](https://learn.gold.ac.uk/mod/course
 ## Component 1 — Science Communication (90%)
 
 Choose **one** target article and communicate the research to a **non-expert audience**.
-
-<br>
 
 You must:
 
@@ -86,15 +79,13 @@ You must:
 
 Full references and DOIs are on the [Assessment page](assessment.qmd).
 
-Week 20 (tutorial week) has no target article.
+Week 20 (tutorial week) has no target article - it is this!
 
 ---
 
 ## What good looks like
 
 Upper second and first class work clearly communicates all four of:
-
-<br>
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -125,11 +116,7 @@ Read examples from [The Conversation](https://theconversation.com) — written b
 
 > "Memory and sense of self may play more of a role in autism than we thought"
 
-<br>
-
 Science writing in *The Times* or *The Guardian* also gives a good sense of the required register.
-
-<br>
 
 See the full list of style examples on the [Assessment page](assessment.qmd).
 
@@ -139,8 +126,6 @@ See the full list of style examples on the [Assessment page](assessment.qmd).
 
 Reflect on your experience creating your blog using **Bain's 5Rs model**.
 
-<br>
-
 | R | Focus |
 |---|-------|
 | **Reporting** | What did you do? What did you choose, and why? |
@@ -148,8 +133,6 @@ Reflect on your experience creating your blog using **Bain's 5Rs model**.
 | **Relating** | How does this connect to previous experiences? |
 | **Reasoning** | What factors shaped your experience, and why? |
 | **Reconstructing** | What will you carry forward? |
-
-<br>
 
 Respond to at least **one prompt per R**. Full prompt list on the [Assessment page](assessment.qmd).
 
@@ -162,11 +145,7 @@ Respond to at least **one prompt per R**. Full prompt list on the [Assessment pa
 Work not submitted to Moodle will not be marked — regardless of whether it is on the blog.
 :::
 
-<br>
-
 **[Submit here: Moodle submission page](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**
-
-<br>
 
 - Blog post: submit as a **Word doc or PDF**
 - Video: submit as a **PowerPoint file** (with recorded audio)
@@ -177,8 +156,6 @@ Work not submitted to Moodle will not be marked — regardless of whether it is 
 ## Publishing on the blog (optional)
 
 Publishing here is not required for the assessment. It is an opportunity to have your work read by a real audience.
-
-<br>
 
 If you want to publish:
 
@@ -194,8 +171,6 @@ Full instructions: [How to Publish](contributing.qmd)
 ## The blog site
 
 The blog is built with Quarto and hosted on GitHub Pages.
-
-<br>
 
 **Pages on the site:**
 
@@ -216,8 +191,6 @@ An example science communication post is available on the site.
 
 It covers: **"Eyebrows cue grandiose narcissism"** (Giacomin & Rule, 2019, *Journal of Personality*)
 
-<br>
-
 The post demonstrates:
 
 - The required style and length
@@ -232,8 +205,6 @@ The post demonstrates:
 ## Writing in Quarto — key features
 
 The [Formatting guide](posts/formatting-guide/index.qmd) shows source code for every feature below.
-
-<br>
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -260,8 +231,6 @@ The [Formatting guide](posts/formatting-guide/index.qmd) shows source code for e
 ## Citations and references
 
 Quarto handles citations automatically from a `.bib` file.
-
-<br>
 
 **In your YAML:**
 ```yaml
@@ -290,14 +259,10 @@ Quarto formats the reference list in **APA style** automatically.
 
 Zotero is free reference management software at [zotero.org](https://www.zotero.org).
 
-<br>
-
 1. Add the paper to your Zotero library
 2. **Right-click** the item → Export Item → Format: **BibTeX**
 3. Copy the entry into your `references.bib` file
 4. Note the **citation key** (e.g. `condon2013`) — this is what you use in the text
-
-<br>
 
 Alternatively: Google Scholar → Cite → BibTeX → copy and paste.
 
@@ -308,8 +273,6 @@ Full instructions in the [Formatting guide](posts/formatting-guide/index.qmd).
 ## Callout boxes
 
 Use callouts to define terms, flag limitations, or separate your view from the evidence.
-
-<br>
 
 ```markdown
 ::: {.callout-note}
@@ -322,8 +285,6 @@ Define the concept here in plain language.
 Flag a methodological caveat here.
 :::
 ```
-
-<br>
 
 Four types: `callout-note` (blue), `callout-tip` (green), `callout-warning` (orange), `callout-important` (red).
 
@@ -338,8 +299,6 @@ Four types: `callout-note` (blue), `callout-tip` (green), `callout-warning` (ora
 "Your most important finding in one sentence."
 :::
 ```
-
-<br>
 
 **TL;DR block** — three-bullet summary at the top of the post:
 
@@ -389,8 +348,6 @@ What this means beyond the lab.
 
 ## Getting help
 
-<br>
-
 | Resource | Where |
 |----------|-------|
 | Full assessment brief | [assessment.qmd](assessment.qmd) |
@@ -398,8 +355,6 @@ What this means beyond the lab.
 | Formatting guide | [posts/formatting-guide](posts/formatting-guide/index.qmd) |
 | Publishing guide | [contributing.qmd](contributing.qmd) |
 | Moodle submission | [learn.gold.ac.uk](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744) |
-
-<br>
 
 For questions about the assessment, post on the Moodle forum so everyone benefits from the answer.
 
@@ -409,15 +364,10 @@ For questions about the assessment, post on the Moodle forum so everyone benefit
 
 **PS51009D Applications of Psychological Research**
 
-Department of Psychology
-Goldsmiths, University of London
+Department of Psychology, Goldsmiths, University of London
 
-<br>
-
-Dr Gordon Wright — gordon@littlemonkeylab.com
-Dr Bence Palfi
-
-<br>
+Dr Gordon Wright — g.wright@gold.ac.uk
+Dr Bence Palfi — b.palfi@gold.ac.uk
 
 Submission deadline: **Monday 11 May, 12 noon**
 Submit via: **[Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**
