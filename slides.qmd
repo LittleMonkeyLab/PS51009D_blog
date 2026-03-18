@@ -7,6 +7,7 @@ date: "2026-03-18"
 format:
   revealjs:
     theme: [default, custom.scss]
+    css: slides.css
     slide-number: true
     progress: true
     history: true

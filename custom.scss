@@ -13,6 +13,11 @@ $headings-color: #0d0d1a;
 $code-bg: #f4f4f8;
 $code-color: #c2185b;
 
+// Navbar — light background so the black logo is visible
+$navbar-bg: #ffffff;
+$navbar-fg: #1a1a2e;
+$navbar-hl: #3d5afe;
+
 // Accents per stream (used in callouts)
 $homework-color: #3d5afe;
 $publication-color: #00897b;
@@ -51,6 +56,12 @@ h3 { font-size: 1.15rem; }
   font-family: 'Syne', sans-serif;
   font-weight: 800;
   font-size: 1.1rem;
+}
+.navbar-logo img,
+.navbar-brand img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 /* ── Stream badges ── */

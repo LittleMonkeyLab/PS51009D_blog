@@ -1,0 +1,7 @@
+/* Revealjs slide logo sizing */
+.slide-logo {
+  max-height: 48px !important;
+  width: auto !important;
+  bottom: 12px !important;
+  right: 12px !important;
+}
