@@ -3,7 +3,7 @@ title: "PS51009D — Science Communication Assessment"
 subtitle: "Applications of Psychological Research"
 author: "Dr Gordon Wright & Dr Bence Palfi"
 institute: "Department of Psychology, Goldsmiths, University of London"
-date: "2025–26"
+date: "2026-03-18"
 format:
   revealjs:
     theme: [default, custom.scss]
@@ -17,6 +17,7 @@ format:
     highlight-style: github
     link-external-newwindow: true
     chalkboard: false
+    scrollable: true
 ---
 
 ## Overview {.center}
