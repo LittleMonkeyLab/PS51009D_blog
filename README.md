@@ -2,13 +2,13 @@
 
 Student blog for **PS51009D Applications of Psychological Research**, Goldsmiths, University of London.
 
-Live site: **https://YOURNAME.github.io/ps51009d-blog**
+Live site: **https://LittleMonkeyLab.github.io/ps51009d-blog**
 
 ---
 
 ## For students
 
-Read the full publishing guide at: `https://YOURNAME.github.io/ps51009d-blog/contributing.html`
+Read the full publishing guide at: `https://LittleMonkeyLab.github.io/ps51009d-blog/contributing.html`
 
 Quick summary:
 1. Fork this repo
