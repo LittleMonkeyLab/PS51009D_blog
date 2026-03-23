@@ -8,8 +8,11 @@ website:
   favicon: assets/GoldLogo.png
 
   navbar:
-    logo: assets/GoldLogo.png
-    logo-alt: "Goldsmiths, University of London"
+    logo: assets/images/svg/goldpsychr-logo-animated.svg
+    logo-alt: "GoldPsychR — Goldsmiths Psychology"
+    title: false
+    background: "#9B1B30"
+    foreground: "#FFFFFF"
     left:
       - text: "Posts"
         href: index.qmd
@@ -32,7 +35,9 @@ citation-style: apa.csl
 
 format:
   html:
-    theme: [flatly, custom.scss]
+    theme: [cosmo, custom.scss]
+    css:
+      - include/webex.css
     toc: true
     toc-depth: 3
     toc-location: right
@@ -42,6 +47,11 @@ format:
     smooth-scroll: true
     highlight-style: github
     link-external-newwindow: true
+    anchor-sections: true
+    include-in-header:
+      - include/fonts.html
+    include-after-body:
+      - include/webex.js
     comments:
       hypothesis: true
 

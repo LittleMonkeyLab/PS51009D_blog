@@ -1,0 +1,313 @@
+---
+title: "Can You Beat the Stroop Effect? An Interactive Look at Cognitive Interference"
+author: "Example Student"
+date: "2026-03-23"
+description: "Explore simulated Stroop task data with interactive visualisations — filter, compare, and see cognitive interference in action."
+categories: [neuropsychology]
+toc: true
+---
+
+::: {.tldr}
+- The Stroop effect is one of the most robust findings in cognitive psychology — naming the ink colour of a colour word is slower when word and ink clash
+- The interference effect is visible in both reaction times and error rates
+- Below you can explore simulated data interactively to see these patterns for yourself
+:::
+
+The Stroop task is beautifully simple. You see a word printed in coloured ink and your job is to name the ink colour, not read the word. When the word RED appears in green ink, saying "green" takes measurably longer than when the word GREEN appears in green ink. That delay — typically 80 to 120 ms — is the Stroop effect, and it reveals something fundamental about how automatic reading interferes with controlled colour naming.
+
+Rather than summarise a single paper, this post lets you explore what Stroop data actually looks like. The data below are simulated but realistic, based on typical effect sizes reported in the literature.
+
+## The data
+
+```{ojs}
+//| echo: false
+
+// Generate reproducible simulated Stroop data
+{
+  // Simple seeded random number generator
+  function mulberry32(a) {
+    return function() {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
+  }
+
+  const rand = mulberry32(42);
+
+  // Box-Muller transform for normal distribution
+  function randn() {
+    let u = 0, v = 0;
+    while (u === 0) u = rand();
+    while (v === 0) v = rand();
+    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+  }
+
+  const conditions = ["Congruent", "Incongruent", "Neutral"];
+  const means = { "Congruent": 620, "Incongruent": 740, "Neutral": 660 };
+  const sds = { "Congruent": 80, "Incongruent": 100, "Neutral": 85 };
+  const errorRates = { "Congruent": 0.02, "Incongruent": 0.08, "Neutral": 0.03 };
+
+  const rows = [];
+  for (let pid = 1; pid <= 40; pid++) {
+    // Per-participant random offset (individual differences)
+    const offset = randn() * 40;
+    for (const cond of conditions) {
+      for (let trial = 0; trial < 20; trial++) {
+        const rt = Math.round(means[cond] + offset + randn() * sds[cond]);
+        const correct = rand() > errorRates[cond];
+        rows.push({
+          participant: pid,
+          condition: cond,
+          trial: trial + 1,
+          rt: Math.max(200, rt),
+          correct: correct
+        });
+      }
+    }
+  }
+
+  window._stroopData = rows;
+}
+```
+
+```{ojs}
+//| echo: false
+
+data = window._stroopData
+```
+
+```{ojs}
+//| echo: false
+
+// Summary stats per participant per condition
+participantMeans = {
+  const map = new Map();
+  for (const d of data) {
+    if (!d.correct) continue;
+    const key = `${d.participant}-${d.condition}`;
+    if (!map.has(key)) map.set(key, { participant: d.participant, condition: d.condition, rts: [] });
+    map.get(key).rts.push(d.rt);
+  }
+  return Array.from(map.values()).map(d => ({
+    participant: d.participant,
+    condition: d.condition,
+    meanRT: Math.round(d.rts.reduce((a, b) => a + b, 0) / d.rts.length),
+    n: d.rts.length
+  }));
+}
+```
+
+## Interactive: explore the reaction time data
+
+Use the controls below to filter and explore the simulated dataset. Each dot is one participant's mean reaction time (correct trials only) in a given condition.
+
+```{ojs}
+//| echo: false
+//| panel: input
+
+viewof selectedConditions = Inputs.checkbox(
+  ["Congruent", "Incongruent", "Neutral"],
+  { value: ["Congruent", "Incongruent", "Neutral"], label: "Conditions" }
+)
+
+viewof showJitter = Inputs.toggle({ label: "Jitter points", value: true })
+```
+
+```{ojs}
+//| echo: false
+
+filtered = participantMeans.filter(d => selectedConditions.includes(d.condition))
+```
+
+```{ojs}
+//| echo: false
+
+Plot = import("https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm")
+```
+
+```{ojs}
+//| echo: false
+
+Plot.plot({
+  height: 400,
+  marginLeft: 60,
+  marginBottom: 50,
+  style: { fontSize: "13px", fontFamily: "Source Sans 3, sans-serif" },
+  color: {
+    domain: ["Congruent", "Neutral", "Incongruent"],
+    range: ["#28a745", "#6c757d", "#9B1B30"]
+  },
+  x: {
+    label: "Condition",
+    domain: ["Congruent", "Neutral", "Incongruent"]
+  },
+  y: {
+    label: "Mean reaction time (ms)",
+    grid: true
+  },
+  marks: [
+    Plot.dot(filtered, {
+      x: "condition",
+      y: "meanRT",
+      fill: "condition",
+      fillOpacity: 0.6,
+      r: 4,
+      dx: showJitter ? Plot.valueof(filtered, () => (Math.random() - 0.5) * 30) : 0,
+      tip: true,
+      title: d => `P${d.participant}: ${d.meanRT} ms`
+    }),
+    Plot.ruleY([0])
+  ]
+})
+```
+
+::: {.callout-tip}
+## What to notice
+Toggle conditions on and off to see how the distributions shift. The Incongruent condition (burgundy) clusters noticeably higher than Congruent (green), with Neutral falling in between. The spread within each condition reflects genuine individual differences in processing speed.
+:::
+
+## Condition means at a glance
+
+The table below summarises the simulated data across all 40 participants. These values closely mirror real Stroop experiments.
+
+```{ojs}
+//| echo: false
+
+conditionSummary = {
+  const conditions = ["Congruent", "Neutral", "Incongruent"];
+  return conditions.map(cond => {
+    const vals = participantMeans.filter(d => d.condition === cond);
+    const rts = vals.map(d => d.meanRT);
+    const mean = rts.reduce((a, b) => a + b, 0) / rts.length;
+    const sd = Math.sqrt(rts.map(x => (x - mean) ** 2).reduce((a, b) => a + b, 0) / (rts.length - 1));
+    const min = Math.min(...rts);
+    const max = Math.max(...rts);
+
+    const allTrials = data.filter(d => d.condition === cond);
+    const errors = allTrials.filter(d => !d.correct).length;
+    const errorPct = ((errors / allTrials.length) * 100).toFixed(1);
+
+    return {
+      Condition: cond,
+      "Mean RT (ms)": Math.round(mean),
+      "SD (ms)": Math.round(sd),
+      "Min (ms)": min,
+      "Max (ms)": max,
+      "Error rate": `${errorPct}%`,
+      "N": vals.length
+    };
+  });
+}
+```
+
+```{ojs}
+//| echo: false
+
+html`<table class="fancy-table">
+  <thead>
+    <tr>
+      <th>Condition</th>
+      <th>Mean RT (ms)</th>
+      <th>SD (ms)</th>
+      <th>Range (ms)</th>
+      <th>Error rate</th>
+      <th>N</th>
+    </tr>
+  </thead>
+  <tbody>
+    ${conditionSummary.map(d => html`<tr class="${d.Condition.toLowerCase()}">
+      <td><strong>${d.Condition}</strong></td>
+      <td>${d["Mean RT (ms)"]}</td>
+      <td>${d["SD (ms)"]}</td>
+      <td>${d["Min (ms)"]}–${d["Max (ms)"]}</td>
+      <td>${d["Error rate"]}</td>
+      <td>${d.N}</td>
+    </tr>`)}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="6"><em>Simulated data: 40 participants, 20 trials per condition. Correct trials only for RT calculations.</em></td>
+    </tr>
+  </tfoot>
+</table>`
+```
+
+## The interference effect, visualised
+
+This chart plots every participant's Stroop interference score — the difference between their Incongruent and Congruent mean RTs. A positive value means incongruent trials were slower, as predicted.
+
+```{ojs}
+//| echo: false
+
+interferenceScores = {
+  const byP = new Map();
+  for (const d of participantMeans) {
+    if (!byP.has(d.participant)) byP.set(d.participant, {});
+    byP.get(d.participant)[d.condition] = d.meanRT;
+  }
+  return Array.from(byP.entries())
+    .filter(([_, v]) => v.Congruent && v.Incongruent)
+    .map(([p, v]) => ({
+      participant: p,
+      interference: v.Incongruent - v.Congruent
+    }))
+    .sort((a, b) => a.interference - b.interference);
+}
+```
+
+```{ojs}
+//| echo: false
+
+Plot.plot({
+  height: 350,
+  marginLeft: 60,
+  marginBottom: 50,
+  style: { fontSize: "13px", fontFamily: "Source Sans 3, sans-serif" },
+  x: {
+    label: "Participant (sorted by interference)",
+    ticks: 0
+  },
+  y: {
+    label: "Interference effect (ms)",
+    grid: true
+  },
+  marks: [
+    Plot.ruleY([0], { stroke: "#999", strokeDasharray: "4,4" }),
+    Plot.barY(interferenceScores, {
+      x: (d, i) => i,
+      y: "interference",
+      fill: d => d.interference >= 0 ? "#9B1B30" : "#28a745",
+      fillOpacity: 0.7,
+      tip: true,
+      title: d => `P${d.participant}: ${d.interference > 0 ? "+" : ""}${d.interference} ms`
+    })
+  ]
+})
+```
+
+::: {.pullquote}
+"Nearly every participant shows a positive interference effect — the Stroop phenomenon is remarkably consistent across individuals."
+:::
+
+Almost all bars extend upwards, meaning incongruent trials were slower than congruent trials for nearly every participant. The handful of participants near or below zero illustrate normal variability rather than a genuine absence of the effect.
+
+## Why this matters
+
+The Stroop effect endures because it taps into a fundamental tension in the cognitive system: reading is so automatic that it intrudes even when you are explicitly trying to ignore it. That involuntary interference has made the Stroop task a standard tool for studying attention, executive function, and inhibitory control across clinical and experimental settings.
+
+---
+
+::: {.author-card}
+
+<div>
+<div class="author-card-name">Example Student</div>
+<div class="author-card-bio">
+  Psychology student at Goldsmiths, University of London.
+  Interested in cognitive psychology and interactive data.
+</div>
+</div>
+:::
+
+*This post is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*

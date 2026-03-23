@@ -1,33 +1,46 @@
 /*-- scss:defaults --*/
 
-// Fonts
-$font-family-sans-serif: 'DM Sans', system-ui, sans-serif;
-$headings-font-family: 'Syne', sans-serif;
-$font-family-monospace: 'DM Mono', 'Fira Code', monospace;
+// Goldsmiths brand colours
+$gold-red: #9B1B30;
+$gold-dark: #1a1a1a;
+$gold-grey: #6c757d;
+$gold-light: #f8f9fa;
 
-// Colours
-$body-bg: #ffffff;
-$body-color: #1a1a2e;
-$link-color: #3d5afe;
-$headings-color: #0d0d1a;
-$code-bg: #f4f4f8;
-$code-color: #c2185b;
+// Custom callout colours
+$purple: #61589C;
+$teal: #008080;
+$orange: #E78021;
 
-// Navbar — light background so the black logo is visible
-$navbar-bg: #ffffff;
-$navbar-fg: #1a1a2e;
-$navbar-hl: #3d5afe;
+// Theme colours
+$primary: $gold-red;
+$secondary: $gold-grey;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
 
-// Accents per stream (used in callouts)
-$homework-color: #3d5afe;
+// Stream accent colours
+$homework-color: $gold-red;
 $publication-color: #00897b;
 $creator-color: #d81b60;
 
+// Typography — Source Sans 3 + Fira Code loaded via include/fonts.html
+$font-family-sans-serif: "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "Fira Code", "Source Code Pro", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+$headings-font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+$headings-font-weight: 600;
+
+// Colours
+$body-bg: #ffffff;
+$body-color: $gold-dark;
+$link-color: $gold-red;
+$headings-color: #0d0d1a;
+$code-bg: #f6f8fa;
+$code-color: $gold-dark;
+
 /*-- scss:rules --*/
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap');
-
-/* ── Site-wide base ── */
+/* -- Site-wide base -- */
 body {
   font-size: 17px;
   line-height: 1.75;
@@ -35,104 +48,223 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin-top: 1.8em;
   margin-bottom: 0.6em;
 }
 
-h1 { font-size: 2.2rem; font-weight: 800; }
+h1 { font-size: 2.2rem; font-weight: 700; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.15rem; }
 
-/* ── Navbar ── */
+/* -- Navigation -- */
 .navbar {
-  border-bottom: 2px solid #f0f0f0;
-  padding: 12px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+.navbar-logo {
+  max-height: 80px;
+  width: auto;
+}
+
 .navbar-brand {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.1rem;
 }
+
 .navbar-logo img,
 .navbar-brand img {
-  height: 36px;
+  height: 40px;
   width: auto;
   display: block;
 }
 
-/* ── Stream badges ── */
+/* -- Content -- */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sidebar-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $gold-red;
+}
+
+/* -- Hero banner -- */
+.hero-banner {
+  background: linear-gradient(135deg, $gold-red 0%, darken($gold-red, 15%) 100%);
+  color: white;
+  padding: 3rem 2rem;
+  margin: -1rem -1rem 2rem -1rem;
+  text-align: center;
+  border-radius: 0 0 1rem 1rem;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+}
+
+/* -- Stream badges -- */
 .stream-homework {
   display: inline-block;
-  background: #e8ecff;
-  color: #3d5afe;
-  font-family: 'DM Mono', monospace;
+  background: rgba(155, 27, 48, 0.1);
+  color: $gold-red;
+  font-family: $font-family-monospace;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(61,90,254,0.25);
+  border: 1px solid rgba(155, 27, 48, 0.25);
 }
+
 .stream-publication {
   display: inline-block;
   background: #e0f5f2;
   color: #00695c;
-  font-family: 'DM Mono', monospace;
+  font-family: $font-family-monospace;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(0,137,123,0.25);
+  border: 1px solid rgba(0, 137, 123, 0.25);
 }
+
 .stream-creator {
   display: inline-block;
   background: #fce4ec;
   color: #c2185b;
-  font-family: 'DM Mono', monospace;
+  font-family: $font-family-monospace;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(216,27,96,0.25);
+  border: 1px solid rgba(216, 27, 96, 0.25);
 }
 
-/* ── Stream callout variants ── */
+/* -- Stream callout variants -- */
 .callout-homework {
-  border-left-color: #3d5afe !important;
-  background: #f0f3ff;
+  border-left-color: $gold-red !important;
+  background: rgba(155, 27, 48, 0.05);
 }
+
 .callout-publication {
-  border-left-color: #00897b !important;
+  border-left-color: $publication-color !important;
   background: #f0faf8;
 }
+
 .callout-creator {
-  border-left-color: #d81b60 !important;
+  border-left-color: $creator-color !important;
   background: #fff0f4;
 }
 
-/* ── Pull quote ── */
-.pullquote {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.35;
-  color: #0d0d1a;
-  border-left: 4px solid #3d5afe;
-  padding: 16px 24px;
-  margin: 2em 0;
-  background: #f8f9ff;
+/* -- Standard callouts -- */
+.callout {
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+
+  &.callout-tip { border-left-color: $success; }
+  &.callout-note { border-left-color: $info; }
+  &.callout-warning { border-left-color: $warning; }
+  &.callout-important { border-left-color: $danger; }
 }
 
-/* ── TL;DR box ── */
+/* -- Custom Activity callout -- */
+.callout.activity {
+  border-left-color: $purple !important;
+
+  .callout-header {
+    background-color: rgba(97, 88, 156, 0.25) !important;
+  }
+
+  .callout-title-container {
+    text-indent: -9999px;
+    line-height: 0;
+
+    &::after {
+      content: "Activity";
+      text-indent: 0;
+      display: block;
+      line-height: 1.5em;
+      font-weight: 600;
+      color: $purple;
+    }
+  }
+}
+
+/* -- Custom Try This callout -- */
+.callout.try {
+  border-left-color: $teal !important;
+
+  .callout-header {
+    background-color: rgba(0, 128, 128, 0.15) !important;
+  }
+
+  .callout-title-container {
+    text-indent: -9999px;
+    line-height: 0;
+
+    &::after {
+      content: "Try This";
+      text-indent: 0;
+      display: block;
+      line-height: 1.5em;
+      font-weight: 600;
+      color: $teal;
+    }
+  }
+}
+
+/* -- Custom Challenge callout -- */
+.callout.challenge {
+  border-left-color: $orange !important;
+
+  .callout-header {
+    background-color: rgba(231, 128, 33, 0.15) !important;
+  }
+
+  .callout-title-container {
+    text-indent: -9999px;
+    line-height: 0;
+
+    &::after {
+      content: "Challenge";
+      text-indent: 0;
+      display: block;
+      line-height: 1.5em;
+      font-weight: 600;
+      color: darken($orange, 10%);
+    }
+  }
+}
+
+/* -- Pull quote -- */
+.pullquote {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #0d0d1a;
+  border-left: 4px solid $gold-red;
+  padding: 16px 24px;
+  margin: 2em 0;
+  background: rgba(155, 27, 48, 0.04);
+}
+
+/* -- TL;DR box -- */
 .tldr {
   background: #fffbea;
   border: 1.5px solid #f59e0b;
@@ -140,10 +272,11 @@ h3 { font-size: 1.15rem; }
   padding: 20px 24px;
   margin-bottom: 2em;
 }
+
 .tldr::before {
   content: "TL;DR";
   display: block;
-  font-family: 'DM Mono', monospace;
+  font-family: $font-family-monospace;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -151,71 +284,258 @@ h3 { font-size: 1.15rem; }
   margin-bottom: 8px;
 }
 
-/* ── Author card ── */
+/* -- Author card -- */
 .author-card {
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  background: #f8f8fc;
+  background: $gold-light;
   border: 1px solid #e8e8f0;
   border-radius: 10px;
   padding: 24px;
   margin-top: 3em;
 }
+
 .author-card img {
   width: 64px;
   height: 64px;
   border-radius: 50%;
   object-fit: cover;
 }
+
 .author-card-name {
-  font-family: 'Syne', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   margin-bottom: 4px;
 }
-.author-card-bio { font-size: 0.9rem; color: #555; }
 
-/* ── Code ── */
-pre.sourceCode {
-  border-radius: 8px;
-  border: 1px solid #e8e8f0;
-  font-size: 0.85rem;
+.author-card-bio {
+  font-size: 0.9rem;
+  color: #555;
 }
-code { font-size: 0.88em; }
 
-/* ── TOC ── */
+/* -- Code -- */
+pre.sourceCode {
+  border-radius: 0.5rem;
+  border: 1px solid #e1e4e8;
+
+  code {
+    font-size: 0.9rem;
+  }
+}
+
+code {
+  font-size: 0.88em;
+}
+
+/* -- WebR interactive chunks -- */
+.webr-container {
+  border: 2px solid $gold-red;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+
+  .webr-editor {
+    border-bottom: 1px solid #e1e4e8;
+  }
+
+  button {
+    background-color: $gold-red;
+    color: white;
+
+    &:hover {
+      background-color: darken($gold-red, 10%);
+    }
+  }
+}
+
+/* -- Tables -- */
+table {
+  width: 100%;
+  margin: 1rem 0;
+
+  th {
+    background-color: $gold-light;
+    font-weight: 600;
+  }
+
+  td, th {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+}
+
+/* -- Fancy table (interactive posts) -- */
+.fancy-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+
+  thead tr {
+    background: linear-gradient(135deg, $gold-red, darken($gold-red, 12%));
+    color: white;
+  }
+
+  thead th {
+    background: transparent;
+    color: white;
+    font-weight: 600;
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border: none;
+    letter-spacing: 0.02em;
+  }
+
+  tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    border-left: none;
+    border-right: none;
+  }
+
+  tbody tr {
+    transition: background-color 0.15s;
+    background-color: white;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+
+  tbody tr:hover {
+    background-color: rgba(155, 27, 48, 0.05);
+  }
+
+  tbody tr.congruent td:first-child {
+    border-left: 4px solid #28a745;
+  }
+
+  tbody tr.neutral td:first-child {
+    border-left: 4px solid #6c757d;
+  }
+
+  tbody tr.incongruent td:first-child {
+    border-left: 4px solid $gold-red;
+  }
+
+  tfoot td {
+    padding: 0.6rem 1rem;
+    font-size: 0.82rem;
+    color: $gold-grey;
+    border-top: 2px solid #eee;
+    border-bottom: none;
+    background: $gold-light;
+  }
+}
+
+/* -- TOC -- */
 #TOC {
   border-left: 3px solid #f0f0f0;
   padding-left: 16px;
   font-size: 0.88rem;
 }
-#TOC a { color: #555; text-decoration: none; }
-#TOC a:hover { color: #3d5afe; }
-#TOC .active { color: #3d5afe; font-weight: 500; }
 
-/* ── Listing cards ── */
+#TOC a { color: #555; text-decoration: none; }
+#TOC a:hover { color: $gold-red; }
+#TOC .active { color: $gold-red; font-weight: 500; }
+
+/* -- Listing cards -- */
 .quarto-listing .list-item {
   border: 1px solid #f0f0f0;
   border-radius: 10px;
   padding: 20px 24px;
   transition: box-shadow 0.15s, transform 0.15s;
 }
+
 .quarto-listing .list-item:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
 }
 
-/* ── Footer ── */
+/* -- Grid cards -- */
+.grid .g-col-4 {
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid #e1e4e8;
+  border-radius: 0.5rem;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 a {
+    color: $gold-red;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* -- Footer -- */
+.page-footer {
+  background-color: $gold-dark;
+  color: white;
+  padding: 1.5rem;
+  margin-top: 3rem;
+
+  a {
+    color: lighten($gold-red, 30%);
+  }
+}
+
 .nav-footer {
-  border-top: 1px solid #f0f0f0;
   font-size: 0.85rem;
-  color: #999;
   padding: 20px 0;
 }
 
-/* ── Responsive tweaks ── */
+/* -- External links indicator -- */
+a[target="_blank"]::after {
+  content: " \2197";
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+a[target="_blank"]:hover::after {
+  opacity: 1;
+}
+
+/* -- Iframe styling for slides -- */
+iframe {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* -- Responsive -- */
 @media (max-width: 768px) {
   h1 { font-size: 1.7rem; }
   .pullquote { font-size: 1.2rem; }
+
+  .hero-banner {
+    padding: 2rem 1rem;
+
+    h1 {
+      font-size: 1.75rem;
+    }
+  }
+
+  .grid .g-col-4 {
+    margin-bottom: 1rem;
+  }
+
+  iframe {
+    height: 400px !important;
+  }
 }
