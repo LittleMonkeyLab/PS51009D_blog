@@ -73,6 +73,7 @@ simData = {
   const withinSD = 80;
 
   const rows = [];
+  let idx = 0;
   for (let pid = 1; pid <= nParticipants; pid++) {
     const offset = randn() * individualVariability;
     for (const cond of conditions) {
@@ -81,7 +82,10 @@ simData = {
         trialRTs.push(Math.max(200, Math.round(means[cond] + offset + randn() * withinSD)));
       }
       const meanRT = Math.round(trialRTs.reduce((a, b) => a + b, 0) / trialRTs.length);
-      rows.push({ participant: pid, condition: cond, meanRT: meanRT });
+      // Deterministic jitter from index so dots don't overlap
+      const jitter = Math.sin(idx * 2.39996) * 15;
+      rows.push({ participant: pid, condition: cond, meanRT: meanRT, jitter: jitter });
+      idx++;
     }
   }
 
@@ -110,6 +114,22 @@ scores = {
 ```{ojs}
 //| echo: false
 
+// Compute condition medians for the crossbar
+conditionMedians = {
+  const out = [];
+  for (const cond of ["Congruent", "Incongruent"]) {
+    const rts = simData.filter(d => d.condition === cond).map(d => d.meanRT).sort((a, b) => a - b);
+    const mid = Math.floor(rts.length / 2);
+    const median = rts.length % 2 ? rts[mid] : Math.round((rts[mid - 1] + rts[mid]) / 2);
+    out.push({ condition: cond, median: median });
+  }
+  return out;
+}
+```
+
+```{ojs}
+//| echo: false
+
 Plot.plot({
   height: 380,
   marginLeft: 60,
@@ -121,32 +141,29 @@ Plot.plot({
     range: ["#28a745", "#9B1B30"],
     legend: true
   },
-  facet: {
-    data: simData,
-    x: "condition"
+  x: {
+    label: "Condition",
+    domain: ["Congruent", "Incongruent"]
   },
-  x: { label: null, domain: ["Congruent", "Incongruent"] },
   y: { label: "Mean reaction time (ms)", grid: true },
   marks: [
     Plot.dot(simData, {
-      fx: "condition",
-      x: () => 0,
+      x: "condition",
       y: "meanRT",
       fill: "condition",
       fillOpacity: 0.5,
       r: 5,
-      dx: Plot.identity(simData.map((_, i) => (Math.sin(i * 2.39996) * 15))),
+      dx: "jitter",
       tip: true,
       title: d => `P${d.participant}: ${d.meanRT} ms`
     }),
-    Plot.tickY(simData, Plot.groupX({ y: "median" }, {
-      fx: "condition",
-      x: () => 0,
-      y: "meanRT",
+    Plot.tickX(conditionMedians, {
+      x: "condition",
+      y: "median",
       stroke: "black",
       strokeWidth: 3,
       strokeOpacity: 0.8
-    }))
+    })
   ]
 })
 ```
