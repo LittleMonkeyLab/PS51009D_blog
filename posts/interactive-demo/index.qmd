@@ -2,7 +2,7 @@
 title: "Can You Beat the Stroop Effect? An Interactive Look at Cognitive Interference"
 author: "Example Student"
 date: "2026-03-23"
-description: "Explore simulated Stroop task data with interactive visualisations — filter, compare, and see cognitive interference in action."
+description: "Explore simulated Stroop task data with interactive visualisations — tweak the experiment parameters and watch the data respond."
 categories: [neuropsychology]
 toc: true
 ---
@@ -10,20 +10,42 @@ toc: true
 ::: {.tldr}
 - The Stroop effect is one of the most robust findings in cognitive psychology — naming the ink colour of a colour word is slower when word and ink clash
 - The interference effect is visible in both reaction times and error rates
-- Below you can explore simulated data interactively to see these patterns for yourself
+- Below you can tweak the experiment and watch the data change in real time
 :::
 
 The Stroop task is beautifully simple. You see a word printed in coloured ink and your job is to name the ink colour, not read the word. When the word RED appears in green ink, saying "green" takes measurably longer than when the word GREEN appears in green ink. That delay — typically 80 to 120 ms — is the Stroop effect, and it reveals something fundamental about how automatic reading interferes with controlled colour naming.
 
-Rather than summarise a single paper, this post lets you explore what Stroop data actually looks like. The data below are simulated but realistic, based on typical effect sizes reported in the literature.
+Rather than summarise a single paper, this post lets you play with the parameters of a simulated Stroop experiment and see how the data respond.
 
-## The data
+## Build your own Stroop experiment
+
+Use the sliders to change the experiment. **Interference strength** controls how much slower the incongruent condition is. **Number of participants** changes the sample size. **Individual variability** controls how different people are from each other. Watch the histogram and summary statistics update as you move each slider.
+
+```{ojs}
+//| echo: false
+//| panel: input
+
+viewof interferenceStrength = Inputs.range(
+  [0, 250],
+  { value: 120, step: 5, label: "Interference strength (ms)" }
+)
+
+viewof nParticipants = Inputs.range(
+  [10, 100],
+  { value: 40, step: 5, label: "Number of participants" }
+)
+
+viewof individualVariability = Inputs.range(
+  [10, 120],
+  { value: 40, step: 5, label: "Individual variability (SD, ms)" }
+)
+```
 
 ```{ojs}
 //| echo: false
 
-// Generate reproducible simulated Stroop data — returned as an array
-data = {
+// Regenerate data reactively when sliders change
+simData = {
   function mulberry32(a) {
     return function() {
       a |= 0; a = a + 0x6D2B79F5 | 0;
@@ -42,26 +64,24 @@ data = {
     return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
   }
 
-  const conditions = ["Congruent", "Incongruent", "Neutral"];
-  const means = { "Congruent": 620, "Incongruent": 740, "Neutral": 660 };
-  const sds = { "Congruent": 80, "Incongruent": 100, "Neutral": 85 };
-  const errorRates = { "Congruent": 0.02, "Incongruent": 0.08, "Neutral": 0.03 };
+  const baseMean = 620;
+  const conditions = ["Congruent", "Incongruent"];
+  const means = {
+    "Congruent": baseMean,
+    "Incongruent": baseMean + interferenceStrength
+  };
+  const withinSD = 80;
 
   const rows = [];
-  for (let pid = 1; pid <= 40; pid++) {
-    const offset = randn() * 40;
+  for (let pid = 1; pid <= nParticipants; pid++) {
+    const offset = randn() * individualVariability;
     for (const cond of conditions) {
-      for (let trial = 0; trial < 20; trial++) {
-        const rt = Math.round(means[cond] + offset + randn() * sds[cond]);
-        const correct = rand() > errorRates[cond];
-        rows.push({
-          participant: pid,
-          condition: cond,
-          trial: trial + 1,
-          rt: Math.max(200, rt),
-          correct: correct
-        });
+      const trialRTs = [];
+      for (let t = 0; t < 20; t++) {
+        trialRTs.push(Math.max(200, Math.round(means[cond] + offset + randn() * withinSD)));
       }
+      const meanRT = Math.round(trialRTs.reduce((a, b) => a + b, 0) / trialRTs.length);
+      rows.push({ participant: pid, condition: cond, meanRT: meanRT });
     }
   }
 
@@ -72,139 +92,126 @@ data = {
 ```{ojs}
 //| echo: false
 
-// Mean RT per participant per condition (correct trials only)
-participantMeans = {
-  const map = new Map();
-  for (const d of data) {
-    if (!d.correct) continue;
-    const key = d.participant + "-" + d.condition;
-    if (!map.has(key)) map.set(key, { participant: d.participant, condition: d.condition, rts: [] });
-    map.get(key).rts.push(d.rt);
+// Compute per-participant interference scores
+scores = {
+  const byP = new Map();
+  for (const d of simData) {
+    if (!byP.has(d.participant)) byP.set(d.participant, {});
+    byP.get(d.participant)[d.condition] = d.meanRT;
   }
-  return Array.from(map.values()).map(d => ({
-    participant: d.participant,
-    condition: d.condition,
-    meanRT: Math.round(d.rts.reduce((a, b) => a + b, 0) / d.rts.length),
-    n: d.rts.length
-  }));
+  return Array.from(byP.values())
+    .map(v => ({ interference: v.Incongruent - v.Congruent }))
+    .sort((a, b) => a.interference - b.interference);
 }
 ```
 
-## Interactive: explore the reaction time data
-
-Use the controls below to filter and explore the simulated dataset. Each dot is one participant's mean reaction time (correct trials only) in a given condition.
-
-```{ojs}
-//| echo: false
-//| panel: input
-
-viewof selectedConditions = Inputs.checkbox(
-  ["Congruent", "Incongruent", "Neutral"],
-  { value: ["Congruent", "Incongruent", "Neutral"], label: "Conditions" }
-)
-```
-
-```{ojs}
-//| echo: false
-
-filtered = participantMeans.filter(d => selectedConditions.includes(d.condition))
-```
-
-```{ojs}
-//| echo: false
-
-// Add jitter as a plain data column so Plot gets a simple array of numbers
-jitteredData = {
-  function mulberry32(a) {
-    return function() {
-      a |= 0; a = a + 0x6D2B79F5 | 0;
-      var t = Math.imul(a ^ a >>> 15, 1 | a);
-      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
-      return ((t ^ t >>> 14) >>> 0) / 4294967296;
-    }
-  }
-  const jitterRand = mulberry32(99);
-  return filtered.map(d => ({
-    ...d,
-    jitter: (jitterRand() - 0.5) * 30
-  }));
-}
-```
+### Distribution of reaction times by condition
 
 ```{ojs}
 //| echo: false
 
 Plot.plot({
-  height: 400,
+  height: 380,
   marginLeft: 60,
-  marginBottom: 50,
+  marginBottom: 45,
+  marginRight: 20,
   style: { fontSize: "13px", fontFamily: "Source Sans 3, sans-serif" },
   color: {
-    domain: ["Congruent", "Neutral", "Incongruent"],
-    range: ["#28a745", "#6c757d", "#9B1B30"]
+    domain: ["Congruent", "Incongruent"],
+    range: ["#28a745", "#9B1B30"],
+    legend: true
   },
-  x: {
-    label: "Condition",
-    domain: ["Congruent", "Neutral", "Incongruent"]
+  facet: {
+    data: simData,
+    x: "condition"
   },
-  y: {
-    label: "Mean reaction time (ms)",
-    grid: true
-  },
+  x: { label: null, domain: ["Congruent", "Incongruent"] },
+  y: { label: "Mean reaction time (ms)", grid: true },
   marks: [
-    Plot.dot(jitteredData, {
-      x: "condition",
+    Plot.dot(simData, {
+      fx: "condition",
+      x: () => 0,
       y: "meanRT",
       fill: "condition",
-      fillOpacity: 0.6,
-      r: 4,
-      dx: "jitter",
+      fillOpacity: 0.5,
+      r: 5,
+      dx: Plot.identity(simData.map((_, i) => (Math.sin(i * 2.39996) * 15))),
       tip: true,
       title: d => `P${d.participant}: ${d.meanRT} ms`
     }),
-    Plot.ruleY([0])
+    Plot.tickY(simData, Plot.groupX({ y: "median" }, {
+      fx: "condition",
+      x: () => 0,
+      y: "meanRT",
+      stroke: "black",
+      strokeWidth: 3,
+      strokeOpacity: 0.8
+    }))
   ]
 })
 ```
 
-::: {.callout-tip}
-## What to notice
-Toggle conditions on and off to see how the distributions shift. The Incongruent condition (burgundy) clusters noticeably higher than Congruent (green), with Neutral falling in between. The spread within each condition reflects genuine individual differences in processing speed.
-:::
+### Interference effect per participant
 
-## Condition means at a glance
-
-The table below summarises the simulated data across all 40 participants. These values closely mirror real Stroop experiments.
+Each bar shows one participant's interference score (Incongruent minus Congruent RT). Bars above the dashed line mean the Stroop effect worked as expected. Try dragging the interference slider to zero — can you eliminate the effect entirely?
 
 ```{ojs}
 //| echo: false
 
-conditionSummary = {
-  const conds = ["Congruent", "Neutral", "Incongruent"];
-  return conds.map(cond => {
-    const vals = participantMeans.filter(d => d.condition === cond);
-    const rts = vals.map(d => d.meanRT);
+Plot.plot({
+  height: 300,
+  marginLeft: 60,
+  marginBottom: 45,
+  style: { fontSize: "13px", fontFamily: "Source Sans 3, sans-serif" },
+  x: {
+    label: "Participant (sorted)",
+    ticks: []
+  },
+  y: {
+    label: "Interference (ms)",
+    grid: true
+  },
+  marks: [
+    Plot.ruleY([0], { stroke: "#999", strokeDasharray: "4,4" }),
+    Plot.barY(scores.map((d, i) => ({...d, i})), {
+      x: "i",
+      y: "interference",
+      fill: d => d.interference >= 0 ? "#9B1B30" : "#28a745",
+      fillOpacity: 0.7,
+      insetLeft: 0.5,
+      insetRight: 0.5,
+      tip: true,
+      title: d => `${d.interference > 0 ? "+" : ""}${d.interference} ms`
+    })
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+
+// Live summary statistics
+summaryStats = {
+  const conds = ["Congruent", "Incongruent"];
+  const out = conds.map(cond => {
+    const rts = simData.filter(d => d.condition === cond).map(d => d.meanRT);
     const mean = rts.reduce((a, b) => a + b, 0) / rts.length;
     const sd = Math.sqrt(rts.map(x => (x - mean) ** 2).reduce((a, b) => a + b, 0) / (rts.length - 1));
-    const min = Math.min(...rts);
-    const max = Math.max(...rts);
-
-    const allTrials = data.filter(d => d.condition === cond);
-    const errors = allTrials.filter(d => !d.correct).length;
-    const errorPct = ((errors / allTrials.length) * 100).toFixed(1);
-
-    return {
-      condition: cond,
-      mean: Math.round(mean),
-      sd: Math.round(sd),
-      min: min,
-      max: max,
-      errorPct: errorPct,
-      n: vals.length
-    };
+    return { condition: cond, mean: Math.round(mean), sd: Math.round(sd), min: Math.min(...rts), max: Math.max(...rts), n: rts.length };
   });
+
+  const ints = scores.map(d => d.interference);
+  const intMean = ints.reduce((a, b) => a + b, 0) / ints.length;
+  const intSD = Math.sqrt(ints.map(x => (x - intMean) ** 2).reduce((a, b) => a + b, 0) / (ints.length - 1));
+  const tStat = (intMean / (intSD / Math.sqrt(ints.length))).toFixed(2);
+  const positive = ints.filter(d => d > 0).length;
+  const pctPositive = ((positive / ints.length) * 100).toFixed(0);
+
+  return { conditions: out, intMean: Math.round(intMean), intSD: Math.round(intSD), tStat, pctPositive, n: ints.length };
 }
 ```
+
+## Condition means at a glance
 
 ```{ojs}
 //| echo: false
@@ -216,97 +223,50 @@ html`<table class="fancy-table">
       <th>Mean RT (ms)</th>
       <th>SD (ms)</th>
       <th>Range (ms)</th>
-      <th>Error rate</th>
       <th>N</th>
     </tr>
   </thead>
   <tbody>
-    ${conditionSummary.map(d => html`<tr class="${d.condition.toLowerCase()}">
+    ${summaryStats.conditions.map(d => html`<tr class="${d.condition.toLowerCase()}">
       <td><strong>${d.condition}</strong></td>
       <td>${d.mean}</td>
       <td>${d.sd}</td>
       <td>${d.min}–${d.max}</td>
-      <td>${d.errorPct}%</td>
       <td>${d.n}</td>
     </tr>`)}
+    <tr style="border-top: 2px solid #9B1B30;">
+      <td><strong>Interference</strong></td>
+      <td>${summaryStats.intMean}</td>
+      <td>${summaryStats.intSD}</td>
+      <td colspan="1"><em>t</em> = ${summaryStats.tStat}</td>
+      <td>${summaryStats.pctPositive}% positive</td>
+    </tr>
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="6"><em>Simulated data: 40 participants, 20 trials per condition. Correct trials only for RT calculations.</em></td>
+      <td colspan="5"><em>Simulated data: ${summaryStats.n} participants, 20 trials per condition. All values update live.</em></td>
     </tr>
   </tfoot>
 </table>`
 ```
 
-## The interference effect, visualised
-
-This chart plots every participant's Stroop interference score — the difference between their Incongruent and Congruent mean RTs. A positive value means incongruent trials were slower, as predicted.
-
-```{ojs}
-//| echo: false
-
-interferenceScores = {
-  const byP = new Map();
-  for (const d of participantMeans) {
-    if (!byP.has(d.participant)) byP.set(d.participant, {});
-    byP.get(d.participant)[d.condition] = d.meanRT;
-  }
-  return Array.from(byP.entries())
-    .filter(([_, v]) => v.Congruent && v.Incongruent)
-    .map(([p, v]) => ({
-      participant: p,
-      interference: v.Incongruent - v.Congruent
-    }))
-    .sort((a, b) => a.interference - b.interference);
-}
-```
-
-```{ojs}
-//| echo: false
-
-// Add index as data column for the x-axis
-indexedScores = interferenceScores.map((d, i) => ({...d, index: i}))
-```
-
-```{ojs}
-//| echo: false
-
-Plot.plot({
-  height: 350,
-  marginLeft: 60,
-  marginBottom: 50,
-  style: { fontSize: "13px", fontFamily: "Source Sans 3, sans-serif" },
-  x: {
-    label: "Participant (sorted by interference)",
-    ticks: []
-  },
-  y: {
-    label: "Interference effect (ms)",
-    grid: true
-  },
-  marks: [
-    Plot.ruleY([0], { stroke: "#999", strokeDasharray: "4,4" }),
-    Plot.barY(indexedScores, {
-      x: "index",
-      y: "interference",
-      fill: d => d.interference >= 0 ? "#9B1B30" : "#28a745",
-      fillOpacity: 0.7,
-      tip: true,
-      title: d => `P${d.participant}: ${d.interference > 0 ? "+" : ""}${d.interference} ms`
-    })
-  ]
-})
-```
+::: {.callout-tip}
+## Things to try
+- **Set interference to 0** — the bar chart should scatter roughly evenly above and below zero, and the *t*-statistic should drop toward zero. This is what "no effect" looks like.
+- **Crank interference to 250** — nearly every bar should be positive and the two dot clouds should separate clearly.
+- **Increase individual variability** — the dots spread out and the effect gets harder to detect, even if the interference strength stays the same. This is why noisy data need larger samples.
+- **Drop participants to 10, then raise to 100** — watch the *t*-statistic stabilise as the sample grows. This is statistical power in action.
+:::
 
 ::: {.pullquote}
 "Nearly every participant shows a positive interference effect — the Stroop phenomenon is remarkably consistent across individuals."
 :::
 
-Almost all bars extend upwards, meaning incongruent trials were slower than congruent trials for nearly every participant. The handful of participants near or below zero illustrate normal variability rather than a genuine absence of the effect.
-
 ## Why this matters
 
 The Stroop effect endures because it taps into a fundamental tension in the cognitive system: reading is so automatic that it intrudes even when you are explicitly trying to ignore it. That involuntary interference has made the Stroop task a standard tool for studying attention, executive function, and inhibitory control across clinical and experimental settings.
+
+The interactive above also illustrates something broader: the relationship between effect size, variability, and sample size is not just a statistical abstraction. You can *see* the signal emerge from (or disappear into) the noise as you adjust the sliders. That intuition is harder to build from formulas alone.
 
 ---
 
