@@ -22,9 +22,8 @@ Rather than summarise a single paper, this post lets you explore what Stroop dat
 ```{ojs}
 //| echo: false
 
-// Generate reproducible simulated Stroop data
-{
-  // Simple seeded random number generator
+// Generate reproducible simulated Stroop data — returned as an array
+data = {
   function mulberry32(a) {
     return function() {
       a |= 0; a = a + 0x6D2B79F5 | 0;
@@ -36,7 +35,6 @@ Rather than summarise a single paper, this post lets you explore what Stroop dat
 
   const rand = mulberry32(42);
 
-  // Box-Muller transform for normal distribution
   function randn() {
     let u = 0, v = 0;
     while (u === 0) u = rand();
@@ -51,7 +49,6 @@ Rather than summarise a single paper, this post lets you explore what Stroop dat
 
   const rows = [];
   for (let pid = 1; pid <= 40; pid++) {
-    // Per-participant random offset (individual differences)
     const offset = randn() * 40;
     for (const cond of conditions) {
       for (let trial = 0; trial < 20; trial++) {
@@ -68,25 +65,19 @@ Rather than summarise a single paper, this post lets you explore what Stroop dat
     }
   }
 
-  window._stroopData = rows;
+  return rows;
 }
 ```
 
 ```{ojs}
 //| echo: false
 
-data = window._stroopData
-```
-
-```{ojs}
-//| echo: false
-
-// Summary stats per participant per condition
+// Mean RT per participant per condition (correct trials only)
 participantMeans = {
   const map = new Map();
   for (const d of data) {
     if (!d.correct) continue;
-    const key = `${d.participant}-${d.condition}`;
+    const key = d.participant + "-" + d.condition;
     if (!map.has(key)) map.set(key, { participant: d.participant, condition: d.condition, rts: [] });
     map.get(key).rts.push(d.rt);
   }
@@ -111,8 +102,6 @@ viewof selectedConditions = Inputs.checkbox(
   ["Congruent", "Incongruent", "Neutral"],
   { value: ["Congruent", "Incongruent", "Neutral"], label: "Conditions" }
 )
-
-viewof showJitter = Inputs.toggle({ label: "Jitter points", value: true })
 ```
 
 ```{ojs}
@@ -124,7 +113,22 @@ filtered = participantMeans.filter(d => selectedConditions.includes(d.condition)
 ```{ojs}
 //| echo: false
 
-Plot = import("https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm")
+// Add jitter as a plain data column so Plot gets a simple array of numbers
+jitteredData = {
+  function mulberry32(a) {
+    return function() {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
+  }
+  const jitterRand = mulberry32(99);
+  return filtered.map(d => ({
+    ...d,
+    jitter: (jitterRand() - 0.5) * 30
+  }));
+}
 ```
 
 ```{ojs}
@@ -148,13 +152,13 @@ Plot.plot({
     grid: true
   },
   marks: [
-    Plot.dot(filtered, {
+    Plot.dot(jitteredData, {
       x: "condition",
       y: "meanRT",
       fill: "condition",
       fillOpacity: 0.6,
       r: 4,
-      dx: showJitter ? Plot.valueof(filtered, () => (Math.random() - 0.5) * 30) : 0,
+      dx: "jitter",
       tip: true,
       title: d => `P${d.participant}: ${d.meanRT} ms`
     }),
@@ -176,8 +180,8 @@ The table below summarises the simulated data across all 40 participants. These 
 //| echo: false
 
 conditionSummary = {
-  const conditions = ["Congruent", "Neutral", "Incongruent"];
-  return conditions.map(cond => {
+  const conds = ["Congruent", "Neutral", "Incongruent"];
+  return conds.map(cond => {
     const vals = participantMeans.filter(d => d.condition === cond);
     const rts = vals.map(d => d.meanRT);
     const mean = rts.reduce((a, b) => a + b, 0) / rts.length;
@@ -190,13 +194,13 @@ conditionSummary = {
     const errorPct = ((errors / allTrials.length) * 100).toFixed(1);
 
     return {
-      Condition: cond,
-      "Mean RT (ms)": Math.round(mean),
-      "SD (ms)": Math.round(sd),
-      "Min (ms)": min,
-      "Max (ms)": max,
-      "Error rate": `${errorPct}%`,
-      "N": vals.length
+      condition: cond,
+      mean: Math.round(mean),
+      sd: Math.round(sd),
+      min: min,
+      max: max,
+      errorPct: errorPct,
+      n: vals.length
     };
   });
 }
@@ -217,13 +221,13 @@ html`<table class="fancy-table">
     </tr>
   </thead>
   <tbody>
-    ${conditionSummary.map(d => html`<tr class="${d.Condition.toLowerCase()}">
-      <td><strong>${d.Condition}</strong></td>
-      <td>${d["Mean RT (ms)"]}</td>
-      <td>${d["SD (ms)"]}</td>
-      <td>${d["Min (ms)"]}–${d["Max (ms)"]}</td>
-      <td>${d["Error rate"]}</td>
-      <td>${d.N}</td>
+    ${conditionSummary.map(d => html`<tr class="${d.condition.toLowerCase()}">
+      <td><strong>${d.condition}</strong></td>
+      <td>${d.mean}</td>
+      <td>${d.sd}</td>
+      <td>${d.min}–${d.max}</td>
+      <td>${d.errorPct}%</td>
+      <td>${d.n}</td>
     </tr>`)}
   </tbody>
   <tfoot>
@@ -260,6 +264,13 @@ interferenceScores = {
 ```{ojs}
 //| echo: false
 
+// Add index as data column for the x-axis
+indexedScores = interferenceScores.map((d, i) => ({...d, index: i}))
+```
+
+```{ojs}
+//| echo: false
+
 Plot.plot({
   height: 350,
   marginLeft: 60,
@@ -267,7 +278,7 @@ Plot.plot({
   style: { fontSize: "13px", fontFamily: "Source Sans 3, sans-serif" },
   x: {
     label: "Participant (sorted by interference)",
-    ticks: 0
+    ticks: []
   },
   y: {
     label: "Interference effect (ms)",
@@ -275,8 +286,8 @@ Plot.plot({
   },
   marks: [
     Plot.ruleY([0], { stroke: "#999", strokeDasharray: "4,4" }),
-    Plot.barY(interferenceScores, {
-      x: (d, i) => i,
+    Plot.barY(indexedScores, {
+      x: "index",
       y: "interference",
       fill: d => d.interference >= 0 ? "#9B1B30" : "#28a745",
       fillOpacity: 0.7,
