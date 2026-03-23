@@ -21,8 +21,6 @@ bibliography: apa-refs.bib
 format:
   apaquarto-html:
     toc: true
-  apaquarto-pdf:
-    documentmode: man
 floatsintext: true
 ---
 
