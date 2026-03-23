@@ -1,0 +1,406 @@
+---
+title: "Why Science Communication<br>Is a Superpower"
+subtitle: "PS51009D — Applications of Psychological Research"
+author: "Dr Gordon Wright"
+institute: "Department of Psychology, Goldsmiths, University of London"
+date: "2026-03-23"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    css: slides.css
+    slide-number: true
+    progress: true
+    history: true
+    logo: assets/GoldLogo.png
+    footer: "PS51009D — Why Science Communication Is a Superpower"
+    transition: fade
+    background-transition: fade
+    highlight-style: github
+    link-external-newwindow: true
+    chalkboard: false
+    scrollable: true
+    smaller: true
+---
+
+## {background-color="#9B1B30"}
+
+::: {.r-fit-text style="color: white;"}
+Nobody ever got hired<br>for being unable to explain<br>what they know.
+:::
+
+::: {.notes}
+Open bold. Let this land. This is the whole argument in one sentence.
+:::
+
+---
+
+## Let's get something out of the way {.center}
+
+This is not about becoming a blogger.
+
+This is not about writing about psychology forever.
+
+This is about the **single most transferable skill** you will develop at university:
+
+**The ability to take something complex and make it land.**
+
+---
+
+## What "Science Communication" actually means
+
+It is not one skill. It is a stack.
+
+| Layer | What it is | Where it shows up |
+|-------|-----------|-------------------|
+| **Comprehension** | Understanding something deeply enough to simplify it | Every job, every meeting, every pitch |
+| **Audience awareness** | Knowing what your reader knows and does not know | Marketing, UX, teaching, consulting, therapy |
+| **Narrative structure** | Telling a story with a beginning, middle, and end | Proposals, presentations, fundraising, journalism |
+| **Visual thinking** | Choosing the right image, chart, or diagram | Design, data science, social media, publishing |
+| **Editing** | Cutting what does not earn its place | Writing, management, strategy, any form of leadership |
+
+---
+
+## {background-color="#1a1a1a"}
+
+::: {.r-fit-text style="color: white;"}
+"If you can't explain it simply,<br>you don't understand it well enough."
+:::
+
+::: {style="color: #ccc; text-align: center; font-size: 0.9em; margin-top: 1em;"}
+Often attributed to Einstein. Probably apocryphal. Still true.
+:::
+
+---
+
+## The Greats: Feynman {.smaller}
+
+:::: {.columns}
+::: {.column width="60%"}
+**Richard Feynman** (1918--1988)
+
+Nobel laureate in physics. But his legacy is not the diagrams.
+
+It is that he could explain *anything* to *anyone*.
+
+His 1964 Cornell lectures made quantum electrodynamics feel conversational. He taught undergraduates as though they were colleagues. He testified to Congress about the Challenger disaster using a glass of ice water and a rubber O-ring.
+
+**The Feynman lesson:** Complexity is not a sign of intelligence. Clarity is.
+:::
+::: {.column width="40%"}
+![Feynman lecturing at Caltech, 1962](https://upload.wikimedia.org/wikipedia/commons/1/1a/RichardFeynman-PainsOfOldAge.jpg){fig-alt="Richard Feynman at a chalkboard"}
+:::
+::::
+
+---
+
+## The Greats: Sagan {.smaller}
+
+:::: {.columns}
+::: {.column width="60%"}
+**Carl Sagan** (1934--1996)
+
+Astronomer. Author. The voice of *Cosmos*.
+
+Sagan did not simplify science. He made you feel the *scale* of it. "Billions and billions" became a cultural phrase not because it was dumbed down, but because it was felt.
+
+He understood that science communication is not about lowering the bar. It is about **widening the door**.
+
+**The Sagan lesson:** Awe is a communication strategy. If you feel it, your audience will too.
+:::
+::: {.column width="40%"}
+![Carl Sagan with a model of the Viking lander](https://upload.wikimedia.org/wikipedia/commons/b/be/Carl_Sagan_Planetary_Society.JPG){fig-alt="Carl Sagan"}
+:::
+::::
+
+---
+
+## The Greats: Attenborough {.smaller}
+
+:::: {.columns}
+::: {.column width="60%"}
+**Sir David Attenborough** (b. 1926)
+
+Seven decades of broadcasting. Still going.
+
+What Attenborough does better than anyone: he **disappears**. The story is never about him. It is about the animal, the ecosystem, the moment. His voice is a vehicle, not a brand.
+
+He also proves that science communication is not just for scientists. Attenborough studied geology and zoology, then spent his career translating the work of others.
+
+**The Attenborough lesson:** The best communicator is the one you forget is there. The subject is the star.
+:::
+::: {.column width="40%"}
+![David Attenborough in the field](https://upload.wikimedia.org/wikipedia/commons/2/27/Naturalis_Biodiversity_Center_-_David_Attenborough_visit_-_Video_call_%28cropped%29.jpg){fig-alt="David Attenborough"}
+:::
+::::
+
+---
+
+## {background-color="#9B1B30"}
+
+::: {.r-fit-text style="color: white;"}
+But those are legends.<br>What about the real world?
+:::
+
+---
+
+## The Modern Communicators
+
+Science communication did not stay in lecture halls. It went everywhere.
+
+---
+
+## In writing: Ed Yong {.smaller}
+
+:::: {.columns}
+::: {.column width="65%"}
+**Ed Yong** — staff writer at *The Atlantic*
+
+Won the Pulitzer Prize for Explanatory Reporting in 2021 for his COVID-19 coverage. His book *I Contain Multitudes* made the microbiome genuinely fascinating to a mass audience.
+
+Yong does not have a science PhD. He has a zoology degree and an extraordinary ability to read 40 papers and turn them into one clear story.
+
+**The lesson:** You do not need to be the expert. You need to be the translator.
+:::
+::: {.column width="35%"}
+*"The best science writing makes the reader feel smarter, not smaller."*
+:::
+::::
+
+---
+
+## On screen: Hannah Fry {.smaller}
+
+:::: {.columns}
+::: {.column width="65%"}
+**Hannah Fry** — mathematician, UCL professor, BBC presenter
+
+Fry presents documentaries on algorithms, AI, and mathematics to mainstream BBC audiences. Her TED talks have been viewed millions of times. Her book *Hello World* made algorithmic decision-making accessible without losing its ethical weight.
+
+She is a working academic who also happens to be one of the most effective communicators in Britain.
+
+**The lesson:** Academic rigour and public accessibility are not opposites. They are the same skill applied differently.
+:::
+::: {.column width="35%"}
+*"If you can make someone care about a maths problem, you can make them care about anything."*
+:::
+::::
+
+---
+
+## In data: Hans Rosling {.smaller}
+
+:::: {.columns}
+::: {.column width="65%"}
+**Hans Rosling** (1948--2017) — physician, statistician, sword-swallower
+
+His Gapminder presentations turned global health data into theatre. Bubbles moved. Axes told stories. Audiences gasped at data about child mortality.
+
+Rosling proved that a chart is not a chart. It is a **narrative device**. The same data, presented differently, changes minds or puts them to sleep.
+
+**The lesson:** Data does not speak for itself. You speak for it. Learn to speak well.
+:::
+::: {.column width="35%"}
+*"I have a sword-swallowing act. It helps me make the point that the seemingly impossible is possible."*
+:::
+::::
+
+---
+
+## On social media: Hank Green {.smaller}
+
+:::: {.columns}
+::: {.column width="65%"}
+**Hank Green** — creator of SciShow, CrashCourse, and Complexly
+
+Green builds science communication empires on YouTube and TikTok. SciShow has over 8 million subscribers. CrashCourse is used in classrooms worldwide.
+
+He understood before almost anyone that the medium matters. A 12-minute explainer video is a different art form from a journal article, a lecture, or a tweet. Each demands different skills. All of them are science communication.
+
+**The lesson:** The platform changes. The core skill does not. Understand your audience, choose your medium, deliver with clarity.
+:::
+::: {.column width="35%"}
+*"Being excited about science is not unprofessional. It is the whole point."*
+:::
+::::
+
+---
+
+## In business: every single day {.smaller}
+
+Here is the part nobody tells you in a psychology degree:
+
+**Most of the working world runs on communication.**
+
+| Role | What they actually do all day |
+|------|------------------------------|
+| Management consultant | Reads complex data, writes clear decks |
+| UX researcher | Translates user behaviour into design recommendations |
+| Policy adviser | Turns evidence into briefings ministers can act on |
+| Marketing strategist | Makes complicated products feel simple |
+| Clinical psychologist | Explains diagnoses and treatment plans to patients and families |
+| Data analyst | Tells stories with numbers |
+| Founder / entrepreneur | Pitches, pitches, pitches |
+
+Every one of these is science communication with the serial numbers filed off.
+
+---
+
+## {background-color="#1a1a1a"}
+
+::: {.r-fit-text style="color: white;"}
+The skill is the same.<br>The stage changes.
+:::
+
+---
+
+## Your trajectory at Goldsmiths
+
+This module is not the destination. It is the first rung.
+
+```{mermaid}
+%%| fig-width: 9
+flowchart LR
+    A["<b>Year 1</b><br>Science Communication<br>Blog Post"] --> B["<b>Year 2</b><br>Science Fair<br>Poster & Presentation"]
+    B --> C["<b>Year 3</b><br>Science Conference<br>Research Talk"]
+    C --> D["<b>Beyond</b><br>Ownership<br>Your Voice, Your Platform"]
+
+    style A fill:#9B1B30,color:#fff,stroke:none
+    style B fill:#61589C,color:#fff,stroke:none
+    style C fill:#008080,color:#fff,stroke:none
+    style D fill:#1a1a1a,color:#fff,stroke:none
+```
+
+---
+
+## Year 1: Science Communication
+
+**Where you are now.**
+
+You take someone else's research and communicate it to a general audience.
+
+This builds:
+
+- **Reading comprehension** at speed
+- **Audience awareness** (who am I writing for?)
+- **Narrative structure** (beginning, middle, end)
+- **Visual communication** (at least one original figure)
+- **Writing under constraint** (800--1000 words is harder than 3000)
+
+---
+
+## Year 2: Science Fair
+
+**Where you are going next.**
+
+You present your *own* empirical work on a poster, face to face.
+
+This adds:
+
+- **Speaking to strangers** about your work
+- **Defending your reasoning** under live questioning
+- **Designing for the wall** — a poster is not a paper, it is a billboard
+- **Real-time adaptation** — reading your audience and adjusting
+
+The blog post taught you to write for a reader you cannot see. The poster teaches you to communicate with a person standing right in front of you.
+
+---
+
+## Year 3: Science Conference
+
+**Where it comes together.**
+
+You present a full research talk at a student conference.
+
+This adds:
+
+- **Slide design** as argumentation
+- **Timing and pacing** — 15 minutes, no more
+- **Handling questions** from peers and academics
+- **Professional identity** — this is how academics actually share knowledge
+
+By Year 3, you will have communicated science in writing, on a poster, and from a podium. That is a portfolio, not a coursework history.
+
+---
+
+## Beyond Goldsmiths
+
+**Where the skill becomes yours.**
+
+You may never write another blog post about psychology. That is fine. The skills transfer completely:
+
+- A management consultant explains a restructuring plan to a board
+- A therapist explains a diagnosis to a worried parent
+- A data scientist explains a model's predictions to a CEO who does not know what a regression is
+- A founder explains their product to an investor in 90 seconds
+
+**These are all the same skill.** Comprehension, structure, audience, clarity.
+
+---
+
+## {background-color="#9B1B30"}
+
+::: {.r-fit-text style="color: white;"}
+You are not learning<br>to blog about psychology.
+:::
+
+---
+
+## {background-color="#9B1B30"}
+
+::: {.r-fit-text style="color: white;"}
+You are learning<br>to make the complex clear.
+:::
+
+---
+
+## {background-color="#9B1B30"}
+
+::: {.r-fit-text style="color: white;"}
+That is the skill<br>that changes everything.
+:::
+
+---
+
+## What Feynman, Sagan, and Attenborough share
+
+It is not fame. It is not charisma.
+
+It is **the refusal to hide behind jargon**.
+
+They each decided that if the audience did not understand, the failure was theirs, not the audience's.
+
+That is the mindset this module asks you to adopt.
+
+Not: "Can I demonstrate that I understood the paper?"
+
+But: "Can I make *you* understand it — and care?"
+
+---
+
+## The brief, one more time
+
+| | |
+|---|---|
+| **What** | 800--1000 word blog post (or 4--5 min video) |
+| **About** | One target article, communicated to a non-expert audience |
+| **Plus** | 480--600 word reflection using Bain's 5Rs |
+| **Deadline** | Monday 11 May, 12 noon |
+| **Submit via** | [Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744) |
+
+---
+
+## {.center background-color="#1a1a1a"}
+
+::: {style="color: white; font-size: 1.4em;"}
+**PS51009D Applications of Psychological Research**
+
+Department of Psychology, Goldsmiths, University of London
+
+Dr Gordon Wright — g.wright@gold.ac.uk
+
+Dr Bence Palfi — b.palfi@gold.ac.uk
+:::
+
+::: {style="color: #ccc; font-size: 1.1em; margin-top: 1.5em;"}
+Now go make something clear.
+:::

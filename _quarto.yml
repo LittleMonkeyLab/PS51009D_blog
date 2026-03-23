@@ -23,7 +23,13 @@ website:
       - text: "Formatting Guide"
         href: posts/formatting-guide/index.qmd
       - text: "Slides"
-        href: slides.qmd
+        menu:
+          - text: "Assessment Brief"
+            href: slides.qmd
+          - text: "Why Science Communication"
+            href: slides-why-scicomm.qmd
+      - text: "Scrollytelling Demo"
+        href: posts/minards-map/index.qmd
       - text: "About"
         href: about.qmd
 
