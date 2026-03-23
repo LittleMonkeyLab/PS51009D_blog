@@ -1,0 +1,280 @@
+---
+title: "Seminar Activity: Reading Science Communication Like a Writer"
+subtitle: "PS51009D — Applications of Psychological Research (1 hour)"
+author: "Dr Gordon Wright"
+date: "2026-03-23"
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    toc: true
+    toc-depth: 2
+    include-in-header: include/fonts.html
+    smooth-scroll: true
+---
+
+::: {.callout-important}
+## Tutor notes
+This is a scaffolded 1-hour seminar activity. Students work in small groups (3--4), reading real science communication pieces, identifying structural and rhetorical choices ("beats"), evaluating effectiveness, and discussing what they would steal for their own posts. The session builds toward the blog post assessment. Print or share this page so students can follow along.
+:::
+
+---
+
+## Session overview (60 minutes)
+
+| Time | Phase | What students do |
+|------|-------|-----------------|
+| 0--5 min | **Warm-up** | Individual quick-read of a short excerpt |
+| 5--15 min | **Phase 1: Read** | Read one full article in pairs |
+| 15--30 min | **Phase 2: Dissect** | Identify the "beats" using the framework below |
+| 30--45 min | **Phase 3: Evaluate** | Score and critique the piece against marking criteria |
+| 45--55 min | **Phase 4: Share** | Groups present their analysis (2 min each) |
+| 55--60 min | **Wrap-up** | One thing you will steal for your own post |
+
+---
+
+## Before you start
+
+You will need:
+
+- Access to the blog: [PS51009D Science Communication Blog](index.qmd)
+- A copy of the **beats framework** below (on this page)
+- A pen or device for notes
+- Your group (3--4 people)
+
+---
+
+## Warm-up: the opening paragraph test (5 min)
+
+Read the following two opening paragraphs silently. Do not discuss yet.
+
+::: {.callout-note}
+## Opening A
+> Most of us like to think we can spot a narcissist. The self-promotion, the name-dropping, the way they steer every conversation back to themselves. But what if you could identify someone's narcissistic tendencies before they had said a single word — just from looking at their face?
+:::
+
+::: {.callout-note}
+## Opening B
+> This blog post will discuss a study by Giacomin and Rule (2019) which examined whether narcissism can be detected from facial features. The study used photographs and found that eyebrows were the key feature. The findings are discussed below.
+:::
+
+**On your own, answer:** Which opening makes you want to keep reading? Why? What is the difference in *technique*, not just quality?
+
+::: {.callout-tip collapse="true"}
+## Tutor prompt
+Opening A uses a **hook** (something the reader recognises), a **list** (concrete, rhythmic), and a **pivot** ("But what if..."). It creates a question in the reader's mind. Opening B is a summary — it answers every question before the reader has a chance to ask one. The difference is not vocabulary or intelligence. It is **structure**.
+:::
+
+---
+
+## Phase 1: Read (10 min)
+
+In your group, choose **one** of the following pieces to read together. Each person should read the full piece individually, then compare notes.
+
+| Piece | Where to find it | Length |
+|-------|-----------------|--------|
+| **The Eyes Don't Have It** (example post) | [Blog: Example Post](posts/example-post/index.qmd) | ~1000 words |
+| **Can You Beat the Stroop Effect?** (interactive demo) | [Blog: Interactive Demo](posts/interactive-demo/index.qmd) | ~600 words + interactive |
+| **The Visual Display of Quantitative Information** (scrollytelling) | [Blog: Minard's Map](posts/minards-map/index.qmd) | ~400 words + scroll narrative |
+
+::: {.callout-tip}
+## Reading tip
+Read it *twice*. First time: read as a reader. Did you enjoy it? Did it make sense? Second time: read as a writer. How did they make it work? What moves did they make?
+:::
+
+---
+
+## Phase 2: Dissect — the "beats" framework (15 min)
+
+Every good piece of science communication follows a rhythm. We call these **beats** — the structural moves the writer makes to take the reader from "I don't know about this" to "I understand and care."
+
+### The 8 beats
+
+Use this framework to annotate the piece you just read. For each beat, note **where** it appears (quote a phrase or give a paragraph number) and **how** the writer executes it.
+
+```{=html}
+<table class="fancy-table">
+  <thead>
+    <tr>
+      <th style="width: 5%;">#</th>
+      <th style="width: 18%;">Beat</th>
+      <th style="width: 35%;">What it does</th>
+      <th style="width: 42%;">Where is it in your piece? How is it done?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1</strong></td>
+      <td><strong>The Hook</strong></td>
+      <td>Grabs attention. Creates a question or tension in the reader's mind. Often a surprise, a contradiction, or a relatable scenario.</td>
+      <td style="background: #fafafa; border-left: 3px solid #9B1B30;"><em>Your notes...</em></td>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td>
+      <td><strong>The Stakes</strong></td>
+      <td>Tells the reader why this matters. Why should anyone care about this research? What is the real-world relevance?</td>
+      <td style="background: #fafafa; border-left: 3px solid #9B1B30;"><em>Your notes...</em></td>
+    </tr>
+    <tr>
+      <td><strong>3</strong></td>
+      <td><strong>The Background</strong></td>
+      <td>Provides just enough context for the reader to follow the study. Not a literature review — a single paragraph of "here is what we already knew."</td>
+      <td style="background: #fafafa; border-left: 3px solid #9B1B30;"><em>Your notes...</em></td>
+    </tr>
+    <tr>
+      <td><strong>4</strong></td>
+      <td><strong>The Method</strong></td>
+      <td>Explains what the researchers did — in plain language. Not a methods section. A story: "They recruited X people and asked them to..."</td>
+      <td style="background: #fafafa; border-left: 3px solid #9B1B30;"><em>Your notes...</em></td>
+    </tr>
+    <tr>
+      <td><strong>5</strong></td>
+      <td><strong>The Finding</strong></td>
+      <td>The key result, stated clearly. Often a single sentence that carries the whole piece. Numbers help but are not required.</td>
+      <td style="background: #fafafa; border-left: 3px solid #9B1B30;"><em>Your notes...</em></td>
+    </tr>
+    <tr>
+      <td><strong>6</strong></td>
+      <td><strong>The Visual</strong></td>
+      <td>An image, chart, table, or interactive element that shows what words alone cannot. Earns its place — not decoration.</td>
+      <td style="background: #fafafa; border-left: 3px solid #9B1B30;"><em>Your notes...</em></td>
+    </tr>
+    <tr>
+      <td><strong>7</strong></td>
+      <td><strong>The Caveat</strong></td>
+      <td>Acknowledges limitations honestly. Shows the writer is thinking critically, not just summarising. Usually one paragraph.</td>
+      <td style="background: #fafafa; border-left: 3px solid #9B1B30;"><em>Your notes...</em></td>
+    </tr>
+    <tr>
+      <td><strong>8</strong></td>
+      <td><strong>The So-What</strong></td>
+      <td>The takeaway. Why does this matter beyond the lab? What should the reader think, do, or question differently now?</td>
+      <td style="background: #fafafa; border-left: 3px solid #9B1B30;"><em>Your notes...</em></td>
+    </tr>
+  </tbody>
+</table>
+```
+
+::: {.callout-tip collapse="true"}
+## Tutor prompt: what if a beat is missing?
+Not every piece will have all 8 beats in neat order. Some merge beats (stakes + background in one paragraph). Some skip the caveat. Some open with the finding and work backwards. **Missing or reordered beats are worth discussing** — was it a deliberate choice or a weakness?
+:::
+
+---
+
+## Phase 3: Evaluate (15 min)
+
+Now use the marking criteria (from the [Assessment page](assessment.qmd)) to evaluate the piece. As a group, score it on each dimension.
+
+### Quick evaluation grid
+
+Rate each dimension 1--5, then discuss *why*.
+
+```{=html}
+<table class="fancy-table">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>What you are looking for</th>
+      <th style="width: 10%;">Score<br>(1–5)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Accuracy</strong></td>
+      <td>Is the research described correctly? Are claims supported? Are any findings misrepresented or exaggerated?</td>
+      <td style="background: #fafafa; text-align: center;"><em>__</em></td>
+    </tr>
+    <tr>
+      <td><strong>Accessibility</strong></td>
+      <td>Could a non-psychologist follow this? Is jargon defined? Is the language clear without being patronising?</td>
+      <td style="background: #fafafa; text-align: center;"><em>__</em></td>
+    </tr>
+    <tr>
+      <td><strong>Engagement</strong></td>
+      <td>Does it hold your attention? Is the opening compelling? Does it flow or does it feel like a list of facts?</td>
+      <td style="background: #fafafa; text-align: center;"><em>__</em></td>
+    </tr>
+    <tr>
+      <td><strong>Visual aid</strong></td>
+      <td>Does the visual earn its place? Does it communicate something words alone could not? Is it well designed?</td>
+      <td style="background: #fafafa; text-align: center;"><em>__</em></td>
+    </tr>
+    <tr>
+      <td><strong>Critical voice</strong></td>
+      <td>Does the writer show they have thought critically? Are limitations flagged? Is the tone balanced?</td>
+      <td style="background: #fafafa; text-align: center;"><em>__</em></td>
+    </tr>
+    <tr>
+      <td><strong>Structure</strong></td>
+      <td>Are the beats in a logical order? Does the piece build toward something? Does the ending land?</td>
+      <td style="background: #fafafa; text-align: center;"><em>__</em></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2"><strong>Overall impression</strong></td>
+      <td style="text-align: center;"><strong>__ /30</strong></td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+### Discussion prompts
+
+As a group, discuss:
+
+1. **What is the single strongest moment in this piece?** — the sentence, paragraph, or visual that works best. Why does it work?
+2. **What is the weakest moment?** — where did your attention drift, or where did the writing feel flat? What would you change?
+3. **If you had to cut 200 words**, which section would you trim? Why? What does this tell you about what is essential?
+4. **Who is the audience?** — describe the ideal reader of this piece. Is the writing well-calibrated for them?
+
+---
+
+## Phase 4: Share (10 min)
+
+Each group presents their analysis in **2 minutes**. Structure:
+
+1. **Which piece** you analysed
+2. **One beat that was executed especially well** — read the specific sentence or describe the visual
+3. **One beat that was weak or missing** — and what you would do differently
+4. **Your overall score** and one-sentence justification
+
+::: {.callout-note}
+## Listening task
+While other groups present, note any technique or observation you had not thought of. You are building a toolkit for your own writing.
+:::
+
+---
+
+## Wrap-up: one thing to steal (5 min)
+
+On a piece of paper or in your notes, write down:
+
+::: {.pullquote}
+"The one technique I saw today that I will use in my own blog post is..."
+:::
+
+This is not about copying. It is about building a repertoire. Every good writer reads like a writer — noticing the moves, filing them away, adapting them.
+
+---
+
+## After the seminar
+
+Before your next session, try this:
+
+- [ ] Read one article on [The Conversation](https://theconversation.com) and identify the 8 beats
+- [ ] Choose your target article for the assessment
+- [ ] Write a draft opening paragraph using the **hook + stakes + pivot** pattern from Opening A
+- [ ] Bring your draft opening to the next session for peer feedback
+
+---
+
+::: {.callout-tip}
+## Resources
+| Resource | Link |
+|----------|------|
+| Example post | [The Eyes Don't Have It](posts/example-post/index.qmd) |
+| Formatting guide | [How to Format Your Blog Post](posts/formatting-guide/index.qmd) |
+| Assessment brief | [Assessment](assessment.qmd) |
+| The Conversation | [theconversation.com](https://theconversation.com) |
+:::

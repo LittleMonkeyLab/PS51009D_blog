@@ -1,0 +1,173 @@
+---
+title: "Interactive Statistics Worksheet: The t-test"
+subtitle: "PS52014A Research Methods — Week 8 Practice"
+author: "Dr Gordon Wright"
+date: "2026-03-23"
+format:
+  html:
+    theme: [cosmo, ../custom.scss]
+    toc: true
+    toc-depth: 2
+    include-in-header: ../include/fonts.html
+    include-after-body: ../include/webex.js
+    css: ../include/webex.css
+    smooth-scroll: true
+filters:
+  - webr
+---
+
+::: {.callout-note}
+## About this worksheet
+This is an interactive worksheet. You can edit and run R code directly in your browser — nothing to install. Type your answers into the boxes and click **Show Answers** to check your work.
+:::
+
+## Part 1: When to use a t-test
+
+A t-test compares the means of two groups (or one group against a known value) to determine whether the difference is statistically significant.
+
+::: {.callout-tip}
+## The key question
+"Is the difference between these means larger than we would expect by chance alone?"
+:::
+
+**Quick check:** For each scenario, decide which type of t-test is appropriate.
+
+::: {.webex-check}
+
+Comparing exam scores between two different classes of students:
+
+`r mcq(c("One-sample t-test", answer = "Independent-samples t-test", "Paired-samples t-test"))`
+
+Comparing a class's average score against the national average of 65%:
+
+`r mcq(c(answer = "One-sample t-test", "Independent-samples t-test", "Paired-samples t-test"))`
+
+Comparing participants' anxiety scores before and after an intervention:
+
+`r mcq(c("One-sample t-test", "Independent-samples t-test", answer = "Paired-samples t-test"))`
+
+:::
+
+## Part 2: Running a t-test in R
+
+Here is some data from a (simulated) experiment. Participants completed a memory task under two conditions: silence and background music. The dependent variable is the number of words recalled (out of 20).
+
+```{webr-r}
+# Simulated data: words recalled out of 20
+silence <- c(14, 16, 13, 17, 15, 12, 18, 14, 16, 15,
+             13, 17, 14, 16, 15, 11, 18, 13, 15, 14)
+
+music   <- c(12, 14, 11, 15, 13, 10, 16, 12, 14, 13,
+             11, 15, 12, 14, 13, 9, 16, 11, 13, 12)
+
+# Calculate the means
+mean(silence)
+mean(music)
+```
+
+**What are the means?**
+
+::: {.webex-check}
+
+Mean words recalled in silence: `r fitb(14.7, tol = 0.2)`
+
+Mean words recalled with music: `r fitb(12.8, tol = 0.2)`
+
+:::
+
+Now run the t-test. Edit the code below to complete the analysis:
+
+```{webr-r}
+# Run an independent-samples t-test
+# Replace the ___ with the correct arguments
+t.test(silence, music, paired = FALSE)
+```
+
+**Interpret the output:**
+
+::: {.webex-check}
+
+The t-statistic is approximately: `r fitb(3.2, tol = 0.5)`
+
+Is the p-value less than .05? `r mcq(c(answer = "Yes", "No"))`
+
+Based on this result, we would: `r mcq(c(answer = "Reject the null hypothesis", "Fail to reject the null hypothesis"))`
+
+:::
+
+## Part 3: Effect size
+
+A significant p-value tells you the effect is unlikely to be zero. It does not tell you how *large* the effect is. For that, we need an effect size measure.
+
+**Cohen's d** expresses the difference between means in standard deviation units:
+
+$$d = \frac{M_1 - M_2}{SD_{pooled}}$$
+
+```{webr-r}
+# Calculate Cohen's d manually
+mean_diff <- mean(silence) - mean(music)
+pooled_sd <- sqrt((sd(silence)^2 + sd(music)^2) / 2)
+
+cohens_d <- mean_diff / pooled_sd
+round(cohens_d, 2)
+```
+
+::: {.webex-check}
+
+Cohen's d is approximately: `r fitb(1.0, tol = 0.3)`
+
+This would be considered a: `r mcq(c("Small effect (d ~ 0.2)", "Medium effect (d ~ 0.5)", answer = "Large effect (d ~ 0.8+)"))`
+
+:::
+
+## Part 4: Visualising the data
+
+A good visualisation is worth more than a table of numbers. Run the code below to create a boxplot comparing the two conditions:
+
+```{webr-r}
+# Create a simple comparison plot
+boxplot(silence, music,
+        names = c("Silence", "Music"),
+        col = c("#28a745", "#9B1B30"),
+        ylab = "Words recalled",
+        main = "Memory performance by condition",
+        border = "grey30")
+
+# Add individual data points
+set.seed(42)
+points(jitter(rep(1, length(silence)), amount = 0.1), silence, pch = 16, cex = 0.8)
+points(jitter(rep(2, length(music)), amount = 0.1), music, pch = 16, cex = 0.8)
+```
+
+::: {.callout-tip}
+## Why show raw data points?
+A boxplot alone can hide the distribution of individual scores. Adding the raw data points (as we did with `points()`) lets the reader see both the summary statistics and the underlying pattern. This is good practice in any report or presentation.
+:::
+
+## Part 5: Writing up the result
+
+In APA format, a t-test result is reported like this:
+
+> An independent-samples t-test revealed that participants recalled significantly more words in the silence condition (*M* = 14.70, *SD* = 1.87) than in the music condition (*M* = 12.80, *SD* = 1.82), *t*(38) = 3.25, *p* = .002, *d* = 1.03.
+
+::: {.webex-check}
+
+In the write-up above, what does the 38 in *t*(38) represent?
+
+`r mcq(c("The number of participants", answer = "The degrees of freedom", "The sample size minus one", "The t-statistic"))`
+
+Which of the following should always be reported alongside a t-test?
+
+`r mcq(c("Only the p-value", "The t-statistic and p-value", answer = "The t-statistic, degrees of freedom, p-value, and effect size", "Only the means and standard deviations"))`
+
+:::
+
+## Summary
+
+::: {.callout-important}
+## Key takeaways
+1. Choose the right t-test for your design (one-sample, independent, or paired)
+2. Always report the effect size alongside the p-value
+3. Visualise your data — do not rely on summary statistics alone
+4. Write up results in APA format with all required components
+:::

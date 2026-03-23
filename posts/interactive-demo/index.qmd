@@ -4,6 +4,7 @@ author: "Example Student"
 date: "2026-03-23"
 description: "Explore simulated Stroop task data with interactive visualisations — tweak the experiment parameters and watch the data respond."
 categories: [neuropsychology]
+image: "images/cover.svg"
 toc: true
 ---
 

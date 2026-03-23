@@ -1,0 +1,246 @@
+---
+title: "Psychology Student Dashboard"
+format:
+  dashboard:
+    theme: [cosmo, ../custom.scss]
+    logo: ../assets/images/svg/goldpsychr-logo-animated.svg
+    nav-buttons:
+      - icon: house
+        href: ../index.qmd
+    orientation: rows
+---
+
+```{ojs}
+//| echo: false
+// Seeded RNG for reproducible fake data
+function mulberry32(a) {
+  return function() {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    var t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  }
+}
+rand = mulberry32(2026)
+```
+
+## Row {height=25%}
+
+### {.valuebox}
+```{ojs}
+//| echo: false
+//| component: valuebox
+viewof _vb1 = {
+  return Object.assign(document.createElement("div"), {});
+}
+```
+
+**Modules Active**
+
+<span style="font-size: 3rem; font-weight: 700; color: #9B1B30;">6</span>
+
+of 6 enrolled
+
+### {.valuebox}
+
+**Current Average**
+
+<span style="font-size: 3rem; font-weight: 700; color: #28a745;">64.2%</span>
+
+Upper Second Class
+
+### {.valuebox}
+
+**Assessments Due**
+
+<span style="font-size: 3rem; font-weight: 700; color: #E78021;">3</span>
+
+in the next 30 days
+
+### {.valuebox}
+
+**Attendance**
+
+<span style="font-size: 3rem; font-weight: 700; color: #61589C;">87%</span>
+
+above 75% threshold
+
+## Row {height=40%}
+
+### Module Progress {width=60%}
+
+```{ojs}
+//| echo: false
+
+modules = [
+  { module: "PS51009D Apps of Psych Research", grade: 68, credits: 15, status: "In progress" },
+  { module: "PS52010A Cognitive Psychology", grade: 62, credits: 15, status: "In progress" },
+  { module: "PS52011A Social Psychology", grade: 71, credits: 15, status: "Complete" },
+  { module: "PS52012A Developmental Psychology", grade: 58, credits: 15, status: "In progress" },
+  { module: "PS52013A Biological Psychology", grade: 65, credits: 15, status: "In progress" },
+  { module: "PS52014A Research Methods 2", grade: 61, credits: 15, status: "In progress" }
+]
+```
+
+```{ojs}
+//| echo: false
+
+Plot.plot({
+  height: 280,
+  marginLeft: 220,
+  marginRight: 40,
+  style: { fontSize: "12px", fontFamily: "Source Sans 3, sans-serif" },
+  x: {
+    label: "Grade (%)",
+    domain: [0, 100],
+    grid: true
+  },
+  y: {
+    label: null
+  },
+  color: {
+    domain: ["First", "2:1", "2:2", "Third"],
+    range: ["#9B1B30", "#28a745", "#E78021", "#6c757d"]
+  },
+  marks: [
+    Plot.ruleX([40], { stroke: "#dc3545", strokeDasharray: "4,4", strokeOpacity: 0.5 }),
+    Plot.ruleX([50], { stroke: "#E78021", strokeDasharray: "4,4", strokeOpacity: 0.5 }),
+    Plot.ruleX([60], { stroke: "#28a745", strokeDasharray: "4,4", strokeOpacity: 0.5 }),
+    Plot.ruleX([70], { stroke: "#9B1B30", strokeDasharray: "4,4", strokeOpacity: 0.5 }),
+    Plot.barX(modules, {
+      x: "grade",
+      y: "module",
+      fill: d => d.grade >= 70 ? "First" : d.grade >= 60 ? "2:1" : d.grade >= 50 ? "2:2" : "Third",
+      tip: true,
+      title: d => `${d.module}: ${d.grade}%`
+    }),
+    Plot.text(modules, {
+      x: d => d.grade + 1.5,
+      y: "module",
+      text: d => `${d.grade}%`,
+      fontSize: 11,
+      textAnchor: "start"
+    })
+  ]
+})
+```
+
+### Upcoming Deadlines {width=40%}
+
+| Date | Module | Assessment | Weight |
+|------|--------|-----------|--------|
+| **28 Mar** | Research Methods 2 | Lab report draft | 0% |
+| **11 Apr** | Cognitive Psychology | Essay | 50% |
+| **11 May** | PS51009D | Blog post + reflection | 100% |
+| **16 May** | Developmental | Research summary | 40% |
+| **23 May** | Biological | MCQ exam | 50% |
+| **30 May** | Social Psychology | Group presentation | 30% |
+
+## Row {height=35%}
+
+### Grade Distribution Across Modules {width=50%}
+
+```{ojs}
+//| echo: false
+
+// Simulate 30 students' averages
+studentGrades = {
+  const r = mulberry32(123);
+  function randn() {
+    let u = 0, v = 0;
+    while (u === 0) u = r();
+    while (v === 0) v = r();
+    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+  }
+  const grades = [];
+  for (let i = 0; i < 120; i++) {
+    const g = Math.round(58 + randn() * 12);
+    grades.push({ grade: Math.max(20, Math.min(95, g)), you: false });
+  }
+  grades.push({ grade: 64, you: true });
+  return grades;
+}
+```
+
+```{ojs}
+//| echo: false
+
+Plot.plot({
+  height: 250,
+  marginLeft: 50,
+  marginBottom: 40,
+  style: { fontSize: "12px", fontFamily: "Source Sans 3, sans-serif" },
+  x: { label: "Average grade (%)" },
+  y: { label: "Students", grid: true },
+  marks: [
+    Plot.rectY(studentGrades.filter(d => !d.you), Plot.binX({ y: "count" }, {
+      x: "grade",
+      fill: "#ddd",
+      thresholds: 15
+    })),
+    Plot.ruleX([64], { stroke: "#9B1B30", strokeWidth: 2.5 }),
+    Plot.text([{ x: 66, label: "You: 64%" }], {
+      x: "x",
+      text: "label",
+      dy: -100,
+      fill: "#9B1B30",
+      fontWeight: 700,
+      fontSize: 12
+    })
+  ]
+})
+```
+
+### Study Hours This Week {width=50%}
+
+```{ojs}
+//| echo: false
+
+weekHours = [
+  { day: "Mon", hours: 4.5, type: "Lectures" },
+  { day: "Mon", hours: 2.0, type: "Self-study" },
+  { day: "Tue", hours: 3.0, type: "Lectures" },
+  { day: "Tue", hours: 1.5, type: "Self-study" },
+  { day: "Wed", hours: 2.0, type: "Lectures" },
+  { day: "Wed", hours: 3.0, type: "Self-study" },
+  { day: "Thu", hours: 3.0, type: "Lectures" },
+  { day: "Thu", hours: 2.5, type: "Self-study" },
+  { day: "Fri", hours: 1.0, type: "Lectures" },
+  { day: "Fri", hours: 4.0, type: "Self-study" },
+  { day: "Sat", hours: 0, type: "Lectures" },
+  { day: "Sat", hours: 2.0, type: "Self-study" },
+  { day: "Sun", hours: 0, type: "Lectures" },
+  { day: "Sun", hours: 1.0, type: "Self-study" }
+]
+```
+
+```{ojs}
+//| echo: false
+
+Plot.plot({
+  height: 250,
+  marginLeft: 50,
+  marginBottom: 40,
+  style: { fontSize: "12px", fontFamily: "Source Sans 3, sans-serif" },
+  x: {
+    label: null,
+    domain: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  y: { label: "Hours", grid: true },
+  color: {
+    domain: ["Lectures", "Self-study"],
+    range: ["#9B1B30", "#61589C"],
+    legend: true
+  },
+  marks: [
+    Plot.barY(weekHours, Plot.stackY({
+      x: "day",
+      y: "hours",
+      fill: "type",
+      tip: true,
+      title: d => `${d.day}: ${d.hours}h ${d.type}`
+    })),
+    Plot.ruleY([0])
+  ]
+})
+```

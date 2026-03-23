@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <!-- Subtle paper texture via noise-like pattern -->
+    <pattern id="paperGrain" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="#faf8f5"/>
+      <rect x="1" y="0" width="1" height="1" fill="#f5f2ef" opacity="0.3"/>
+      <rect x="3" y="2" width="1" height="1" fill="#f5f2ef" opacity="0.2"/>
+      <rect x="0" y="3" width="1" height="1" fill="#f5f2ef" opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <!-- Cream background -->
+  <rect width="800" height="450" fill="#faf8f5"/>
+  <rect width="800" height="450" fill="url(#paperGrain)"/>
+
+  <!-- Faint longitude lines (vertical) -->
+  <line x1="100" y1="40" x2="100" y2="410" stroke="#e8e4df" stroke-width="0.5"/>
+  <line x1="200" y1="40" x2="200" y2="410" stroke="#e8e4df" stroke-width="0.5"/>
+  <line x1="300" y1="40" x2="300" y2="410" stroke="#e8e4df" stroke-width="0.5"/>
+  <line x1="400" y1="40" x2="400" y2="410" stroke="#e8e4df" stroke-width="0.5"/>
+  <line x1="500" y1="40" x2="500" y2="410" stroke="#e8e4df" stroke-width="0.5"/>
+  <line x1="600" y1="40" x2="600" y2="410" stroke="#e8e4df" stroke-width="0.5"/>
+  <line x1="700" y1="40" x2="700" y2="410" stroke="#e8e4df" stroke-width="0.5"/>
+
+  <!-- Faint latitude lines (horizontal) -->
+  <line x1="40" y1="90" x2="760" y2="90" stroke="#e8e4df" stroke-width="0.5"/>
+  <line x1="40" y1="170" x2="760" y2="170" stroke="#e8e4df" stroke-width="0.5"/>
+  <line x1="40" y1="250" x2="760" y2="250" stroke="#e8e4df" stroke-width="0.5"/>
+  <line x1="40" y1="330" x2="760" y2="330" stroke="#e8e4df" stroke-width="0.5"/>
+
+  <!-- Faint coordinate labels -->
+  <text x="100" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="middle">24</text>
+  <text x="200" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="middle">26</text>
+  <text x="300" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="middle">28</text>
+  <text x="400" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="middle">30</text>
+  <text x="500" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="middle">32</text>
+  <text x="600" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="middle">34</text>
+  <text x="700" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="middle">36</text>
+
+  <text x="32" y="94" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="end">56</text>
+  <text x="32" y="174" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="end">55</text>
+  <text x="32" y="254" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="end">54</text>
+  <text x="32" y="334" font-family="Georgia, 'Times New Roman', serif" font-size="9" fill="#d0ccc5" text-anchor="end">53</text>
+
+  <!-- Main flow line: advance (thick to thin, left to right) -->
+  <!-- Using a polygon to create the tapering flow shape -->
+  <path d="
+    M 60,185
+    C 120,175 180,165 250,170
+    C 320,175 370,160 430,155
+    C 490,150 530,145 580,150
+    C 630,155 670,148 710,145
+    L 730,148
+    L 730,158
+    C 670,162 630,168 580,165
+    C 530,162 490,167 430,172
+    C 370,177 320,192 250,188
+    C 180,183 120,198 60,210
+    Z
+  " fill="#d4b483" opacity="0.85"/>
+
+  <!-- Thinner return flow line (below, darker) -->
+  <path d="
+    M 730,155
+    C 690,175 650,200 600,210
+    C 550,220 500,235 440,245
+    C 380,255 320,260 260,270
+    C 200,280 150,290 100,300
+    L 80,305
+    L 80,298
+    C 150,282 200,272 260,262
+    C 320,252 380,248 440,238
+    C 500,228 550,214 600,204
+    C 650,194 690,170 730,150
+    Z
+  " fill="#b89a6a" opacity="0.6"/>
+
+  <!-- Small city dots along the route -->
+  <circle cx="100" cy="195" r="3" fill="#a89070" opacity="0.7"/>
+  <circle cx="250" cy="178" r="3" fill="#a89070" opacity="0.7"/>
+  <circle cx="430" cy="162" r="2.5" fill="#a89070" opacity="0.7"/>
+  <circle cx="580" cy="156" r="2" fill="#a89070" opacity="0.7"/>
+  <circle cx="730" cy="152" r="2" fill="#a89070" opacity="0.7"/>
+
+  <!-- City labels in small italic serif -->
+  <text x="100" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#b0a898" text-anchor="middle">Kowno</text>
+  <text x="250" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#b0a898" text-anchor="middle">Wilna</text>
+  <text x="430" y="143" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#b0a898" text-anchor="middle">Smolensk</text>
+  <text x="730" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#b0a898" text-anchor="middle">Moscou</text>
+
+  <!-- Title, Tufte style -->
+  <text x="400" y="395" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#a89878" text-anchor="middle" letter-spacing="2">CARTE FIGURATIVE</text>
+</svg>

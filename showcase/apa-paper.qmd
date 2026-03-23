@@ -1,0 +1,123 @@
+---
+title: "Eyebrow Distinctiveness as a Cue to Grandiose Narcissism: A Replication and Extension"
+shorttitle: "Eyebrows and Narcissism"
+author:
+  - name: Example Student
+    affiliations:
+      - name: Goldsmiths, University of London
+        department: Department of Psychology
+    orcid: 0000-0000-0000-0000
+    email: examp001@gold.ac.uk
+    corresponding: true
+abstract: |
+  Previous research has demonstrated that perceivers can accurately detect grandiose narcissism from facial photographs, with eyebrow distinctiveness identified as the critical cue. The present study sought to replicate and extend these findings using a UK undergraduate sample (*N* = 85). Participants completed the Narcissistic Personality Inventory and were photographed under standardised conditions. An independent group of raters (*n* = 210) judged perceived narcissism from full-face photographs and isolated eyebrow images. Consistent with Giacomin and Rule (2019), eyebrow distinctiveness significantly predicted both actual narcissism scores and perceived narcissism ratings. The effect was robust across gender and remained significant after controlling for attractiveness and facial symmetry. These findings support the hypothesis that narcissism leaves a detectable signature in facial appearance, specifically in the eyebrows, and that this cue generalises beyond North American samples. Implications for person perception and first impressions are discussed.
+keywords:
+  - narcissism
+  - eyebrows
+  - person perception
+  - face perception
+  - first impressions
+bibliography: apa-refs.bib
+format:
+  apaquarto-html:
+    toc: true
+  apaquarto-pdf:
+    documentmode: man
+floatsintext: true
+---
+
+# Introduction
+
+Grandiose narcissism is characterised by an inflated sense of self-importance, a preoccupation with fantasies of power and success, and a strong desire for admiration from others [@miller2011]. While narcissistic individuals often make favourable first impressions [@paulhus1998], the long-term consequences of interacting with narcissistic individuals tend to be negative, including interpersonal conflict, exploitation, and reduced cooperation [@campbell2011].
+
+Given the social costs associated with narcissism, the ability to detect narcissistic tendencies early in an interaction would have considerable adaptive value. A growing body of research suggests that people can, in fact, judge others' narcissism with above-chance accuracy from minimal information. @holtzman2011 demonstrated that both static photographs and brief video clips of targets were sufficient for perceivers to make valid narcissism judgements.
+
+## The Role of Facial Features
+
+The question of *which* facial features support accurate narcissism detection was addressed by @giacomin2019 in a systematic series of studies. Using a feature-isolation paradigm, these researchers progressively masked or revealed different regions of the face and measured how accurately perceivers could judge narcissism from each configuration. Their findings converged on a surprising conclusion: the eyebrows, and specifically eyebrow *distinctiveness* (thickness, density, and darkness), were the critical cue.
+
+This finding is notable for several reasons. First, it identifies a specific, measurable facial feature rather than a diffuse "facial gestalt" as the carrier of personality information. Second, it suggests a potential mechanism: narcissistic individuals, who score highly on grandiose exhibitionism, may maintain more distinctive eyebrows as part of their self-presentation strategy. Third, the authors demonstrated causality by digitally transplanting eyebrows between high- and low-narcissism targets, showing that the brows themselves — not correlated features — drove the perception.
+
+## The Present Study
+
+The present study aimed to replicate the core findings of @giacomin2019 using a UK undergraduate sample. The original studies were conducted in Canada, and cross-cultural replication is important given that grooming norms and facial feature preferences may vary across cultures. We also extended the original work by controlling for facial attractiveness and symmetry, which were not assessed in the original studies.
+
+We hypothesised that:
+
+1. Eyebrow distinctiveness would positively predict actual narcissism scores (H1).
+2. Eyebrow distinctiveness would positively predict perceived narcissism ratings (H2).
+3. These effects would remain significant after controlling for attractiveness and symmetry (H3).
+
+# Method
+
+## Participants
+
+Eighty-five undergraduate psychology students (*M*~age~ = 20.4, *SD* = 2.1; 62 women, 21 men, 2 non-binary) were recruited from Goldsmiths, University of London, via the departmental participant pool. All participants provided informed consent. The study was approved by the Goldsmiths Psychology Ethics Committee (ref: EP/2025/0142).
+
+An independent sample of 210 raters (*M*~age~ = 24.8, *SD* = 6.3) was recruited via Prolific for the perception phase of the study.
+
+## Materials
+
+### Narcissistic Personality Inventory
+
+Participants completed the 40-item Narcissistic Personality Inventory [NPI; @raskin1988]. Each item presents a pair of statements (e.g., "I like to be the centre of attention" vs. "I prefer to blend in with the crowd"), and participants select the statement that best describes them. Total scores range from 0 to 40, with higher scores indicating greater narcissistic tendencies.
+
+### Photographs
+
+Participants were photographed against a neutral grey background using a Canon EOS 250D with standardised lighting. All photographs were taken with a neutral facial expression, no glasses, and hair pulled back to reveal the full face and eyebrows.
+
+### Eyebrow Ratings
+
+Four trained coders (blind to NPI scores) rated each target's eyebrows on three dimensions using 7-point scales: thickness, density, and darkness. These three ratings were averaged to create a composite *eyebrow distinctiveness* score (Cronbach's alpha = .84).
+
+## Procedure
+
+The study proceeded in two phases. In Phase 1, target participants attended a laboratory session where they completed the NPI and were photographed. In Phase 2, conducted online via Prolific, independent raters viewed either full-face photographs or isolated eyebrow images (between-subjects) and rated each target on perceived narcissism using a single 7-point scale.
+
+## Data Analysis
+
+We used hierarchical linear regression to test our hypotheses. In Step 1, eyebrow distinctiveness was entered as the sole predictor. In Step 2, attractiveness and symmetry ratings (obtained from an independent group of 50 raters) were added as covariates. Perceived narcissism ratings were aggregated across raters before analysis.
+
+# Results
+
+## Descriptive Statistics
+
+Table 1 presents descriptive statistics for all key variables.
+
+| Variable | *M* | *SD* | Range |
+|----------|-----|------|-------|
+| NPI total | 15.8 | 6.9 | 2–34 |
+| Eyebrow distinctiveness | 4.2 | 1.3 | 1.5–6.8 |
+| Perceived narcissism (full face) | 3.6 | 0.8 | 1.9–5.4 |
+| Perceived narcissism (eyebrows only) | 3.4 | 0.7 | 2.0–5.1 |
+| Attractiveness | 3.9 | 1.1 | 1.4–6.2 |
+| Symmetry | 4.1 | 0.9 | 2.1–5.9 |
+
+: Descriptive statistics for key variables (*N* = 85) {#tbl-descriptives}
+
+## Hypothesis Testing
+
+Supporting H1, eyebrow distinctiveness significantly predicted actual NPI scores, *b* = 1.82, *SE* = 0.56, *t*(83) = 3.25, *p* = .002, *R*^2^ = .11. Targets with more distinctive eyebrows scored higher on the NPI.
+
+Supporting H2, eyebrow distinctiveness significantly predicted perceived narcissism from full-face photographs, *b* = 0.21, *SE* = 0.06, *t*(83) = 3.50, *p* < .001, *R*^2^ = .13, and from isolated eyebrow images, *b* = 0.16, *SE* = 0.05, *t*(83) = 3.20, *p* = .002, *R*^2^ = .11.
+
+Supporting H3, the effects of eyebrow distinctiveness on both actual and perceived narcissism remained significant after controlling for attractiveness and symmetry. The addition of these covariates did not significantly improve model fit, [Delta]*R*^2^ = .02, *F*(2, 81) = 0.89, *p* = .41, suggesting that the eyebrow–narcissism link is not an artefact of general facial attractiveness.
+
+# Discussion
+
+The present findings replicate and extend those of @giacomin2019, demonstrating that eyebrow distinctiveness is a valid cue to grandiose narcissism in a UK undergraduate sample. The effect was robust across the full-face and eyebrow-only conditions and was not attributable to confounds with attractiveness or facial symmetry.
+
+These results contribute to the growing literature on "thin-slice" personality judgements by identifying a specific, measurable facial feature that supports accurate narcissism detection. The cross-cultural replication is particularly informative, as it suggests that the eyebrow–narcissism link is not confined to North American grooming norms.
+
+## Limitations and Future Directions
+
+Several limitations should be noted. First, the sample was predominantly female and drawn from a single university, limiting generalisability. Second, the NPI has been criticised for conflating adaptive and maladaptive narcissism [@ackerman2011], and future work should examine whether eyebrow distinctiveness differentially predicts specific facets of narcissism. Third, the present study did not include an eyebrow transplant manipulation, which would provide stronger evidence for a causal role of eyebrows in narcissism perception.
+
+## Conclusion
+
+Narcissism is written on the face — specifically, in the eyebrows. This finding has implications not only for understanding person perception but also for appreciating the subtle ways in which personality traits are expressed through physical appearance and self-presentation.
+
+# References
+
+::: {#refs}
+:::

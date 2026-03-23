@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="edgeFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="5%" stop-color="#1e1e1e"/>
+      <stop offset="95%" stop-color="#1e1e1e"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="800" height="450" fill="#1a1a1a"/>
+
+  <!-- Editor chrome: title bar -->
+  <rect x="60" y="30" width="680" height="390" rx="8" fill="#252525"/>
+  <rect x="60" y="30" width="680" height="32" rx="8" fill="#2d2d2d"/>
+  <rect x="60" y="54" width="680" height="8" fill="#2d2d2d"/>
+  <!-- Window dots -->
+  <circle cx="84" cy="46" r="6" fill="#ff5f57"/>
+  <circle cx="104" cy="46" r="6" fill="#febc2e"/>
+  <circle cx="124" cy="46" r="6" fill="#28c840"/>
+  <!-- Filename tab -->
+  <text x="400" y="50" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="11" fill="#888" text-anchor="middle">post.qmd</text>
+
+  <!-- Line numbers gutter -->
+  <rect x="60" y="62" width="40" height="358" fill="#222"/>
+
+  <!-- Line numbers -->
+  <text x="90" y="96" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="13" fill="#555" text-anchor="end">1</text>
+  <text x="90" y="136" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="13" fill="#555" text-anchor="end">2</text>
+  <text x="90" y="176" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="13" fill="#555" text-anchor="end">3</text>
+  <text x="90" y="216" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="13" fill="#555" text-anchor="end">4</text>
+  <text x="90" y="256" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="13" fill="#555" text-anchor="end">5</text>
+  <text x="90" y="296" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="13" fill="#555" text-anchor="end">6</text>
+  <text x="90" y="336" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="13" fill="#555" text-anchor="end">7</text>
+  <text x="90" y="376" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="13" fill="#555" text-anchor="end">8</text>
+
+  <!-- Code lines -->
+  <!-- Line 1: ## Heading -->
+  <text x="115" y="96" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="16" font-weight="700">
+    <tspan fill="#9B1B30">## </tspan><tspan fill="#e0e0e0">Analysis Results</tspan>
+  </text>
+
+  <!-- Line 2: blank -->
+
+  <!-- Line 3: **bold** -->
+  <text x="115" y="176" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="16">
+    <tspan fill="#666">**</tspan><tspan fill="#ffffff" font-weight="700">Statistical significance</tspan><tspan fill="#666">**</tspan><tspan fill="#999"> was found.</tspan>
+  </text>
+
+  <!-- Line 4: *italic* -->
+  <text x="115" y="216" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="16">
+    <tspan fill="#666">*</tspan><tspan fill="#cccccc" font-style="italic">p</tspan><tspan fill="#666">*</tspan><tspan fill="#999"> &lt; .001, </tspan><tspan fill="#666">*</tspan><tspan fill="#cccccc" font-style="italic">d</tspan><tspan fill="#666">*</tspan><tspan fill="#999"> = 0.82</tspan>
+  </text>
+
+  <!-- Line 5: > quote -->
+  <text x="115" y="256" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="16">
+    <tspan fill="#9B1B30">&gt; </tspan><tspan fill="#aaa" font-style="italic">Correlation does not imply causation.</tspan>
+  </text>
+
+  <!-- Line 6: blank -->
+
+  <!-- Line 7: ![image]() -->
+  <text x="115" y="336" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="16">
+    <tspan fill="#9B1B30">!</tspan><tspan fill="#888">[</tspan><tspan fill="#ccc">Figure 1</tspan><tspan fill="#888">](</tspan><tspan fill="#666">plot.png</tspan><tspan fill="#888">)</tspan>
+  </text>
+
+  <!-- Line 8: [@cite] -->
+  <text x="115" y="376" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="16">
+    <tspan fill="#999">See </tspan><tspan fill="#888">[</tspan><tspan fill="#9B1B30">@cohen1988</tspan><tspan fill="#888">]</tspan><tspan fill="#999"> for details.</tspan>
+  </text>
+
+  <!-- Cursor blink line -->
+  <rect x="115" y="124" width="2" height="18" fill="#9B1B30" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+</svg>

@@ -1,0 +1,162 @@
+---
+title: "Quarto Format Showcase"
+subtitle: "What else can Quarto do?"
+author: "Dr Gordon Wright"
+date: "2026-03-23"
+format:
+  html:
+    theme: [cosmo, ../custom.scss]
+    toc: true
+    toc-depth: 2
+    include-in-header: ../include/fonts.html
+    smooth-scroll: true
+---
+
+This page collects examples of different Quarto output formats. Each demonstrates a capability you may find useful during your degree and beyond. All of these are created from plain text `.qmd` files — the same format you use for your blog posts.
+
+::: {.callout-tip}
+## Why this matters
+Learning Quarto does not just mean learning to write blog posts. The same skills transfer directly to dashboards, academic papers, interactive worksheets, presentations, and more. One syntax, many outputs.
+:::
+
+---
+
+## Dashboard
+
+**What it is:** A multi-panel data display with value boxes, charts, and tables — all updating from code.
+
+**When you would use it:** Project overviews, research progress tracking, presenting survey results, client-facing analytics.
+
+**Quarto format:** `format: dashboard`
+
+[View the Student Dashboard](dashboard.qmd){.btn .btn-primary}
+
+**Key features demonstrated:**
+
+- Value boxes showing summary metrics
+- Interactive bar charts (Observable Plot)
+- Grade distribution histogram with a "you are here" marker
+- Stacked bar chart for weekly study hours
+- Deadline table
+
+---
+
+## APA 7 Academic Paper
+
+**What it is:** A fully formatted APA Style 7th Edition manuscript, generated from a single `.qmd` file. Renders to both HTML (for reading) and PDF (for submission).
+
+**When you would use it:** Lab reports, dissertations, journal submissions, coursework that requires APA formatting.
+
+**Quarto format:** `format: apaquarto-html` / `format: apaquarto-pdf` (via the [apaquarto](https://github.com/wjschne/apaquarto) extension)
+
+[View the APA Paper (HTML)](apa-paper.qmd){.btn .btn-primary}
+
+**Key features demonstrated:**
+
+- APA title page with author, affiliation, and ORCID
+- Structured abstract with keywords
+- In-text citations and automatic APA reference list
+- Proper heading levels (APA Levels 1–3)
+- Statistical notation in-line (*M*, *SD*, *t*, *p*, *d*)
+- Tables with APA-style captions
+
+---
+
+## Interactive Worksheet (WebR)
+
+**What it is:** A teaching worksheet where students can write and run R code directly in the browser. Includes auto-marked quiz questions and fill-in-the-blank answers.
+
+**When you would use it:** Statistics teaching, lab preparation, revision exercises, self-paced tutorials.
+
+**Quarto format:** Standard HTML + [webR extension](https://github.com/coatless/quarto-webr) + webexercises
+
+[View the Interactive Worksheet](worksheet.qmd){.btn .btn-primary}
+
+**Key features demonstrated:**
+
+- Editable, runnable R code cells (no installation required)
+- Multiple-choice questions with auto-checking
+- Fill-in-the-blank numeric answers with tolerance
+- Live data visualisation (boxplots, point overlays)
+- Scaffolded learning: concept, code, interpret, write up
+
+---
+
+## Scrollytelling (Closeread)
+
+**What it is:** A narrative that scrolls through a sequence of annotated views of a single image or visualisation. The reader scrolls the text while the image pans, zooms, and highlights.
+
+**When you would use it:** Data visualisation walkthroughs, annotated figures, narrative explanations of complex diagrams, museum-style exhibits.
+
+**Quarto format:** `format: closeread-html` (via the [closeread](https://github.com/qmd-lab/closeread) extension)
+
+[View the Minard's Map Scrollytelling](../posts/minards-map/index.qmd){.btn .btn-primary}
+
+**Key features demonstrated:**
+
+- Scroll-triggered pan and zoom on a high-resolution image
+- Tufte-inspired typography (ET Book font)
+- Narrative annotations synchronised with image regions
+- Transparent overlay styling for readability
+
+---
+
+## Presentations (RevealJS)
+
+**What it is:** Browser-based slide decks with transitions, speaker notes, columns, and embedded media. No PowerPoint required.
+
+**When you would use it:** Lectures, conference talks, student presentations, tutorial walkthroughs.
+
+**Quarto format:** `format: revealjs`
+
+:::: {.columns}
+::: {.column width="50%"}
+[Assessment Brief Slides](../slides.qmd){.btn .btn-primary}
+:::
+::: {.column width="50%"}
+[Why Science Communication](../slides-why-scicomm.qmd){.btn .btn-primary}
+:::
+::::
+
+**Key features demonstrated:**
+
+- Branded slide decks with Goldsmiths colours and logo
+- Two-column layouts
+- Mermaid diagrams (flowcharts, timelines)
+- Full-bleed background slides
+- Tabset panels within slides
+- Speaker notes
+
+---
+
+## Blog Posts
+
+**What it is:** The format you already know. A styled article with citations, figures, callouts, and interactive elements.
+
+**Quarto format:** Standard website HTML
+
+:::: {.columns}
+::: {.column width="50%"}
+[Example Post (Eyebrows & Narcissism)](../posts/example-post/index.qmd){.btn .btn-primary}
+:::
+::: {.column width="50%"}
+[Interactive Demo (Stroop Effect)](../posts/interactive-demo/index.qmd){.btn .btn-primary}
+:::
+::::
+
+---
+
+## The point
+
+All of these outputs come from the same underlying system: a plain-text `.qmd` file, some YAML at the top, and Quarto doing the rendering. Learn the syntax once and you can produce:
+
+| Format | File you write | Output you get |
+|--------|---------------|----------------|
+| Blog post | `index.qmd` | Styled HTML article |
+| Dashboard | `dashboard.qmd` | Multi-panel data display |
+| APA paper | `paper.qmd` | Formatted manuscript (HTML + PDF) |
+| Worksheet | `worksheet.qmd` | Interactive tutorial with live R |
+| Scrollytelling | `story.qmd` | Scroll-driven narrative |
+| Slides | `slides.qmd` | Browser-based presentation |
+
+One skill. Six outputs. That is what Quarto gives you.

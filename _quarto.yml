@@ -22,14 +22,26 @@ website:
         href: contributing.qmd
       - text: "Formatting Guide"
         href: posts/formatting-guide/index.qmd
+      - text: "Seminar Activity"
+        href: seminar-activity.qmd
       - text: "Slides"
         menu:
           - text: "Assessment Brief"
             href: slides.qmd
           - text: "Why Science Communication"
             href: slides-why-scicomm.qmd
-      - text: "Scrollytelling Demo"
-        href: posts/minards-map/index.qmd
+      - text: "Showcase"
+        menu:
+          - text: "Format Overview"
+            href: showcase/poster.qmd
+          - text: "Student Dashboard"
+            href: showcase/dashboard.qmd
+          - text: "APA 7 Paper"
+            href: showcase/apa-paper.qmd
+          - text: "Interactive Worksheet"
+            href: showcase/worksheet.qmd
+          - text: "Scrollytelling Demo"
+            href: posts/minards-map/index.qmd
       - text: "About"
         href: about.qmd
 
