@@ -1,0 +1,154 @@
+---
+title: "Analysing Science Communication Quality"
+subtitle: "PS51009D — Deception and Dark Traits: A Worked Example"
+author: "Dr Gordon Wright"
+date: last-modified
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    toc: true
+    toc-depth: 3
+    include-in-header: include/fonts.html
+    smooth-scroll: true
+---
+
+## Learning objectives
+
+- **Identify** how evidence is cited and claims are supported in public psychology writing
+- **Distinguish** between descriptive, interpretive, and speculative statements
+- **Recognise** good and poor communication techniques in psychology writing
+- **Practise** rewriting weak communication to meet scientific standards
+
+---
+
+## Part 1: Analysing good technique
+
+### Example 1A: The Dark Triad's Dark Underside
+
+**Context:** Susan Krauss Whitbourne discusses research on dark triad traits and well-being, based on a meta-analysis by Blasco-Belled et al. (2024).
+
+> "University of Lleida researchers Ana Blasco-Belled and colleagues (2024) sought to shed light on the relationship between the dark triad traits and well-being by conducting a meta-analysis of 55 studies, involving over 26,000 participants. The studies were selected based on stringent scientific criteria, and the researchers also controlled for publication bias."
+
+::: {.callout-note}
+### Task 1.1: Evidence identification
+Identify the following details from the text above:
+
+- **Specific study details** (authors, dates, methods)
+- **Sample information** (N, inclusion criteria)
+- **Quality indicators** (controls, validation)
+:::
+
+::: {.callout-tip}
+### Task 1.2: Claim strength analysis
+Read this second excerpt and label each sentence as **D** (Descriptive), **I** (Interpretive), **S** (Speculative), or **Q** (Qualification):
+
+1. "The study confirmed that grandiose narcissism, particularly its agentic facet, is associated with positive outcomes, such as satisfaction and positive affect." [ ]
+2. "However, vulnerable and neurotic forms of narcissism do not yield the same results." [ ]
+3. "It's important to note that grandiosity may be fleeting, and individuals with these traits may experience significant fluctuations in their well-being." [ ]
+:::
+
+### Example 1B: Micro-expressions — fact or fiction?
+
+**Context:** Louise Jupe critically examines claims about micro-expression-based lie detection.
+
+::: {.callout-important}
+### Task 1.3: Argument mapping
+Based on the excerpt from Jupe (2020), map the logical structure:
+
+- **Claim by proponent:** _________________________________
+- **Evidence against:** _________________________________
+- **Practical implication:** _________________________________
+:::
+
+---
+
+## Part 2: Analysing poor or mixed technique
+
+### Example 2A: Understanding Dark Triad Traits
+
+**Context:** An excerpt from a therapy centre blog post.
+
+> "As a constellation, the Dark Triad traits have a vicious reputation, as they share an exploitative and agentic interpersonal style at the expense of others' welfare. All three traits are negatively related to honesty and humility, empathy, and agreeableness."
+
+::: {.callout-warning}
+### Task 2.1: Separating claim types
+Code the following as **DEF** (definitional), **EMP** (empirical), or **EVAL** (evaluative):
+
+- "The Dark Triad traits have a vicious reputation" [ ]
+- "All three traits are negatively related to honesty and humility" [ ]
+- "Tendency towards avoiding commitment in relationships" [ ]
+:::
+
+::: {.callout-note}
+### Task 2.2: What is the problem?
+The excerpt above mixes empirical claims with evaluative language. In your own words:
+
+1. Which phrases are **empirical** (could be supported with data)?
+2. Which phrases are **evaluative** (make a value judgment)?
+3. Why does mixing them weaken the writing?
+:::
+
+---
+
+## Part 3: Comparative analysis
+
+### Task 3.1: Techniques table
+
+Complete the table below based on the examples provided in the worksheet:
+
+| Good techniques | Poor / mixed techniques |
+|-----------------|------------------------|
+| Names specific studies with authors and dates | Uses vague phrases like "research shows" |
+| Includes appropriate hedging (e.g., "may," "suggests") | Makes universal claims without hedging |
+| Distinguishes empirical findings from moral judgments | Uses moral evaluation language (e.g., "vicious") |
+| ___________________________________ | ___________________________________ |
+| ___________________________________ | ___________________________________ |
+
+---
+
+## Part 4: Application
+
+### Task 4.1: Write a blog paragraph
+
+Choose one topic (e.g., lie detection accuracy, psychopathy, or narcissism) and write a 150--200 word paragraph. Ensure you:
+
+1. Cite at least **two** specific studies
+2. Use **hedging** language
+3. Avoid **moralising**
+
+::: {.border .p-3}
+*Write your paragraph here...*
+:::
+
+---
+
+## Part 5: Red flags spotter
+
+Identify the problem in each statement, then write a better version.
+
+| Statement | Problem(s) | Better version |
+|-----------|------------|----------------|
+| "Psychopaths... are dangerous predators." | Moralising language, universal labelling | *Research suggests certain psychopathic traits correlate with...* |
+| "Studies prove you can detect lies by watching eyes." | Use of "prove," oversimplification | *While some believe eye movement is a cue, meta-analyses suggest...* |
+| "Narcissists are unable to love." | | |
+| "Research shows dark triad people are toxic." | | |
+
+---
+
+## Self-assessment checklist
+
+Before you submit your blog post, check:
+
+- [ ] Did I name specific researchers and dates?
+- [ ] Did I use hedging language (e.g., *suggests*, *may*, *is associated with*)?
+- [ ] Did I avoid moralising "good vs. evil" language?
+- [ ] Did I distinguish what is known from what is speculated?
+- [ ] Did I cite at least the target article and one additional source?
+
+---
+
+## References
+
+- Blasco-Belled, A., et al. (2024). Dark triad traits and well-being: A meta-analysis. *Personality and Individual Differences*.
+- Jordan, S., et al. (2019). A test of the micro-expressions training tool. *Journal of Investigative Psychology and Offender Profiling*.
+- Whitbourne, S. K. (2024). The dark triad's dark underside. *Psychology Today*.

@@ -4,7 +4,7 @@ author: "Gordon Wright"
 date: "2026-03-18"
 description: "Everything you need to write, cite, and format a science communication post on this site — with source code for every feature."
 categories: [guide]
-image: "images/cover.svg"
+image: cover.svg
 bibliography: references.bib
 toc: true
 toc-depth: 3

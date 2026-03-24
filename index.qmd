@@ -3,7 +3,7 @@ title: "PS51009D Science Communication Blog"
 subtitle: "Student science writing from Applications of Psychological Research, Goldsmiths"
 listing:
   contents: posts
-  sort: "date desc"
+  sort: "date asc"
   type: default
   categories: true
   sort-ui: true

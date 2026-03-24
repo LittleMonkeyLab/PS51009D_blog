@@ -22,8 +22,14 @@ website:
         href: contributing.qmd
       - text: "Formatting Guide"
         href: posts/formatting-guide/index.qmd
-      - text: "Seminar Activity"
-        href: seminar-activity.qmd
+      - text: "Activities"
+        menu:
+          - text: "Seminar: Reading Like a Writer"
+            href: seminar-activity.qmd
+          - text: "Worksheet: Analysing Quality"
+            href: Worksheet.qmd
+          - text: "Facilitator Guide"
+            href: FacilitatorGuide.qmd
       - text: "Slides"
         menu:
           - text: "Assessment Brief"

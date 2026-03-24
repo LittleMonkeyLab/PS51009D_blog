@@ -1,0 +1,140 @@
+---
+title: "Facilitator's Guide: Analysing Science Communication Quality"
+subtitle: "Model Answers, Style Bank, and Persuasion Techniques"
+author: "Dr Gordon Wright"
+date: last-modified
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    toc: true
+    toc-depth: 3
+    include-in-header: include/fonts.html
+    smooth-scroll: true
+---
+
+::: {.callout-important}
+## Tutor document
+This guide accompanies the [student worksheet](Worksheet.qmd). It provides model answers, a style bank for teaching, and discussion prompts. Do not distribute to students before the session.
+:::
+
+---
+
+## Model answer key
+
+### Part 1: Analysing good technique
+
+**Task 1.2: Claim strength analysis**
+
+- **Sentence 1:** **D (Descriptive)**. Reports the specific association found between grandiose narcissism and positive affect.
+- **Sentence 2:** **D (Descriptive)**. Reports the lack of similar results for vulnerable and neurotic narcissism.
+- **Sentence 3:** **Q (Qualification)**. Adds nuance by noting that these states may be "fleeting" or subject to "fluctuations."
+
+**Task 1.3: Effective debunking features**
+
+1. **Use of an active control:** The researchers did not just use a "no training" group; they created a "bogus training" group to account for the placebo effect.
+2. **Comparative accuracy reporting:** By showing the METT group (46.30%) performed similarly to the bogus group (47.30%), the author provides clear, empirical evidence of the tool's inefficacy.
+
+### Part 2: Analysing poor technique
+
+**Task 2.1: Separating claim types**
+
+- *"Vicious reputation"*: **EVAL** (Moral judgment / evaluation).
+- *"Negatively related to honesty"*: **EMP** (Empirical claim requiring evidence).
+- *"Tendency towards avoiding commitment"*: **EMP** (Empirical claim).
+
+::: {.callout-tip}
+### Discussion prompt
+Ask students: "Could you rewrite the 'vicious reputation' sentence to make it empirical rather than evaluative? What would you need to add?" This often reveals that students conflate widely-held opinion with empirical evidence.
+:::
+
+---
+
+## The science communication style bank
+
+Use these techniques as teaching tools, or share them after students have attempted Task 4.1 as models to aspire to.
+
+### 1. The methodological snapshot
+
+Instead of saying "research shows," give a 10-word overview of the study's scope to build instant credibility.
+
+- **Example:** "A meta-analysis of 55 studies involving over 26,000 participants found..."
+- **Why it works:** It shows the reader the *weight* of the evidence immediately, without requiring them to read the original paper.
+
+### 2. Strategic hedging (the nuance toolkit)
+
+Scientific truth is rarely absolute. Use these phrases to align your claim with the actual strength of the data.
+
+| Instead of | Try |
+|-----------|-----|
+| "This proves..." | "Consistent patterns suggest..." |
+| "Research shows that..." | "The evidence indicates a tendency toward..." |
+| "X causes Y" | "X is associated with Y" or "X predicts Y" |
+| "Always" / "Never" | "In most cases..." / "Rarely..." |
+
+::: {.callout-note}
+### Teaching note
+Students often confuse hedging with weakness. Emphasise that hedging is a sign of **expertise**, not uncertainty. The strongest writers hedge most precisely because they understand the limits of the evidence.
+:::
+
+### 3. Objective translation
+
+Replace moralising language with descriptive, behavioural language. The writer's role is to be a neutral guide, not a judge.
+
+| Avoid | Adopt instead |
+|-------|--------------|
+| "Vicious" | "Exploitative interpersonal style" |
+| "Evil" | "Characterised by low empathy and high callousness" |
+| "Dangerous predators" | "Individuals scoring high on antisocial traits" |
+
+### 4. The one-to-one critique
+
+When debunking a myth, explain *why* the logic fails — not just that it fails.
+
+- **Example:** "There is no one-to-one mapping between physiological manifestations (like perspiration) and the act of lying."
+- **Why it works:** It addresses the underlying theory, not just the result. Readers learn *why* their intuition is wrong, which makes the correction stick.
+
+---
+
+## Authentic persuasion: the "so what?" move
+
+To persuade a practitioner audience without lecturing, highlight the **practical risk** of poor science.
+
+::: {.pullquote}
+"When micro-expression training tools yield accuracy rates no better than a coin flip (46%), relying on them in security settings creates a high risk of false accusations."
+:::
+
+This framing works because it translates an abstract accuracy statistic into a concrete, actionable consequence. Students should practise this in their blog posts: not just "here is what the study found" but "here is why it matters for the real world."
+
+---
+
+## Self-assessment checklist (model version)
+
+The student worksheet includes this checklist. Use it during feedback to identify patterns in student writing:
+
+| Criterion | Common student error |
+|-----------|---------------------|
+| Named specific researchers and dates | Defaults to "research shows" or "studies suggest" with no attribution |
+| Used hedging language | Either no hedging (overclaims) or excessive hedging (every sentence qualified) |
+| Avoided moralising language | Uses "good/bad" or "toxic/healthy" framing inherited from pop psychology sources |
+| Distinguished known from speculated | Treats speculative implications as established findings |
+| Cited target article + one additional source | Relies entirely on the target article with no broader context |
+
+---
+
+## Session timing suggestions
+
+If using the worksheet in a 1-hour seminar:
+
+| Time | Activity |
+|------|----------|
+| 0--5 min | Introduce the worksheet and learning objectives |
+| 5--15 min | Parts 1--2 in pairs (read, annotate, discuss) |
+| 15--25 min | Part 3 as a group (build the techniques table on the board) |
+| 25--40 min | Part 4 individually (write the paragraph) |
+| 40--50 min | Peer review of paragraphs using the checklist |
+| 50--60 min | Part 5 as a group, then wrap-up |
+
+::: {.callout-tip}
+### Pairing with the seminar activity
+This worksheet focuses on **evidential rigour** (claim types, hedging, evidence quality). The [Seminar Activity: Reading Like a Writer](seminar-activity.qmd) focuses on **narrative structure** (the 8 beats). They work well in sequence: run the beats session first to build awareness of structure, then this session to build awareness of precision. Together they cover both the art and the science of science communication.
+:::

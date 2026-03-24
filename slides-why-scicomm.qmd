@@ -3,7 +3,7 @@ title: "Why Science Communication<br>Is a Superpower"
 subtitle: "PS51009D — Applications of Psychological Research"
 author: "Dr Gordon Wright"
 institute: "Department of Psychology, Goldsmiths, University of London"
-date: "2026-03-23"
+date: "2026-03-24"
 format:
   revealjs:
     theme: [default, custom.scss]
@@ -60,6 +60,14 @@ It is not one skill. It is a stack.
 
 ---
 
+## The APA agrees {.smaller}
+
+![](assets/images/slides/apa-communication.png){fig-alt="APA communication skills" fig-align="center" width="80%"}
+
+Communication is not a soft add-on. It is a **core competency** of the psychology degree. The APA Guidelines for the Undergraduate Psychology Major list it as one of the five pillars of the discipline.
+
+---
+
 ## {background-color="#1a1a1a"}
 
 ::: {.r-fit-text style="color: white;"}
@@ -72,31 +80,43 @@ Often attributed to Einstein. Probably apocryphal. Still true.
 
 ---
 
-## The Greats: Feynman {.smaller}
+## The Greats {background-color="#9B1B30"}
+
+::: {.r-fit-text style="color: white;"}
+People who changed<br>the world by explaining it.
+:::
+
+---
+
+## Feynman: "I'm an ordinary person who studied hard" {.smaller}
 
 :::: {.columns}
-::: {.column width="60%"}
+::: {.column width="55%"}
 **Richard Feynman** (1918--1988)
 
 Nobel laureate in physics. But his legacy is not the diagrams.
 
 It is that he could explain *anything* to *anyone*.
 
-His 1964 Cornell lectures made quantum electrodynamics feel conversational. He taught undergraduates as though they were colleagues. He testified to Congress about the Challenger disaster using a glass of ice water and a rubber O-ring.
+His Cornell lectures made quantum electrodynamics feel conversational. He testified to Congress about the Challenger disaster using a glass of ice water and a rubber O-ring.
 
 **The Feynman lesson:** Complexity is not a sign of intelligence. Clarity is.
 :::
-::: {.column width="40%"}
-![Feynman lecturing at Caltech, 1962](https://upload.wikimedia.org/wikipedia/commons/1/1a/RichardFeynman-PainsOfOldAge.jpg){fig-alt="Richard Feynman at a chalkboard"}
+::: {.column width="45%"}
+{{< video https://www.youtube.com/watch?v=bAX27XRHMH8 width="100%" height="300" >}}
+
+::: {style="font-size: 0.7em; color: #666; text-align: center;"}
+"I'm an ordinary person who studied hard."
+:::
 :::
 ::::
 
 ---
 
-## The Greats: Sagan {.smaller}
+## Sagan: Pale Blue Dot {.smaller}
 
 :::: {.columns}
-::: {.column width="60%"}
+::: {.column width="55%"}
 **Carl Sagan** (1934--1996)
 
 Astronomer. Author. The voice of *Cosmos*.
@@ -107,38 +127,113 @@ He understood that science communication is not about lowering the bar. It is ab
 
 **The Sagan lesson:** Awe is a communication strategy. If you feel it, your audience will too.
 :::
-::: {.column width="40%"}
-![Carl Sagan with a model of the Viking lander](https://upload.wikimedia.org/wikipedia/commons/b/be/Carl_Sagan_Planetary_Society.JPG){fig-alt="Carl Sagan"}
+::: {.column width="45%"}
+{{< video https://www.youtube.com/watch?v=wupToqz1e2g width="100%" height="300" >}}
+
+::: {style="font-size: 0.7em; color: #666; text-align: center;"}
+"Look again at that dot. That's here. That's home. That's us."
+:::
 :::
 ::::
 
 ---
 
-## The Greats: Attenborough {.smaller}
+## Attenborough: master of disappearing {.smaller}
 
 :::: {.columns}
-::: {.column width="60%"}
+::: {.column width="55%"}
 **Sir David Attenborough** (b. 1926)
 
 Seven decades of broadcasting. Still going.
 
-What Attenborough does better than anyone: he **disappears**. The story is never about him. It is about the animal, the ecosystem, the moment. His voice is a vehicle, not a brand.
+What Attenborough does better than anyone: he **disappears**. The story is never about him. It is about the animal, the ecosystem, the moment.
 
 He also proves that science communication is not just for scientists. Attenborough studied geology and zoology, then spent his career translating the work of others.
 
 **The Attenborough lesson:** The best communicator is the one you forget is there. The subject is the star.
 :::
-::: {.column width="40%"}
-![David Attenborough in the field](https://upload.wikimedia.org/wikipedia/commons/2/27/Naturalis_Biodiversity_Center_-_David_Attenborough_visit_-_Video_call_%28cropped%29.jpg){fig-alt="David Attenborough"}
+::: {.column width="45%"}
+{{< video https://www.youtube.com/watch?v=8c7NEf6qFlc width="100%" height="300" >}}
+
+::: {style="font-size: 0.7em; color: #666; text-align: center;"}
+Langur monkeys grieve over a robot spy monkey.
+:::
 :::
 ::::
+
+---
+
+## Goodall: "What you do makes a difference" {.smaller}
+
+:::: {.columns}
+::: {.column width="55%"}
+**Jane Goodall** (b. 1934)
+
+Primatologist, conservationist, and one of the most recognisable scientists alive.
+
+Goodall's genius was not just the fieldwork — it was making people *care*. She gave the chimps names. She told their stories as individuals. She broke the rules of detached scientific reporting and, in doing so, built a global movement.
+
+Her late career is entirely science communication: talks, books, the Jane Goodall Institute, Roots & Shoots. The research became the platform. The communication became the mission.
+
+**The Goodall lesson:** Science communication is not what you do after the research. Sometimes it *is* the point.
+:::
+::: {.column width="45%"}
+{{< video https://www.youtube.com/watch?v=lfLKHY52ERc width="100%" height="300" >}}
+
+::: {style="font-size: 0.7em; color: #666; text-align: center;"}
+"What you do makes a difference, and you have to decide what kind of difference you want to make."
+:::
+:::
+::::
+
+---
+
+## Loftus: rewriting your memories with an advert {.smaller}
+
+:::: {.columns}
+::: {.column width="55%"}
+**Elizabeth Loftus** (b. 1944)
+
+The world's leading expert on false memory. But also one of psychology's most effective public communicators.
+
+Loftus does not just publish papers. She testifies in court, she appears on television, she gives talks that make juries — and the public — understand that memory is not a recording.
+
+Her work on the misinformation effect has influenced law, policy, and culture. None of that happens if she cannot explain it outside the lab.
+
+**The Loftus lesson:** Impact requires communication. The best research in the world changes nothing if nobody outside your field understands it.
+:::
+::: {.column width="45%"}
+{{< video https://www.youtube.com/watch?v=_RLvSGYxDIs width="100%" height="300" >}}
+
+::: {style="font-size: 0.7em; color: #666; text-align: center;"}
+The Bugs Bunny study — a masterclass in communicating a finding.
+:::
+:::
+::::
+
+---
+
+## The Bugs Bunny experiment {.smaller}
+
+Braun, Ellis & Loftus (2002) showed that a single **fake Disney advert** featuring Bugs Bunny could make people "remember" meeting him at Disneyland as a child.
+
+This is impossible. Bugs Bunny is a Warner Bros. character. He has never been at Disneyland.
+
+But after viewing the ad, **16% of participants reported remembering shaking hands with Bugs Bunny at a Disney resort.**
+
+The ad did not just change attitudes. It **rewrote memories**.
+
+::: {.callout-note}
+## Why this is great science communication
+Loftus did not need to explain signal detection theory or source monitoring frameworks. She told a story about a cartoon rabbit and a handshake. Everyone gets it. The finding communicates itself because the example is perfectly chosen.
+:::
 
 ---
 
 ## {background-color="#9B1B30"}
 
 ::: {.r-fit-text style="color: white;"}
-But those are legends.<br>What about the real world?
+But those are legends.<br>What about *us*?
 :::
 
 ---
@@ -222,6 +317,119 @@ He understood before almost anyone that the medium matters. A 12-minute explaine
 *"Being excited about science is not unprofessional. It is the whole point."*
 :::
 ::::
+
+---
+
+## And also: the power of gesture {.smaller}
+
+Communication is not just words. It is **body language, gesture, and performance**.
+
+![Clinton's thumb-over-fist gesture — trained to appear authoritative without pointing](assets/images/slides/clinton-gestures.png){fig-alt="Clinton gesture comparison" fig-align="center" width="80%"}
+
+Bill Clinton's communication coaches replaced his natural pointing gesture with the now-famous thumb-over-fist. Pointing is aggressive. The thumb is assertive but warm. That single change in nonverbal communication reshaped how millions of people perceived him.
+
+**Every detail of communication is a choice.**
+
+---
+
+## {background-color="#1a1a1a"}
+
+::: {.r-fit-text style="color: white;"}
+OK but what about<br>closer to home?
+:::
+
+---
+
+## Your lecturer does this too {.smaller}
+
+Science communication is not something I teach from a distance. It is something I do.
+
+:::: {.columns}
+::: {.column width="50%"}
+![BBC Horizon: A Week Without Lying — The Honesty Experiment](assets/images/slides/honesty-experiment.png){fig-alt="Horizon honesty experiment" width="100%"}
+
+![The One Show — live BBC studio, explaining deception research](assets/images/slides/oneshow.jpg){fig-alt="Gordon on The One Show" width="100%"}
+:::
+::: {.column width="50%"}
+![TikTok — 1 million views explaining psychology of deception with Dougal the dog](assets/images/slides/tiktok-famous.jpg){fig-alt="TikTok famous" width="100%"}
+
+![With Beth Loftus — memory researcher, courtroom expert, science communicator](assets/images/slides/gordon-beth.jpg){fig-alt="Gordon and Beth Loftus" width="100%"}
+:::
+::::
+
+---
+
+## Different platforms, same skill {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**BBC Horizon** — 60 minute documentary. Millions of viewers. I had to explain the psychology of deception to a general audience while participating in an experiment on camera.
+
+**The One Show** — Live BBC studio. 4 minutes. No second takes. You either communicate clearly or you do not.
+
+**TikTok** — 60 seconds. A dog. 1 million views. The platform is absurd. The communication skill is identical.
+
+Each of these required the same core competencies you are building in this module.
+:::
+::: {.column width="50%"}
+
+**Academic conferences** — presenting to experts who will challenge every claim.
+
+**Courtrooms** — as an expert witness, explaining psychological concepts to juries.
+
+**Journalism** — quoted in newspapers, on radio, in podcasts.
+
+The medium changes. The skill does not.
+:::
+::::
+
+---
+
+## Science communication as immersive theatre {.smaller}
+
+At Goldsmiths, the Forensic Psychology Unit turned science communication into something nobody expected: **immersive crime events**.
+
+:::: {.columns}
+::: {.column width="33%"}
+![](assets/images/slides/the-accused.png){fig-alt="The Accused poster" width="100%"}
+:::
+::: {.column width="33%"}
+![](assets/images/slides/ncpd-poster.png){fig-alt="NCPD poster" width="100%"}
+:::
+::: {.column width="33%"}
+![](assets/images/slides/top-of-the-cops.png){fig-alt="Top of the Cops poster" width="100%"}
+:::
+::::
+
+Real psychology. Real evidence. Real audience participation. Hundreds of members of the public, in costume, solving crimes using forensic psychology.
+
+---
+
+## {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+![The Goldsmiths Great Hall became a courtroom, a crime scene, and an 80s disco](assets/images/slides/fpu-80s-event.png){fig-alt="FPU 80s event" width="100%"}
+:::
+::: {.column width="50%"}
+![Period costumes, courtroom drama, and genuine forensic psychology — Goldsmiths High Court](assets/images/slides/goldsmiths-high-court.png){fig-alt="Goldsmiths High Court" width="100%"}
+:::
+::::
+
+These events were created by **psychology staff and students**. The research was real. The communication was theatrical. The audience learned without realising they were being taught.
+
+**That is science communication at its most ambitious.**
+
+---
+
+## And yes, it got weird {.center}
+
+![](assets/images/slides/psychic-detectives.png){fig-alt="Psychic Detectives poster" fig-align="center" width="50%"}
+
+We even ran an event debunking psychic detectives. Using psychology. As seen on TV.
+
+The point: **there is no format that science communication cannot occupy.**
 
 ---
 
@@ -361,11 +569,13 @@ That is the skill<br>that changes everything.
 
 ---
 
-## What Feynman, Sagan, and Attenborough share
+## What they all share
 
 It is not fame. It is not charisma.
 
 It is **the refusal to hide behind jargon**.
+
+Feynman used a glass of ice water. Sagan used a photograph of Earth. Attenborough used a robot monkey. Loftus used Bugs Bunny. We used a courtroom in the Great Hall.
 
 They each decided that if the audience did not understand, the failure was theirs, not the audience's.
 

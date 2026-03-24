@@ -4,7 +4,7 @@ author: "Example Student"
 date: "2025-04-15"
 description: "Psychologists have identified the specific facial feature that lets us accurately detect narcissism at first glance — and it is not what most people would guess."
 categories: [individual differences, person perception, narcissism]
-image: "images/cover.png"
+image: cover.png
 bibliography: references.bib
 ---
 
