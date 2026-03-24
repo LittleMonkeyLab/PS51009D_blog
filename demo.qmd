@@ -23,7 +23,7 @@ execute:
 ## Introduction
 
 This document demonstrates a single Quarto source rendering to multiple formats.
-The same `.qmd` file produces HTML, PDF, and Word output without modification.
+The same `.qmd` file produces HTML, PDF, RevealJS (presentations) and Word output without modification.
 
 ## A Simple Calculation
 
