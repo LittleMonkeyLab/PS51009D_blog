@@ -51,7 +51,7 @@ surveyData = {
 }
 ```
 
-## Row {height=45%}
+## Row
 
 ### Favourite Statistical Test {width=50%}
 
@@ -122,7 +122,7 @@ Plot.plot({
 })
 ```
 
-## Row {height=55%}
+## Row
 
 ### Statistics Confidence Over the Semester {width=60%}
 
