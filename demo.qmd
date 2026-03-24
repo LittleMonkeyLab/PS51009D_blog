@@ -1,0 +1,104 @@
+---
+title: "Multi-Format Quarto Demo"
+author: "Gordon Wright"
+date: today
+format:
+  revealjs: 
+    output-ext: .htm
+  html:
+    toc: true
+    theme: cosmo
+    self-contained: true
+  pdf:
+    toc: true
+    number-sections: true
+  docx:
+    toc: true
+    number-sections: true
+execute:
+  echo: true
+  warning: false
+---
+
+## Introduction
+
+This document demonstrates a single Quarto source rendering to multiple formats.
+The same `.qmd` file produces HTML, PDF, and Word output without modification.
+
+## A Simple Calculation
+
+Here is an inline calculation: the mean of 1 to 10 is `r mean(1:10)`.
+
+```{r}
+#| label: summary-stats
+#| fig-cap: "Distribution of a normal sample"
+
+set.seed(42)
+x <- rnorm(200, mean = 50, sd = 10)
+summary(x)
+```
+
+## A Plot
+
+```{r}
+#| label: fig-histogram
+
+hist(
+  x,
+  main   = "Sample Distribution",
+  xlab   = "Value",
+  col    = "steelblue",
+  border = "white"
+)
+```
+
+## A Table
+
+```{r}
+#| label: tbl-iris
+#| tbl-cap: "First six rows of the iris dataset"
+
+knitr::kable(head(iris))
+```
+
+## Cross-referencing
+
+See @fig-histogram for the distribution and @tbl-iris for a sample table.
+Quarto handles cross-references consistently across all output formats.
+
+## Maths
+
+Inline: $\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$
+
+Display:
+
+$$
+\sigma^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2
+$$
+
+## Callouts
+
+::: {.callout-note}
+Callouts render in HTML and PDF. In Word output they appear as styled blockquotes.
+:::
+
+::: {.callout-warning}
+PDF rendering requires a LaTeX engine. Install TinyTeX with:
+`quarto install tinytex`
+:::
+
+## Rendering
+
+Render all formats at once from the terminal:
+
+```bash
+quarto render demo.qmd
+```
+
+Or a specific format:
+
+```bash
+quarto render demo.qmd --to pdf
+quarto render demo.qmd --to html
+quarto render demo.qmd --to docx
+```

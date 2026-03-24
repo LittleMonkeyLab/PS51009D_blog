@@ -1,0 +1,15 @@
+{
+  "hash": "0ef3793ed7d01a63aa76d394cfb0ec45",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Multi-Format Quarto Demo\"\nauthor: \"Gordon Wright\"\ndate: today\nformat:\n  revealjs: \n    output-ext: .htm\n  pptx: default\n  html:\n    toc: true\n    theme: cosmo\n    self-contained: true\n  pdf:\n    toc: true\n    number-sections: true\n  docx:\n    toc: true\n    number-sections: true\nexecute:\n  echo: true\n  warning: false\n---\n\n## Introduction\n\nThis document demonstrates a single Quarto source rendering to multiple formats.\nThe same `.qmd` file produces HTML, PDF, and Word output without modification.\n\n## A Simple Calculation\n\nHere is an inline calculation: the mean of 1 to 10 is 5.5.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nset.seed(42)\nx <- rnorm(200, mean = 50, sd = 10)\nsummary(x)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  20.07   43.90   49.84   49.73   56.34   77.02 \n```\n\n\n:::\n:::\n\n\n## A Plot\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhist(\n  x,\n  main   = \"Sample Distribution\",\n  xlab   = \"Value\",\n  col    = \"steelblue\",\n  border = \"white\"\n)\n```\n\n::: {.cell-output-display}\n![](demo_files/figure-pdf/fig-histogram-1.pdf){#fig-histogram fig-pos='H'}\n:::\n:::\n\n\n## A Table\n\n\n::: {#tbl-iris .cell tbl-cap='First six rows of the iris dataset'}\n\n```{.r .cell-code}\nknitr::kable(head(iris))\n```\n\n::: {.cell-output-display}\n\n\n| Sepal.Length| Sepal.Width| Petal.Length| Petal.Width|Species |\n|------------:|-----------:|------------:|-----------:|:-------|\n|          5.1|         3.5|          1.4|         0.2|setosa  |\n|          4.9|         3.0|          1.4|         0.2|setosa  |\n|          4.7|         3.2|          1.3|         0.2|setosa  |\n|          4.6|         3.1|          1.5|         0.2|setosa  |\n|          5.0|         3.6|          1.4|         0.2|setosa  |\n|          5.4|         3.9|          1.7|         0.4|setosa  |\n\n\n:::\n:::\n\n\n## Cross-referencing\n\nSee @fig-histogram for the distribution and @tbl-iris for a sample table.\nQuarto handles cross-references consistently across all output formats.\n\n## Maths\n\nInline: $\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i$\n\nDisplay:\n\n$$\n\\sigma^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}(x_i - \\bar{x})^2\n$$\n\n## Callouts\n\n::: {.callout-note}\nCallouts render in HTML and PDF. In Word output they appear as styled blockquotes.\n:::\n\n::: {.callout-warning}\nPDF rendering requires a LaTeX engine. Install TinyTeX with:\n`quarto install tinytex`\n:::\n\n## Rendering\n\nRender all formats at once from the terminal:\n\n```bash\nquarto render demo.qmd\n```\n\nOr a specific format:\n\n```bash\nquarto render demo.qmd --to pdf\nquarto render demo.qmd --to html\nquarto render demo.qmd --to docx\n```\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}
