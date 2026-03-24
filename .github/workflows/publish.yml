@@ -41,6 +41,14 @@ jobs:
             any::knitr
             any::rmarkdown
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Jupyter
+        run: python3 -m pip install jupyter nbformat nbclient
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
