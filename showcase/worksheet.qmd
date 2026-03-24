@@ -1,173 +1,157 @@
 ---
-title: "Interactive Statistics Worksheet: The t-test"
-subtitle: "PS52014A Research Methods — Week 8 Practice"
+title: "Interactive R Worksheet: F1 Race Data"
+subtitle: "Explore Formula 1 data live in your browser"
 author: "Dr Gordon Wright"
-date: "2026-03-23"
+date: "2026-03-24"
 format:
   html:
     theme: [cosmo, ../custom.scss]
     toc: true
     toc-depth: 2
     include-in-header: ../include/fonts.html
-    include-after-body: ../include/webex.js
-    css: ../include/webex.css
     smooth-scroll: true
 filters:
   - webr
+execute:
+  echo: true
 ---
 
 ::: {.callout-note}
 ## About this worksheet
-This is an interactive worksheet. You can edit and run R code directly in your browser — nothing to install. Type your answers into the boxes and click **Show Answers** to check your work.
+All R code runs directly in your browser via WebR. No installation needed. Edit any code cell and press the Run button to see the results.
 :::
 
-## Part 1: When to use a t-test
+## Part 1: Loading and exploring F1 data
 
-A t-test compares the means of two groups (or one group against a known value) to determine whether the difference is statistically significant.
+WebR comes with many built-in datasets. Let us create some Formula 1 race data and explore it.
+
+```{webr-r}
+# Simulate F1 lap time data for 6 drivers across 20 laps
+set.seed(42)
+
+drivers <- c("Verstappen", "Hamilton", "Norris",
+             "Leclerc", "Piastri", "Russell")
+
+base_pace <- c(91.2, 91.8, 92.0, 92.1, 92.3, 92.5)
+
+f1 <- data.frame(
+  driver = rep(drivers, each = 20),
+  lap = rep(1:20, times = 6),
+  time = unlist(lapply(seq_along(drivers), function(i) {
+    round(base_pace[i] + rnorm(20, 0, 0.8) +
+          seq(0, 1.5, length.out = 20) * runif(1, 0.5, 1.2), 3)
+  }))
+)
+
+head(f1, 12)
+```
+
+```{webr-r}
+# How many observations? How many drivers?
+cat("Rows:", nrow(f1), "\n")
+cat("Drivers:", length(unique(f1$driver)), "\n")
+cat("Laps per driver:", nrow(f1) / length(unique(f1$driver)), "\n")
+```
+
+## Part 2: Summary statistics
+
+```{webr-r}
+# Mean and SD lap time per driver
+driver_stats <- aggregate(time ~ driver, data = f1, FUN = function(x) {
+  c(mean = round(mean(x), 3), sd = round(sd(x), 3))
+})
+
+# Unpack the matrix
+result <- data.frame(
+  driver = driver_stats$driver,
+  mean_time = driver_stats$time[, "mean"],
+  sd_time = driver_stats$time[, "sd"]
+)
+
+result[order(result$mean_time), ]
+```
 
 ::: {.callout-tip}
-## The key question
-"Is the difference between these means larger than we would expect by chance alone?"
+## What to notice
+Verstappen has the fastest mean lap time, but look at the standard deviations. Consistency matters as much as raw pace. A fast but erratic driver loses time through variation.
 :::
 
-**Quick check:** For each scenario, decide which type of t-test is appropriate.
-
-::: {.webex-check}
-
-Comparing exam scores between two different classes of students:
-
-`r mcq(c("One-sample t-test", answer = "Independent-samples t-test", "Paired-samples t-test"))`
-
-Comparing a class's average score against the national average of 65%:
-
-`r mcq(c(answer = "One-sample t-test", "Independent-samples t-test", "Paired-samples t-test"))`
-
-Comparing participants' anxiety scores before and after an intervention:
-
-`r mcq(c("One-sample t-test", "Independent-samples t-test", answer = "Paired-samples t-test"))`
-
-:::
-
-## Part 2: Running a t-test in R
-
-Here is some data from a (simulated) experiment. Participants completed a memory task under two conditions: silence and background music. The dependent variable is the number of words recalled (out of 20).
+## Part 3: Visualising lap times
 
 ```{webr-r}
-# Simulated data: words recalled out of 20
-silence <- c(14, 16, 13, 17, 15, 12, 18, 14, 16, 15,
-             13, 17, 14, 16, 15, 11, 18, 13, 15, 14)
-
-music   <- c(12, 14, 11, 15, 13, 10, 16, 12, 14, 13,
-             11, 15, 12, 14, 13, 9, 16, 11, 13, 12)
-
-# Calculate the means
-mean(silence)
-mean(music)
-```
-
-**What are the means?**
-
-::: {.webex-check}
-
-Mean words recalled in silence: `r fitb(14.7, tol = 0.2)`
-
-Mean words recalled with music: `r fitb(12.8, tol = 0.2)`
-
-:::
-
-Now run the t-test. Edit the code below to complete the analysis:
-
-```{webr-r}
-# Run an independent-samples t-test
-# Replace the ___ with the correct arguments
-t.test(silence, music, paired = FALSE)
-```
-
-**Interpret the output:**
-
-::: {.webex-check}
-
-The t-statistic is approximately: `r fitb(3.2, tol = 0.5)`
-
-Is the p-value less than .05? `r mcq(c(answer = "Yes", "No"))`
-
-Based on this result, we would: `r mcq(c(answer = "Reject the null hypothesis", "Fail to reject the null hypothesis"))`
-
-:::
-
-## Part 3: Effect size
-
-A significant p-value tells you the effect is unlikely to be zero. It does not tell you how *large* the effect is. For that, we need an effect size measure.
-
-**Cohen's d** expresses the difference between means in standard deviation units:
-
-$$d = \frac{M_1 - M_2}{SD_{pooled}}$$
-
-```{webr-r}
-# Calculate Cohen's d manually
-mean_diff <- mean(silence) - mean(music)
-pooled_sd <- sqrt((sd(silence)^2 + sd(music)^2) / 2)
-
-cohens_d <- mean_diff / pooled_sd
-round(cohens_d, 2)
-```
-
-::: {.webex-check}
-
-Cohen's d is approximately: `r fitb(1.0, tol = 0.3)`
-
-This would be considered a: `r mcq(c("Small effect (d ~ 0.2)", "Medium effect (d ~ 0.5)", answer = "Large effect (d ~ 0.8+)"))`
-
-:::
-
-## Part 4: Visualising the data
-
-A good visualisation is worth more than a table of numbers. Run the code below to create a boxplot comparing the two conditions:
-
-```{webr-r}
-# Create a simple comparison plot
-boxplot(silence, music,
-        names = c("Silence", "Music"),
-        col = c("#28a745", "#9B1B30"),
-        ylab = "Words recalled",
-        main = "Memory performance by condition",
+# Boxplot of lap times by driver
+boxplot(time ~ driver, data = f1,
+        col = c("#9B1B30", "#00A19C", "#FF8000",
+                "#E80020", "#FF8000", "#27F4D2"),
+        las = 2,
+        ylab = "Lap time (seconds)",
+        main = "F1 Lap Time Distribution by Driver",
         border = "grey30")
 
-# Add individual data points
-set.seed(42)
-points(jitter(rep(1, length(silence)), amount = 0.1), silence, pch = 16, cex = 0.8)
-points(jitter(rep(2, length(music)), amount = 0.1), music, pch = 16, cex = 0.8)
+# Add a horizontal line at the overall median
+abline(h = median(f1$time), lty = 2, col = "grey50")
+text(0.6, median(f1$time) + 0.15, "Median", cex = 0.7, col = "grey50")
+```
+
+## Part 4: Lap-by-lap degradation
+
+Tyre degradation means lap times typically get slower as the stint progresses. Let us visualise this.
+
+```{webr-r}
+# Plot lap times over laps for each driver
+plot(NULL, xlim = c(1, 20), ylim = range(f1$time),
+     xlab = "Lap", ylab = "Lap time (seconds)",
+     main = "Tyre Degradation: Lap Times Over a Stint")
+
+team_cols <- c("#3366CC", "#CC0000", "#FF8800",
+               "#E80020", "#FF8800", "#00A19C")
+
+for (i in seq_along(drivers)) {
+  d <- f1[f1$driver == drivers[i], ]
+  lines(d$lap, d$time, col = team_cols[i], lwd = 2)
+  # Add a trend line
+  fit <- lm(time ~ lap, data = d)
+  abline(fit, col = team_cols[i], lty = 2, lwd = 1)
+}
+
+legend("topleft", drivers, col = team_cols, lwd = 2,
+       cex = 0.7, bg = "white")
 ```
 
 ::: {.callout-tip}
-## Why show raw data points?
-A boxplot alone can hide the distribution of individual scores. Adding the raw data points (as we did with `points()`) lets the reader see both the summary statistics and the underlying pattern. This is good practice in any report or presentation.
+## Try this
+Edit the code above to change `set.seed(42)` in Part 1 to a different number, then re-run all the cells. The entire analysis updates with new simulated data. This is reproducible research in action.
 :::
 
-## Part 5: Writing up the result
+## Part 5: Is Verstappen actually faster?
 
-In APA format, a t-test result is reported like this:
+```{webr-r}
+# t-test: Verstappen vs Hamilton
+ver <- f1$time[f1$driver == "Verstappen"]
+ham <- f1$time[f1$driver == "Hamilton"]
 
-> An independent-samples t-test revealed that participants recalled significantly more words in the silence condition (*M* = 14.70, *SD* = 1.87) than in the music condition (*M* = 12.80, *SD* = 1.82), *t*(38) = 3.25, *p* = .002, *d* = 1.03.
+t.test(ver, ham)
+```
 
-::: {.webex-check}
+```{webr-r}
+# Effect size: Cohen's d
+mean_diff <- mean(ver) - mean(ham)
+pooled_sd <- sqrt((sd(ver)^2 + sd(ham)^2) / 2)
+cohens_d <- mean_diff / pooled_sd
 
-In the write-up above, what does the 38 in *t*(38) represent?
-
-`r mcq(c("The number of participants", answer = "The degrees of freedom", "The sample size minus one", "The t-statistic"))`
-
-Which of the following should always be reported alongside a t-test?
-
-`r mcq(c("Only the p-value", "The t-statistic and p-value", answer = "The t-statistic, degrees of freedom, p-value, and effect size", "Only the means and standard deviations"))`
-
-:::
+cat("Cohen's d =", round(cohens_d, 2), "\n")
+cat("Interpretation:",
+    ifelse(abs(cohens_d) > 0.8, "Large effect",
+    ifelse(abs(cohens_d) > 0.5, "Medium effect",
+    ifelse(abs(cohens_d) > 0.2, "Small effect", "Negligible"))), "\n")
+```
 
 ## Summary
 
 ::: {.callout-important}
-## Key takeaways
-1. Choose the right t-test for your design (one-sample, independent, or paired)
-2. Always report the effect size alongside the p-value
-3. Visualise your data — do not rely on summary statistics alone
-4. Write up results in APA format with all required components
+## What this demonstrates
+- **WebR** runs R code directly in the browser with no installation
+- Students can explore data, run statistical tests, and create visualisations interactively
+- The same workflow used in RStudio works here: load data, summarise, visualise, test, interpret
+- Every code cell is editable — students can experiment freely without breaking anything
 :::

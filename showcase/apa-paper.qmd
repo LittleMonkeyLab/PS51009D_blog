@@ -6,7 +6,7 @@ author:
     affiliations:
       - name: Goldsmiths, University of London
         department: Department of Psychology
-    orcid: 0000-0000-0000-0000
+
     email: examp001@gold.ac.uk
     corresponding: true
 abstract: |
@@ -21,6 +21,9 @@ bibliography: apa-refs.bib
 format:
   apaquarto-html:
     toc: true
+# To render PDF and DOCX locally (requires tinytex for PDF):
+#   quarto render showcase/apa-paper.qmd --to apaquarto-pdf
+#   quarto render showcase/apa-paper.qmd --to apaquarto-docx
 floatsintext: true
 ---
 

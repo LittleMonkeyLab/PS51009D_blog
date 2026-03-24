@@ -62,23 +62,47 @@ Learning Quarto does not just mean learning to write blog posts. The same skills
 
 ---
 
-## Interactive Worksheet (WebR)
+## Interactive R in the Browser (WebR)
 
-**What it is:** A teaching worksheet where students can write and run R code directly in the browser. Includes auto-marked quiz questions and fill-in-the-blank answers.
+**What it is:** A worksheet where students write and run R code directly in the browser — no installation needed. Simulates F1 race data, calculates statistics, and creates visualisations live.
 
-**When you would use it:** Statistics teaching, lab preparation, revision exercises, self-paced tutorials.
+**When you would use it:** Statistics teaching, lab preparation, data exploration, self-paced tutorials.
 
-**Quarto format:** Standard HTML + [webR extension](https://github.com/coatless/quarto-webr) + webexercises
+**Quarto format:** Standard HTML + [webR extension](https://github.com/coatless/quarto-webr)
 
-[View the Interactive Worksheet](worksheet.qmd){.btn .btn-primary}
+[View the F1 Data Worksheet](worksheet.qmd){.btn .btn-primary}
 
 **Key features demonstrated:**
 
 - Editable, runnable R code cells (no installation required)
-- Multiple-choice questions with auto-checking
-- Fill-in-the-blank numeric answers with tolerance
-- Live data visualisation (boxplots, point overlays)
-- Scaffolded learning: concept, code, interpret, write up
+- Data wrangling, summary statistics, and visualisation
+- t-tests and effect sizes computed live
+- Boxplots, line charts, and trend lines
+- Every cell is editable — students can experiment freely
+
+---
+
+## R Data Visualisation Showcases
+
+**What they are:** TidyTuesday competition entries by Cedric Scherer, adapted for Quarto. These demonstrate the kind of publication-quality data art that R and ggplot2 can produce.
+
+**When you would use them:** Inspiration, teaching data visualisation, demonstrating what R can do beyond basic charts.
+
+:::: {.columns}
+::: {.column width="50%"}
+[LEGO Colour Explosion](2022_36_LEGO_bricks.qmd){.btn .btn-primary}
+:::
+::: {.column width="50%"}
+[Space Journeys](space-journeys.qmd){.btn .btn-primary}
+:::
+::::
+
+**Key features demonstrated:**
+
+- Sankey bump charts (LEGO colour distribution over time)
+- Custom colour palettes and dark themes
+- Astronaut mission data visualisation
+- Complex data wrangling with tidyverse
 
 ---
 
