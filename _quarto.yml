@@ -22,8 +22,6 @@ website:
         href: posts/formatting-guide/index.qmd
       - text: "Slides"
         menu:
-          - text: "Assessment Brief"
-            href: slides.qmd
           - text: "Why Science Communication"
             href: slides-why-scicomm.qmd
       - text: "Showcase"

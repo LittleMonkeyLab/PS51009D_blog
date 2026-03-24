@@ -12,6 +12,7 @@ format:
 
 ```{ojs}
 //| echo: false
+//| output: false
 
 surveyData = {
   return {
@@ -51,12 +52,25 @@ surveyData = {
 }
 ```
 
+## Row {height=8%}
+
+```{=html}
+<div style="background: linear-gradient(135deg, #9B1B30, #7a1526); color: white; padding: 12px 24px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="font-size: 1.6rem; font-weight: 700; font-family: 'Source Sans 3', sans-serif; letter-spacing: -0.02em;">The Psychology Student Statistics Survey</span>
+    <span style="background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">Live Dashboard</span>
+  </div>
+  <span style="font-size: 0.8rem; opacity: 0.7;">N = 168 responses | Spring 2026</span>
+</div>
+```
+
 ## Row
 
-### Favourite Statistical Test {width=50%}
+### {width=50%}
 
 ```{ojs}
 //| echo: false
+//| title: "What is your favourite statistical test?"
 
 Plot.plot({
   height: 300,
@@ -88,10 +102,11 @@ Plot.plot({
 })
 ```
 
-### Favourite p-value {width=50%}
+### {width=50%}
 
 ```{ojs}
 //| echo: false
+//| title: "What is your favourite p-value?"
 
 Plot.plot({
   height: 300,
@@ -124,10 +139,11 @@ Plot.plot({
 
 ## Row
 
-### Statistics Confidence Over the Semester {width=60%}
+### {width=60%}
 
 ```{ojs}
 //| echo: false
+//| title: "How confident do you feel about statistics this week?"
 
 Plot.plot({
   height: 320,
@@ -172,10 +188,11 @@ Plot.plot({
 })
 ```
 
-### Preferred Analysis Tool {width=40%}
+### {width=40%}
 
 ```{ojs}
 //| echo: false
+//| title: "What do you use to analyse data?"
 
 Plot.plot({
   height: 320,

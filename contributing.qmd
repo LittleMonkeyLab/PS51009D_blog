@@ -3,6 +3,7 @@ title: "How to Create and Publish Your Blog Post"
 subtitle: "From no blog to new blog in minutes"
 toc: true
 toc-depth: 3
+toc-location: left
 ---
 
 This guide walks you through creating a Quarto blog post from scratch and getting it published. You do not need to install anything on your own computer — everything runs in your browser via RStudio Server.

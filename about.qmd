@@ -21,12 +21,6 @@ Students choose one of two formats:
 
 Both formats summarise one nominated research paper for a non-academic audience, drawing on relevant content from the module to provide context.
 
-The science communication piece is worth **90%** of the final module grade. A separate reflection piece (500 words) is worth **10%**.
-
-**Submission deadline: Monday 11 May, 12 noon**
-
-For the full brief, target articles, and marking guidance, see the [Assessment](assessment.qmd) page.
-
 ## MVP and flourishes
 
 This site is built with Quarto and can support anything from a simple, clean post to something with interactive charts, embedded video, and tabbed sections. You don't need any of that to do well — but it's there if you want it.
