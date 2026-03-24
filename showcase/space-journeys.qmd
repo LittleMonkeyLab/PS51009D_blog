@@ -47,6 +47,9 @@ Each vertical line represents one astronaut, sorted by the year of their first m
 #| fig-cap: "Cumulative time in outer space for all astronauts, 1961-2020"
 #| fig-width: 12
 #| fig-height: 8
+#| out-width: "100%"
+#| dev: "ragg_png"
+#| fig-bg: "#0a0a0a"
 
 df_missions <- df_astro %>%
   group_by(name) %>%
@@ -85,6 +88,9 @@ ggplot(df_missions, aes(x = id, y = hours, colour = year)) +
 #| fig-cap: "The 10 astronauts with the most cumulative hours in outer space"
 #| fig-width: 10
 #| fig-height: 6
+#| out-width: "100%"
+#| dev: "ragg_png"
+#| fig-bg: "#0a0a0a"
 
 top10 <- df_missions %>%
   slice_max(hours, n = 10) %>%
