@@ -611,7 +611,16 @@ But: "Can I make *you* understand it — and care?"
 
 ## You may consider using R for your blog post...
 
-INSERT LOOM OF GORDON CREATING A NEW BLOG POST
+<!-- TODO: Replace LOOM_VIDEO_ID with the actual Loom share ID once recorded.
+     Uncomment the slide below to enable the full-page video embed.
+
+---
+
+## Watch: creating and publishing a blog post {background-iframe="https://www.loom.com/embed/LOOM_VIDEO_ID" background-interactive="true"}
+
+-->
+
+---
 
 ## {.center background-color="#1a1a1a"}
 
