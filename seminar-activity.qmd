@@ -68,13 +68,14 @@ Opening A uses a **hook** (something the reader recognises), a **list** (concret
 
 ## Phase 1: Read (10 min)
 
-In your group, choose **one** of the following pieces to read together. Each person should read the full piece individually, then compare notes.
+In your group, choose **one** of the following real science communication pieces to read together. Each person should read the full piece individually, then compare notes.
 
-| Piece | Where to find it | Length |
-|-------|-----------------|--------|
-| **The Eyes Don't Have It** (example post) | [Blog: Example Post](posts/example-post/index.qmd) | ~1000 words |
-| **Can You Beat the Stroop Effect?** (interactive demo) | [Blog: Interactive Demo](posts/interactive-demo/index.qmd) | ~600 words + interactive |
-| **The Visual Display of Quantitative Information** (scrollytelling) | [Blog: Minard's Map](posts/minards-map/index.qmd) | ~400 words + scroll narrative |
+| Piece | Source | Topic |
+|-------|--------|-------|
+| **"Goosebumps, tears and tenderness: what it means to be moved"** | [The Conversation](https://theconversation.com/goosebumps-tears-and-tenderness-what-it-means-to-be-moved-205795) | Emotion, aesthetics |
+| **"The dark triad's dark underside shows where things go wrong"** | [Psychology Today](https://www.psychologytoday.com/us/blog/fulfillment-at-any-age/202405/the-dark-triads-dark-underside-shows-where-things-go-wrong) | Personality, dark traits |
+| **"Memory and sense of self may play more of a role in autism than we thought"** | [The Conversation](https://theconversation.com/memory-and-sense-of-self-may-play-more-of-a-role-in-autism-than-we-thought-215986) | Memory, neurodiversity |
+| **"Micro-expressions: fact or fiction?"** | [TSI Magazine](https://tsi-mag.com/micro-expressions-fact-or-fiction/) | Deception, lie detection |
 
 ::: {.callout-tip}
 ## Reading tip
@@ -273,8 +274,9 @@ Before your next session, try this:
 ## Resources
 | Resource | Link |
 |----------|------|
-| Example post | [The Eyes Don't Have It](posts/example-post/index.qmd) |
-| Formatting guide | [How to Format Your Blog Post](posts/formatting-guide/index.qmd) |
+| The Conversation | [theconversation.com](https://theconversation.com) — dozens of examples of the target style |
+| Psychology Today | [psychologytoday.com](https://www.psychologytoday.com) — popular psychology writing (quality varies) |
+| The Guardian Science | [theguardian.com/science](https://www.theguardian.com/science) — news-style science reporting |
 | Assessment brief | [Assessment](assessment.qmd) |
-| The Conversation | [theconversation.com](https://theconversation.com) |
+| Formatting guide | [How to Format Your Blog Post](posts/formatting-guide/index.qmd) |
 :::

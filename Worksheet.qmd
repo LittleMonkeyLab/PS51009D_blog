@@ -21,98 +21,164 @@ format:
 
 ---
 
-## Part 1: Analysing good technique
+## Sources for this worksheet
 
-### Example 1A: The Dark Triad's Dark Underside
-
-**Context:** Susan Krauss Whitbourne discusses research on dark triad traits and well-being, based on a meta-analysis by Blasco-Belled et al. (2024).
-
-> "University of Lleida researchers Ana Blasco-Belled and colleagues (2024) sought to shed light on the relationship between the dark triad traits and well-being by conducting a meta-analysis of 55 studies, involving over 26,000 participants. The studies were selected based on stringent scientific criteria, and the researchers also controlled for publication bias."
+You will need to read excerpts from the following sources during the session. Open them now so they are ready.
 
 ::: {.callout-note}
-### Task 1.1: Evidence identification
-Identify the following details from the text above:
+### Source A (Good practice exemplar)
+**Susan Krauss Whitbourne** — "The Dark Triad's Dark Underside Shows Where Things Go Wrong", *Psychology Today*
 
-- **Specific study details** (authors, dates, methods)
-- **Sample information** (N, inclusion criteria)
-- **Quality indicators** (controls, validation)
+<https://www.psychologytoday.com/us/blog/fulfillment-at-any-age/202405/the-dark-triads-dark-underside-shows-where-things-go-wrong>
 :::
 
+::: {.callout-warning}
+### Source B (Mixed practice exemplar)
+**Growth Wellness Therapy** — "Understanding Dark Triad Traits: Narcissism, Machiavellianism, and Psychopathy"
+
+<https://www.growthwellnesstherapy.com/our-blog/understanding-dark-triad-traits-narcissism-machiavellianism-and-psychopathy>
+:::
+
+::: {.callout-note}
+### Source C (Good practice — deception)
+**Transport Security International Magazine** — "Micro-Expressions: Fact or Fiction?"
+
+<https://tsi-mag.com/micro-expressions-fact-or-fiction/>
+:::
+
+::: {.callout-note}
+### Source D (Academic article)
+**Frontiers in Psychology** — "Microexpressions Differentiate Truths From Lies About Future Malicious Intent"
+
+<https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.02545/full>
+:::
+
+---
+
+## Part 1: Identifying claims, evidence, and value language
+
+### 1A. Dark triad — good practice (Source A)
+
+Read a short section from Whitbourne's *Psychology Today* article.
+
+1. Underline:
+    - One sentence that mainly **describes** a research finding
+    - One sentence that **interprets** what the finding means
+    - One sentence that contains an explicit **value judgement** (e.g., "good", "bad", "dangerous")
+
+2. For each sentence, label it:
+    - **D** = Description of data
+    - **I** = Interpretation / theory
+    - **V** = Value judgement / advice
+
+3. Briefly answer:
+    - Does the author keep these three types of sentence clearly separated, or do they blur together?
+    - How might that affect how a non-expert understands the research?
+
+### 1B. Dark triad — mixed practice (Source B)
+
+Read a short section from the Growth Wellness Therapy blog post.
+
+1. Highlight any phrases that:
+    - Suggest **very strong** conclusions about people with dark traits (e.g., "always", "vicious", "dangerous")
+    - Imply **causality** without clear evidence (e.g., "these traits lead to X")
+
+2. For two highlighted sentences, rewrite each so that it:
+    - Uses more cautious language (e.g., "often associated with...", "research suggests...")
+    - Makes clear that the evidence comes from particular kinds of studies (e.g., "self-report questionnaires in student samples")
+
 ::: {.callout-tip}
-### Task 1.2: Claim strength analysis
-Read this second excerpt and label each sentence as **D** (Descriptive), **I** (Interpretive), **S** (Speculative), or **Q** (Qualification):
+### Task 1C: Claim strength analysis
+Read this excerpt from Source A and label each sentence as **D** (Descriptive), **I** (Interpretive), **S** (Speculative), or **Q** (Qualification):
 
 1. "The study confirmed that grandiose narcissism, particularly its agentic facet, is associated with positive outcomes, such as satisfaction and positive affect." [ ]
 2. "However, vulnerable and neurotic forms of narcissism do not yield the same results." [ ]
 3. "It's important to note that grandiosity may be fleeting, and individuals with these traits may experience significant fluctuations in their well-being." [ ]
 :::
 
-### Example 1B: Micro-expressions — fact or fiction?
+---
 
-**Context:** Louise Jupe critically examines claims about micro-expression-based lie detection.
+## Part 2: Deception and micro-expressions
+
+### 2A. "Micro-expressions: fact or fiction?" (Source C)
+
+Read a short section from the TSI Magazine article.
+
+1. Identify one place where the author:
+    - Summarises an **official report** (e.g., a National Research Council conclusion)
+    - Summarises a **specific study** (e.g., percentages of participants who showed micro-expressions)
+
+2. For each, answer:
+    - What is the **claim**?
+    - What is the **source** (e.g., committee report, experimental study)?
+    - How clearly is the difference between these sources communicated?
+
+3. The article uses this kind of structure: *Vendor claim -> Theoretical critique -> Experimental evidence -> Practical implication.* Sketch that chain in 3--4 bullet points based on your excerpt.
 
 ::: {.callout-important}
-### Task 1.3: Argument mapping
-Based on the excerpt from Jupe (2020), map the logical structure:
+### Task 2B: Argument mapping
+Based on Source C, map the logical structure:
 
 - **Claim by proponent:** _________________________________
 - **Evidence against:** _________________________________
 - **Practical implication:** _________________________________
 :::
 
----
+### 2C. False positives and "near chance" accuracy
 
-## Part 2: Analysing poor or mixed technique
+Micro-expression and lie-detection research often leads to accuracy rates that are only slightly above chance.
 
-### Example 2A: Understanding Dark Triad Traits
+1. In your own words, explain: why is "slightly above chance" in a lab **not automatically good enough** for real-world use (e.g., airport security, police interviews)?
 
-**Context:** An excerpt from a therapy centre blog post.
-
-> "As a constellation, the Dark Triad traits have a vicious reputation, as they share an exploitative and agentic interpersonal style at the expense of others' welfare. All three traits are negatively related to honesty and humility, empathy, and agreeableness."
-
-::: {.callout-warning}
-### Task 2.1: Separating claim types
-Code the following as **DEF** (definitional), **EMP** (empirical), or **EVAL** (evaluative):
-
-- "The Dark Triad traits have a vicious reputation" [ ]
-- "All three traits are negatively related to honesty and humility" [ ]
-- "Tendency towards avoiding commitment in relationships" [ ]
-:::
-
-::: {.callout-note}
-### Task 2.2: What is the problem?
-The excerpt above mixes empirical claims with evaluative language. In your own words:
-
-1. Which phrases are **empirical** (could be supported with data)?
-2. Which phrases are **evaluative** (make a value judgment)?
-3. Why does mixing them weaken the writing?
-:::
+2. Write a 2--3 sentence explanation suitable for a general audience that:
+    - Uses an everyday example (e.g., coin flips, guessing games)
+    - Explains why small accuracy gains can still create many errors when lots of decisions are made
 
 ---
 
-## Part 3: Comparative analysis
+## Part 3: Comparing dark-triad communication styles
 
-### Task 3.1: Techniques table
+You now have two different dark-triad sources in mind (Source A vs Source B).
 
-Complete the table below based on the examples provided in the worksheet:
+Complete this table for a short excerpt from each:
 
-| Good techniques | Poor / mixed techniques |
-|-----------------|------------------------|
-| Names specific studies with authors and dates | Uses vague phrases like "research shows" |
-| Includes appropriate hedging (e.g., "may," "suggests") | Makes universal claims without hedging |
-| Distinguishes empirical findings from moral judgments | Uses moral evaluation language (e.g., "vicious") |
-| ___________________________________ | ___________________________________ |
-| ___________________________________ | ___________________________________ |
+| Feature | Source A: Whitbourne (*Psychology Today*) | Source B: Growth Wellness Therapy |
+|---------|------------------------------------------|----------------------------------|
+| How traits are defined | | |
+| How evidence is referenced | | |
+| How strongly outcomes are claimed | | |
+| Use of hedging (e.g., "may", "tends to", "often") | | |
+
+Based on the table, write 3--4 sentences answering:
+
+- Which excerpt you would trust more as an introduction for Year 1 students, and **why**
+- One thing the "weaker" article does well that you might still want to emulate (e.g., clear examples, accessible language)
 
 ---
 
-## Part 4: Application
+## Part 4: Rewrite exercise
 
-### Task 4.1: Write a blog paragraph
+### 4A. From mixed to strong communication
+
+Choose one "over-strong" sentence from Source B or a similar popular piece, such as:
+
+> "People with dark triad traits are dangerous and will always exploit others to get what they want."
+
+1. Rewrite this sentence so that it:
+    - Makes clear that we are talking about **tendencies**, not certainties
+    - Mentions that the evidence comes from **groups**, not diagnoses of individuals
+    - Uses wording consistent with scientific caution (e.g., "associated with", "on average")
+
+2. Expand your rewritten sentence into a short paragraph (3--4 sentences) that:
+    - Provides at least **one concrete example**
+    - Includes **one hedged statement** about the strength or limits of the evidence
+    - Ends with a clear implication (e.g., why this matters for workplaces, relationships, or legal contexts)
+
+### 4B. Write a blog paragraph
 
 Choose one topic (e.g., lie detection accuracy, psychopathy, or narcissism) and write a 150--200 word paragraph. Ensure you:
 
-1. Cite at least **two** specific studies
+1. Cite at least **two** specific studies (from the sources above or your own reading)
 2. Use **hedging** language
 3. Avoid **moralising**
 
@@ -122,7 +188,19 @@ Choose one topic (e.g., lie detection accuracy, psychopathy, or narcissism) and 
 
 ---
 
-## Part 5: Red flags spotter
+## Part 5: Your own micro-explanation
+
+Choose a concept related to deception or dark traits (e.g., "micro-expressions", "Machiavellianism", "lying by omission").
+
+Write a 4--5 sentence explanation aimed at an interested member of the public. Your explanation must:
+
+- Start with a **concrete example** or scenario
+- Include **one sentence** that clearly distinguishes between **what is known** and **what is still debated**
+- Use **one piece of hedging** (e.g., "often", "tends to", "is associated with") and **one explicit limit** (e.g., "Most studies so far are in university students.")
+
+---
+
+## Red flags spotter
 
 Identify the problem in each statement, then write a better version.
 
@@ -152,3 +230,5 @@ Before you submit your blog post, check:
 - Blasco-Belled, A., et al. (2024). Dark triad traits and well-being: A meta-analysis. *Personality and Individual Differences*.
 - Jordan, S., et al. (2019). A test of the micro-expressions training tool. *Journal of Investigative Psychology and Offender Profiling*.
 - Whitbourne, S. K. (2024). The dark triad's dark underside. *Psychology Today*.
+- Growth Wellness Therapy (n.d.). Understanding dark triad traits. *growthwellnesstherapy.com*.
+- Frontiers in Psychology (2018). Microexpressions differentiate truths from lies about future malicious intent. *Frontiers in Psychology, 9*, 2545.

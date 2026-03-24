@@ -1,0 +1,148 @@
+# Deception & Dark Traits – Science Communication Worksheet
+
+## Sources (for all excerpts and activities)
+
+- Susan Krauss Whitbourne – “The Dark Triad’s Dark Underside Shows Where Things Go Wrong”, *Psychology Today*  
+  https://www.psychologytoday.com/us/blog/fulfillment-at-any-age/202405/the-dark-triads-dark-underside-shows-where-things-go-wrong  
+
+- Growth Wellness Therapy – “Understanding Dark Triad Traits: Narcissism, Machiavellianism, and Psychopathy”  
+  https://www.growthwellnesstherapy.com/our-blog/understanding-dark-triad-traits-narcissism-machiavellianism-and-psychopathy  
+
+- Transport Security International Magazine – “MICRO-EXPRESSIONS: FACT OR FICTION?”  
+  https://tsi-mag.com/micro-expressions-fact-or-fiction/  
+
+- Frontiers in Psychology – “Microexpressions Differentiate Truths From Lies About Future Malicious Intent”  
+  https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.02545/full  
+
+---
+
+## Part 1 – Identifying claims, evidence, and value language
+
+### 1A. Dark triad (good practice exemplar)
+
+Read a short section from Whitbourne’s *Psychology Today* article on the dark triad.  
+(You or your instructor will provide an excerpt.)
+
+1. Underline:
+   - One sentence that mainly **describes** a research finding.
+   - One sentence that **interprets** what the finding means.
+   - One sentence that contains an explicit **value judgement** (e.g., “good”, “bad”, “dangerous”).
+
+2. For each sentence you underlined, label it:
+   - D = Description of data
+   - I = Interpretation / theory
+   - V = Value judgement / advice
+
+3. Briefly answer:
+   - Does the author keep these three types of sentence clearly separated, or do they blur together?  
+   - How might that affect how a non-expert understands the research?
+
+### 1B. Dark triad (mixed practice exemplar)
+
+Read a short section from the Growth Wellness Therapy dark triad blog post.
+
+1. Highlight any phrases that:
+   - Suggest **very strong** conclusions about people with dark traits (e.g., “always”, “vicious”, “dangerous”).
+   - Imply **causality** without clear evidence (e.g., “these traits lead to X”).
+
+2. For two highlighted sentences:
+   - Rewrite each in a way that is still accessible, but:
+     - Uses more cautious language (e.g., “often associated with…”, “research suggests…”).
+     - Makes clear that the evidence comes from particular kinds of studies (e.g., “self-report questionnaires in student samples”).
+
+---
+
+## Part 2 – Deception and micro-expressions
+
+### 2A. “Micro-expressions: fact or fiction?” (good practice exemplar)
+
+Read a short section from the TSI Magazine article.
+
+1. Identify one place where the author:
+   - Summarises an **official report** (e.g., a National Research Council conclusion).
+   - Summarises a **specific study** (e.g., percentages of participants who showed micro-expressions).
+
+2. For each, answer:
+   - What is the **claim**?
+   - What is the **source** (e.g., committee report, experimental study)?
+   - How clearly is the difference between these sources communicated?
+
+3. The article uses this kind of structure:  
+   Vendor claim → Theoretical critique → Experimental evidence → Practical implication.  
+   - Sketch that chain in 3–4 bullet points based on your excerpt.
+
+### 2B. False positives and “near chance” accuracy
+
+Micro-expression and lie-detection research often leads to accuracy rates that are only slightly above chance.
+
+1. In your own words, explain:
+   - Why is “slightly above chance” in a lab **not automatically good enough** for real-world use (e.g., airport security, police interviews)?
+
+2. Write a 2–3 sentence explanation suitable for a general audience that:
+   - Uses an everyday example (e.g., coin flips, guessing games).
+   - Explains why small accuracy gains can still create many errors when lots of decisions are made.
+
+---
+
+## Part 3 – Comparing dark-triad communication styles
+
+You now have two different dark-triad blog sources in mind (Whitbourne vs Growth Wellness).
+
+1. Complete this table for a short excerpt from each:
+
+| Feature                     | Whitbourne (Psychology Today) | Growth Wellness Therapy blog |
+|----------------------------|--------------------------------|------------------------------|
+| How traits are defined     |                                |                              |
+| How evidence is referenced |                                |                              |
+| How strongly outcomes are claimed (e.g., relationships, success, harm) | |            |
+| Use of hedging (e.g., “may”, “tends to”, “often”) |        |                              |
+
+2. Based on the table, write 3–4 sentences answering:
+   - Which excerpt you would trust more as an introduction for Year‑1 students, and **why**.
+   - One thing the “weaker” article does well that you might still want to emulate (e.g., clear examples, accessible language).
+
+---
+
+## Part 4 – Rewrite exercise: from mixed to strong communication
+
+Choose one “over-strong” sentence from the Growth Wellness dark-triad blog or a similar popular piece (your instructor may provide examples), such as:
+
+> “People with dark triad traits are dangerous and will always exploit others to get what they want.”
+
+1. Rewrite this sentence so that it:
+   - Makes clear that we are talking about **tendencies**, not certainties.
+   - Mentions that the evidence comes from **groups**, not diagnoses of individuals.
+   - Uses wording consistent with scientific caution (e.g., “associated with”, “on average”).
+
+2. Now expand your rewritten sentence into a short paragraph (3–4 sentences) that:
+   - Provides at least **one concrete example**.
+   - Includes **one hedged statement** about the strength or limits of the evidence.
+   - Ends with a clear implication (e.g., why this matters for workplaces, relationships, or legal contexts).
+
+---
+
+## Part 5 – Your own micro‑explanation
+
+Choose a concept related to deception or dark traits (e.g., “micro-expressions”, “Machiavellianism”, “lying by omission”).
+
+Write a 4–5 sentence explanation aimed at an interested member of the public. Your explanation must:
+
+- Start with a **concrete example** or scenario.
+- Include **one sentence** that clearly distinguishes between **what is known** and **what is still debated**.
+- Use **one piece of hedging** (e.g., “often”, “tends to”, “is associated with”) and **one explicit limit** (e.g., “Most studies so far are in university students.”)
+
+---
+
+## Sources (again, for student reference)
+
+- Susan Krauss Whitbourne – “The Dark Triad’s Dark Underside Shows Where Things Go Wrong”, *Psychology Today*  
+  https://www.psychologytoday.com/us/blog/fulfillment-at-any-age/202405/the-dark-triads-dark-underside-shows-where-things-go-wrong  
+
+- Growth Wellness Therapy – “Understanding Dark Triad Traits: Narcissism, Machiavellianism, and Psychopathy”  
+  https://www.growthwellnesstherapy.com/our-blog/understanding-dark-triad-traits-narcissism-machiavellianism-and-psychopathy  
+
+- Transport Security International Magazine – “MICRO-EXPRESSIONS: FACT OR FICTION?”  
+  https://tsi-mag.com/micro-expressions-fact-or-fiction/  
+
+- Frontiers in Psychology – “Microexpressions Differentiate Truths From Lies About Future Malicious Intent”  
+  https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.02545/full  

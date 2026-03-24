@@ -247,7 +247,7 @@ Science communication did not stay in lecture halls. It went everywhere.
 ## In writing: Ed Yong {.smaller}
 
 :::: {.columns}
-::: {.column width="65%"}
+::: {.column width="55%"}
 **Ed Yong** — staff writer at *The Atlantic*
 
 Won the Pulitzer Prize for Explanatory Reporting in 2021 for his COVID-19 coverage. His book *I Contain Multitudes* made the microbiome genuinely fascinating to a mass audience.
@@ -256,8 +256,12 @@ Yong does not have a science PhD. He has a zoology degree and an extraordinary a
 
 **The lesson:** You do not need to be the expert. You need to be the translator.
 :::
-::: {.column width="35%"}
+::: {.column width="45%"}
+![Ed Yong — Pulitzer Prize-winning science journalist](assets/images/slides/edyong.jpg){fig-alt="Ed Yong" width="100%"}
+
+::: {style="font-size: 0.7em; color: #666; text-align: center;"}
 *"The best science writing makes the reader feel smarter, not smaller."*
+:::
 :::
 ::::
 
@@ -266,7 +270,7 @@ Yong does not have a science PhD. He has a zoology degree and an extraordinary a
 ## On screen: Hannah Fry {.smaller}
 
 :::: {.columns}
-::: {.column width="65%"}
+::: {.column width="55%"}
 **Hannah Fry** — mathematician, UCL professor, BBC presenter
 
 Fry presents documentaries on algorithms, AI, and mathematics to mainstream BBC audiences. Her TED talks have been viewed millions of times. Her book *Hello World* made algorithmic decision-making accessible without losing its ethical weight.
@@ -275,8 +279,12 @@ She is a working academic who also happens to be one of the most effective commu
 
 **The lesson:** Academic rigour and public accessibility are not opposites. They are the same skill applied differently.
 :::
-::: {.column width="35%"}
+::: {.column width="45%"}
+![Hannah Fry — mathematician, presenter, communicator](assets/images/slides/hannahfry.jpg){fig-alt="Hannah Fry" width="100%"}
+
+::: {style="font-size: 0.7em; color: #666; text-align: center;"}
 *"If you can make someone care about a maths problem, you can make them care about anything."*
+:::
 :::
 ::::
 
@@ -285,7 +293,7 @@ She is a working academic who also happens to be one of the most effective commu
 ## In data: Hans Rosling {.smaller}
 
 :::: {.columns}
-::: {.column width="65%"}
+::: {.column width="55%"}
 **Hans Rosling** (1948--2017) — physician, statistician, sword-swallower
 
 His Gapminder presentations turned global health data into theatre. Bubbles moved. Axes told stories. Audiences gasped at data about child mortality.
@@ -294,8 +302,12 @@ Rosling proved that a chart is not a chart. It is a **narrative device**. The sa
 
 **The lesson:** Data does not speak for itself. You speak for it. Learn to speak well.
 :::
-::: {.column width="35%"}
-*"I have a sword-swallowing act. It helps me make the point that the seemingly impossible is possible."*
+::: {.column width="45%"}
+{{< video https://www.youtube.com/watch?v=jbkSRLYSojo width="100%" height="300" >}}
+
+::: {style="font-size: 0.7em; color: #666; text-align: center;"}
+200 countries, 200 years, 4 minutes. Data as theatre.
+:::
 :::
 ::::
 
