@@ -13,7 +13,6 @@ format:
 ```{ojs}
 //| echo: false
 
-// Fake survey data: "Psychology students' true feelings about statistics"
 surveyData = {
   return {
     favouriteTest: [
@@ -32,12 +31,12 @@ surveyData = {
       { p: "p = .69", votes: 12, label: "Nice" },
       { p: "p = 1.00", votes: 3, label: "Did I break R?" }
     ],
-    spssVsR: [
-      { tool: "R", pct: 23, feeling: "Terrifying but powerful" },
-      { tool: "SPSS", pct: 41, feeling: "Familiar and clicky" },
-      { tool: "Excel", pct: 19, feeling: "It has graphs, right?" },
+    tools: [
+      { tool: "R", pct: 34, feeling: "Terrifying but powerful" },
+      { tool: "Excel", pct: 28, feeling: "It has graphs, right?" },
+      { tool: "Jamovi", pct: 19, feeling: "R with training wheels" },
       { tool: "Calculator", pct: 11, feeling: "If it was good enough for Fisher..." },
-      { tool: "Gut feeling", pct: 6, feeling: "p < vibes" }
+      { tool: "Gut feeling", pct: 8, feeling: "p < vibes" }
     ],
     weeklyMood: [
       { week: "Wk 1", mood: 8.2, label: "This will be fine" },
@@ -52,41 +51,7 @@ surveyData = {
 }
 ```
 
-## Row {height=20%}
-
-### {.valuebox}
-
-**Favourite p-value**
-
-<span style="font-size: 2.8rem; font-weight: 700; color: #9B1B30;">p = .049</span>
-
-"Just scraped in" (62 votes)
-
-### {.valuebox}
-
-**Top Statistical Test**
-
-<span style="font-size: 2.8rem; font-weight: 700; color: #28a745;">t-test</span>
-
-"Only one I understand" (47 votes)
-
-### {.valuebox}
-
-**Preferred Analysis Tool**
-
-<span style="font-size: 2.8rem; font-weight: 700; color: #61589C;">SPSS</span>
-
-"Familiar and clicky" (41%)
-
-### {.valuebox}
-
-**Mean Confidence in Stats**
-
-<span style="font-size: 2.8rem; font-weight: 700; color: #E78021;">4.7 / 10</span>
-
-"Cautiously bewildered"
-
-## Row {height=40%}
+## Row {height=45%}
 
 ### Favourite Statistical Test {width=50%}
 
@@ -95,8 +60,8 @@ surveyData = {
 
 Plot.plot({
   height: 300,
-  marginLeft: 120,
-  marginRight: 40,
+  marginLeft: 130,
+  marginRight: 120,
   style: { fontSize: "12px", fontFamily: "Source Sans 3, sans-serif" },
   x: { label: "Votes", grid: true },
   y: { label: null },
@@ -131,7 +96,7 @@ Plot.plot({
 Plot.plot({
   height: 300,
   marginLeft: 80,
-  marginRight: 40,
+  marginRight: 100,
   style: { fontSize: "12px", fontFamily: "Source Sans 3, sans-serif" },
   x: { label: "Votes", grid: true },
   y: { label: null },
@@ -157,7 +122,7 @@ Plot.plot({
 })
 ```
 
-## Row {height=40%}
+## Row {height=55%}
 
 ### Statistics Confidence Over the Semester {width=60%}
 
@@ -165,7 +130,7 @@ Plot.plot({
 //| echo: false
 
 Plot.plot({
-  height: 280,
+  height: 320,
   marginLeft: 50,
   marginBottom: 50,
   style: { fontSize: "12px", fontFamily: "Source Sans 3, sans-serif" },
@@ -213,22 +178,22 @@ Plot.plot({
 //| echo: false
 
 Plot.plot({
-  height: 280,
+  height: 320,
   marginLeft: 100,
-  marginRight: 40,
+  marginRight: 120,
   style: { fontSize: "12px", fontFamily: "Source Sans 3, sans-serif" },
-  x: { label: "% of students", grid: true, domain: [0, 50] },
+  x: { label: "% of students", grid: true, domain: [0, 45] },
   y: { label: null },
   marks: [
-    Plot.barX(surveyData.spssVsR.sort((a, b) => b.pct - a.pct), {
+    Plot.barX(surveyData.tools.sort((a, b) => b.pct - a.pct), {
       y: "tool",
       x: "pct",
-      fill: d => d.tool === "R" ? "#9B1B30" : d.tool === "SPSS" ? "#61589C" : d.tool === "Excel" ? "#28a745" : "#6c757d",
+      fill: d => d.tool === "R" ? "#9B1B30" : d.tool === "Jamovi" ? "#61589C" : d.tool === "Excel" ? "#28a745" : "#6c757d",
       sort: { y: "-x" },
       tip: true,
       title: d => `${d.tool}: ${d.pct}% — "${d.feeling}"`
     }),
-    Plot.text(surveyData.spssVsR, {
+    Plot.text(surveyData.tools, {
       y: "tool",
       x: d => d.pct + 1,
       text: d => `"${d.feeling}"`,

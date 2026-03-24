@@ -1,68 +1,59 @@
 project:
   type: website
   output-dir: docs
+
 website:
-  title: PS51009D Science Communication Blog
-  description: Student science communication from PS51009D Applications of Psychological
-    Research, Goldsmiths, University of London
+  title: "PS51009D Science Communication Blog"
+  description: "Student science communication from PS51009D Applications of Psychological Research, Goldsmiths, University of London"
   favicon: assets/GoldLogo.png
+
   navbar:
     logo: assets/images/svg/goldpsychr-logo-animated.svg
-    logo-alt: GoldPsychR — Goldsmiths Psychology
+    logo-alt: "GoldPsychR — Goldsmiths Psychology"
     title: false
-    background: '#9B1B30'
-    foreground: '#FFFFFF'
+    background: "#9B1B30"
+    foreground: "#FFFFFF"
     left:
-    - text: Posts
-      href: index.qmd
-    - text: Assessment
-      href: assessment.qmd
-    - text: How to Publish
-      href: contributing.qmd
-    - text: Formatting Guide
-      href: posts/formatting-guide/index.qmd
-    - text: Activities
-      menu:
-      - text: 'Seminar: Reading Like a Writer'
-        href: seminar-activity.qmd
-      - text: 'Worksheet: Analysing Quality'
-        href: Worksheet.qmd
-      - text: Facilitator Guide
-        href: FacilitatorGuide.qmd
-    - text: Slides
-      menu:
-      - text: Assessment Brief
-        href: slides.qmd
-      - text: Why Science Communication
-        href: slides-why-scicomm.qmd
-    - text: Showcase
-      menu:
-      - text: Format Overview
-        href: showcase/poster.qmd
-      - text: Student Dashboard
-        href: showcase/dashboard.qmd
-      - text: APA 7 Paper
-        href: showcase/apa-paper.qmd
-      - text: Interactive R (F1 Data)
-        href: showcase/worksheet.qmd
-      - text: LEGO Bricks (R Visualisation)
-        href: showcase/2022_36_LEGO_bricks.qmd
-      - text: Space Journeys (R Visualisation)
-        href: showcase/space-journeys.qmd
-      - text: Scrollytelling Demo
-        href: posts/minards-map/index.qmd
-    - text: About
-      href: about.qmd
+      - text: "Posts"
+        href: index.qmd
+      - text: "How to Publish"
+        href: contributing.qmd
+      - text: "Formatting Guide"
+        href: posts/formatting-guide/index.qmd
+      - text: "Slides"
+        menu:
+          - text: "Assessment Brief"
+            href: slides.qmd
+          - text: "Why Science Communication"
+            href: slides-why-scicomm.qmd
+      - text: "Showcase"
+        menu:
+          - text: "What Quarto Can Do"
+            href: showcase/poster.qmd
+          - text: "Student Dashboard"
+            href: showcase/dashboard.qmd
+          - text: "APA 7 Paper"
+            href: showcase/apa-paper.qmd
+          - text: "Interactive R (F1 Data)"
+            href: showcase/worksheet.qmd
+          - text: "LEGO Colour Explosion"
+            href: showcase/2022_36_LEGO_bricks.qmd
+          - text: "Space Journeys"
+            href: showcase/space-journeys.qmd
+      - text: "About"
+        href: about.qmd
+
   page-footer:
-    left: PS51009D Applications of Psychological Research — Goldsmiths, University
-      of London
-    right: Built with [Quarto](https://quarto.org)
+    left: "PS51009D Applications of Psychological Research — Goldsmiths, University of London"
+    right: "Built with [Quarto](https://quarto.org)"
+
 citation-style: apa.csl
+
 format:
   html:
     theme:
-    - cosmo
-    - custom.scss
+      - cosmo
+      - custom.scss
     css: include/webex.css
     toc: true
     toc-depth: 3
@@ -78,6 +69,7 @@ format:
     include-after-body: include/webex.js
     comments:
       hypothesis: true
+
 execute:
   freeze: auto
   cache: true

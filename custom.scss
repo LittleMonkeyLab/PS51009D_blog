@@ -59,9 +59,16 @@ h1 { font-size: 2.2rem; font-weight: 700; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.15rem; }
 
-/* -- Navigation -- */
+/* -- Navigation — pinned font so it never inherits page overrides -- */
 .navbar {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-family: "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.navbar .nav-link,
+.navbar .dropdown-item,
+.navbar .navbar-title {
+  font-family: inherit !important;
 }
 
 .navbar-logo {

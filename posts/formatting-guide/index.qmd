@@ -8,6 +8,7 @@ image: cover.svg
 bibliography: references.bib
 toc: true
 toc-depth: 3
+toc-location: left
 ---
 
 <!-- ═══════════════════════════════════════════════════════════════════════════

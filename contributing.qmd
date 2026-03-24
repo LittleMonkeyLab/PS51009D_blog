@@ -1,110 +1,186 @@
 ---
-title: "How to Write and Submit Your Post"
-subtitle: "A step-by-step guide for PS51009D students"
+title: "How to Create and Publish Your Blog Post"
+subtitle: "From no blog to new blog in minutes"
 toc: true
 toc-depth: 3
 ---
 
-This guide covers everything you need to write your science communication post and submit it. You do not need to install anything — all the tools are available in your browser via RStudio Server.
+This guide walks you through creating a Quarto blog post from scratch and getting it published. You do not need to install anything on your own computer — everything runs in your browser via RStudio Server.
 
 ::: {.callout-note}
 ## Two separate things: submission and publication
-**Submitting for marking** happens via [Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744) — this is mandatory.
+**Submitting for marking** happens via [Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744) — this is mandatory. Deadline: **Monday 11 May, 12 noon**.
 
-**Publishing on the blog** is optional. If you want your post published here, upload your files to the [PS51009D OneDrive folder](https://goldsmithscollege-my.sharepoint.com/:f:/g/personal/gwrig002_campus_goldsmiths_ac_uk/IgARGfnH7ojgRqhRM7PF7HR_AbRQbdcJ_jeRtykPpkMi2E8?e=4m1SIt) and Gordon will add it to the site.
+**Publishing on the blog** is optional. If you want your post to appear on this site, follow the publication steps at the end of this guide.
 :::
+
+---
+
+## What you need
+
+- Your Goldsmiths login (for RStudio Server)
+- A web browser
+- Your chosen target article
+- A `.bib` file with your references (see below)
+- At least one original visual aid you created
+
+That is it. No software to install. No command line. **No blog to new blog in minutes.**
 
 ---
 
 ## Step 1 — Open RStudio Server
 
-Go to the Goldsmiths RStudio Server in your browser and log in with your Goldsmiths credentials. You do not need to install R or RStudio on your own computer.
+Go to the Goldsmiths RStudio Server in your browser and log in with your Goldsmiths credentials.
+
+::: {.callout-tip}
+## What is RStudio Server?
+It is a full copy of RStudio that runs on a university server. You access it through your browser like any other website. Your files are saved on the server, not your laptop — so you can work from any device.
+:::
 
 ---
 
 ## Step 2 — Create a new Quarto Blog project
 
-1. Click **File → New Project**
+1. Click **File -> New Project**
 2. Select **New Directory**
 3. Select **Quarto Blog**
 4. Give your project a name — use your surname and topic, e.g. `wright-meditation`
 5. Click **Create Project**
 
-RStudio creates a ready-to-use blog structure for you:
+RStudio creates a ready-to-use blog structure:
 
 ```
-_quarto.yml          ← site settings (you do not need to edit this)
-index.qmd            ← the listing page (you do not need to edit this)
-about.qmd            ← an about page (optional)
-posts/               ← your post goes in here
-styles.css           ← styling (you do not need to edit this)
+your-project/
+  _quarto.yml          <- site settings (leave this alone)
+  index.qmd            <- the listing page (leave this alone)
+  about.qmd            <- an about page (optional)
+  posts/               <- your post goes in here
+    welcome/           <- a sample post (you can delete this)
+  styles.css           <- styling (leave this alone)
 ```
+
+::: {.callout-tip}
+## Want to understand how Quarto blogs work?
+The official Quarto documentation is excellent: [Creating a Blog](https://quarto.org/docs/websites/website-blog.html). It covers project structure, listings, categories, and RSS feeds. You do not need to read it for this assessment, but it is there if you are curious.
+:::
 
 ---
 
-## Step 3 — Create your post
+## Step 3 — Create your post folder
 
-1. Inside the `posts/` folder, create a new subfolder named with your surname and topic — e.g. `wright-meditation`
+Inside the `posts/` folder:
+
+1. Create a new subfolder named with your surname and topic — e.g. `wright-meditation`
 2. Inside that subfolder, create a new file called `index.qmd`
+3. Create an `images/` subfolder for your visual aids
 
 Your structure should look like this:
 
 ```
 posts/
   wright-meditation/
-    index.qmd        ← your post
-    images/          ← create this folder for your visual aids
-    references.bib   ← your reference list (if using .bib citations)
+    index.qmd            <- your post
+    images/              <- your figures and visual aids
+      cover.png          <- optional cover image for the listing
+    references.bib       <- your reference file
 ```
 
 ---
 
-## Step 4 — Write your post
+## Step 4 — Write the YAML header
 
-Open `index.qmd` and start with this YAML header at the very top:
+Every post starts with a YAML header — the block between `---` lines at the very top of your `index.qmd` file.
 
 ```yaml
 ---
-title: "The title of your post"
+title: "Your Post Title Here"
 author: "Your Name"
-date: "2025-04-15"
-description: "One sentence that will appear in the listing."
-categories: [human-AI interaction]
-image: "images/cover.jpg"
+date: "2026-04-15"
+description: "One sentence that appears in the post listing. Make it count."
+categories: [meditation]
+image: "images/cover.png"
 bibliography: references.bib
+toc: true
 ---
 ```
 
+| Field | Required | What it does |
+|-------|----------|-------------|
+| `title` | Yes | The headline of your post |
+| `author` | Yes | Your name as it appears on the post |
+| `date` | Yes | Must be `YYYY-MM-DD` format exactly |
+| `description` | Yes | One-line summary shown in the listing |
+| `categories` | Yes | Your module topic (see below) |
+| `image` | No | Cover image shown in the listing grid |
+| `bibliography` | Yes (if citing) | Path to your `.bib` file |
+
 ::: {.callout-warning}
-## Date format
-Use `YYYY-MM-DD` format exactly. Other formats will cause errors.
+## Date format matters
+Use `YYYY-MM-DD` exactly. Writing "15 April 2026" will break the build.
 :::
 
-Choose your category from the module topics: `human-AI interaction`, `meditation`, `individual differences`, `neuropsychology`, `music psychology`, `expert performance`, `eyewitness testimony`, `stalking`.
+**Categories for this module:**
 
-### What your post must include
+```yaml
+categories: [human-AI interaction]
+categories: [meditation]
+categories: [individual differences]
+categories: [neuropsychology]
+categories: [music psychology]
+categories: [expert performance]
+categories: [eyewitness testimony]
+categories: [stalking]
+```
 
-- 800–1000 words written for a non-expert audience (third person)
-- Covers the research question, method, findings, and conclusions
-- At least one **original visual aid** you created — not taken from the article
-- In-text citations and a full reference list in APA style
+---
 
-### Adding your visual aid
+## Step 5 — Write your post
 
-Save your image in the `images/` subfolder and include it like this:
+Write your science communication piece directly in `index.qmd`, below the YAML header.
+
+### Requirements
+
+- **800--1000 words** written for a non-expert audience
+- Written in the **third person** (you did not run the study)
+- Covers the **research question, method, findings, and conclusions**
+- At least one **original visual aid** you created
+- **In-text citations** and a full **APA reference list**
+
+### Adding images
+
+Save your image in the `images/` subfolder and include it:
 
 ```markdown
 ![A clear caption describing what the figure shows.](images/your-figure.png)
 ```
 
-Your visual aid can be a diagram, infographic, chart, or table — anything you created yourself. Canva, PowerPoint, and Excel are all fine.
+Your visual aid can be a diagram, infographic, chart, or table — anything you created yourself. Canva, PowerPoint, Excel, Google Sheets, or R are all fine.
 
 ### Citations and references
 
-Add `bibliography: references.bib` to your YAML header. Then cite in text:
+Add `bibliography: references.bib` to your YAML header (already done if you followed Step 4).
+
+Create a `references.bib` file in your post folder. Each entry looks like this:
+
+```bibtex
+@article{condon2013,
+  author  = {Condon, Paul and Desbordes, Gaelle and Miller, Willa B. and DeSteno, David},
+  year    = {2013},
+  title   = {Meditation increases compassionate responses to suffering},
+  journal = {Psychological Science},
+  volume  = {24},
+  number  = {10},
+  pages   = {2125--2127},
+  doi     = {10.1177/0956797613485603}
+}
+```
+
+Cite in text:
 
 ```markdown
-The study found that meditation increased compassionate behaviour [@condon2013].
+Meditation increased compassionate behaviour [@condon2013].
+
+Condon and colleagues [-@condon2013] found that...
 ```
 
 At the end of your post, add:
@@ -120,109 +196,95 @@ Quarto formats the reference list in APA style automatically.
 
 ::: {.callout-tip}
 ## Getting .bib entries
-In Zotero: select your item → right-click → Export Item → BibTeX → save as `references.bib`.
+**From Zotero:** select your item -> right-click -> Export Item -> BibTeX -> save as `references.bib`.
 
-In Google Scholar: click Cite under a result → BibTeX → copy the entry into your `references.bib` file.
+**From Google Scholar:** search for the paper -> click the Cite icon (") -> BibTeX -> copy the entry into your `references.bib` file. Check it carefully — Google Scholar sometimes has errors.
 :::
 
 ---
 
-## Step 5 — Preview your post
+## Step 6 — Preview your post
 
-Click the **Render** button (at the top of the editor) to build the site and preview it in the browser. Check:
+Click the **Render** button at the top of the editor in RStudio. This builds your site and opens a preview in your browser.
 
-- Your text appears correctly
-- Your image displays
-- Citations and reference list appear at the end
-- No error messages in the console
+Check:
+
+- [ ] Your text appears correctly
+- [ ] Your image displays with its caption
+- [ ] Citations appear in the text
+- [ ] The reference list appears at the end
+- [ ] No error messages in the RStudio console
+
+::: {.callout-tip}
+## Something went wrong?
+The most common errors:
+- **Date format:** must be `YYYY-MM-DD`
+- **Missing closing `:::`** on a callout or div block
+- **Wrong file path:** check the image path matches exactly (case-sensitive)
+- **Missing `.bib` entry:** the citation key in your text must match the key in your `.bib` file
+:::
 
 ---
 
-## Step 6 — Submit your work
+## Step 7 — Submit for marking (required)
 
-### For marking (required)
+1. After rendering, find the HTML output in the Files pane
+2. Tick the checkbox next to your post's HTML file
+3. Click **More -> Export** to download it
+4. Submit the downloaded file via **[Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**
 
-Download the rendered HTML file and submit it via Moodle:
+Your reflection piece goes to the same Moodle submission page, same deadline: **Monday 11 May, 12 noon**.
 
-1. After rendering, find the `_site/posts/your-folder-name/index.html` file in the Files pane
-2. Tick the checkbox next to it → click **More → Export** to download it
-3. Submit the downloaded HTML file via **[Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744)**
+::: {.callout-important}
+## Moodle is the only submission route
+Work not submitted via Moodle will not be marked, regardless of whether it appears on the blog.
+:::
 
-Your reflection piece goes to the same Moodle submission page on the same deadline: **Monday 11 May, 12 noon**.
+---
 
-### For publication on the blog (optional)
+## Step 8 — Publish on the blog (optional)
 
-If you want your post published here:
+If you want your post published on this site:
 
-1. In the Files pane, tick your entire post folder (e.g. `posts/wright-meditation/`)
-2. Click **More → Export** to download it as a zip file
+1. In the RStudio Files pane, tick your entire post folder (e.g. `posts/wright-meditation/`)
+2. Click **More -> Export** to download it as a zip file
 3. Upload the zip to the **[PS51009D OneDrive folder](https://goldsmithscollege-my.sharepoint.com/:f:/g/personal/gwrig002_campus_goldsmiths_ac_uk/IgARGfnH7ojgRqhRM7PF7HR_AbRQbdcJ_jeRtykPpkMi2E8?e=4m1SIt)**
 
 Gordon will review and add it to the site. You will be notified when it is live.
 
 ---
 
-## Optional: make your post more engaging
+## Optional features
 
-These are not required for the assessment, but are available if you want to go further.
+These are not required for the assessment but are available if you want to go further. See the [Formatting Guide](posts/formatting-guide/index.qmd) for copy-paste code for every feature below.
 
-### Callout boxes
-
-```markdown
-::: {.callout-note}
-## Key concept
-Define a term or highlight an important idea here.
-:::
-
-::: {.callout-warning}
-## Limitation
-Flag a methodological caveat here.
-:::
-```
-
-Types: `callout-note` (blue), `callout-tip` (green), `callout-warning` (orange), `callout-important` (red).
-
-### Pull quote
-
-```markdown
-::: {.pullquote}
-"Your most important finding in one sentence."
-:::
-```
-
-### Tabset panels
-
-```markdown
-::: {.panel-tabset}
-
-## Method
-How the study was run.
-
-## Findings
-What they found.
-
-## Implications
-What it means.
-
-:::
-```
+| Feature | What it does |
+|---------|-------------|
+| Callout boxes | Highlight key terms, tips, warnings, or caveats |
+| Pull quotes | Display a key sentence prominently |
+| Tabset panels | Organise Method / Findings / Implications into tabs |
+| TL;DR block | Three-bullet summary at the top of the post |
+| Author card | Your name and bio at the end |
+| Tables | Present key data from the study |
 
 ---
 
 ## Before you submit — checklist
 
-- [ ] 800–1000 words, written in the third person
+- [ ] 800--1000 words, written in the third person
 - [ ] Covers research question, method, findings, and conclusions
 - [ ] At least one original visual aid you created
 - [ ] In-text citations throughout
 - [ ] Full APA reference list at the end
-- [ ] Reflection piece complete (480–600 words)
+- [ ] Reflection piece complete (480--600 words or 2.5--3 min recording)
 - [ ] Both components submitted via [Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744) by **Monday 11 May, 12 noon**
 
 ---
 
-## Getting help
+## Further reading
 
-See the [Example post](posts/example-post/index.qmd) for a complete worked example, and the [Formatting guide](posts/formatting-guide/index.qmd) for copy-paste code for every feature.
+- [Quarto: Creating a Blog](https://quarto.org/docs/websites/website-blog.html) — the official documentation
+- [Example post](posts/example-post/index.qmd) — a complete worked example of the required style
+- [Formatting Guide](posts/formatting-guide/index.qmd) — copy-paste source code for every Quarto feature
 
 For questions about the assessment, post on the Moodle forum so everyone benefits from the answer.
