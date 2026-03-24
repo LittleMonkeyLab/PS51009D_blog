@@ -156,7 +156,7 @@ He also proves that science communication is not just for scientists. Attenborou
 {{< video https://www.youtube.com/watch?v=8c7NEf6qFlc width="100%" height="300" >}}
 
 ::: {style="font-size: 0.7em; color: #666; text-align: center;"}
-Langur monkeys grieve over a robot spy monkey.
+Little monkeys making mischief! 
 :::
 :::
 ::::
@@ -351,7 +351,7 @@ Science communication is not something I teach from a distance. It is something 
 ![The One Show — live BBC studio, explaining deception research](assets/images/slides/oneshow.jpg){fig-alt="Gordon on The One Show" width="100%"}
 :::
 ::: {.column width="50%"}
-![TikTok — 1 million views explaining psychology of deception with Dougal the dog](assets/images/slides/tiktok-famous.jpg){fig-alt="TikTok famous" width="100%"}
+![TikTok — 1 million views explaining psychology of profiling with Dougal the dog](assets/images/slides/tiktok-famous.jpg){fig-alt="TikTok famous" width="100%"}
 
 ![With Beth Loftus — memory researcher, courtroom expert, science communicator](assets/images/slides/gordon-beth.jpg){fig-alt="Gordon and Beth Loftus" width="100%"}
 :::
@@ -410,7 +410,7 @@ Real psychology. Real evidence. Real audience participation. Hundreds of members
 
 :::: {.columns}
 ::: {.column width="50%"}
-![The Goldsmiths Great Hall became a courtroom, a crime scene, and an 80s disco](assets/images/slides/fpu-80s-event.png){fig-alt="FPU 80s event" width="100%"}
+![The Goldsmiths Great Hall became a courtroom, St. James a crime scene, and an 80s disco](assets/images/slides/fpu-80s-event.png){fig-alt="FPU 80s event" width="100%"}
 :::
 ::: {.column width="50%"}
 ![Period costumes, courtroom drama, and genuine forensic psychology — Goldsmiths High Court](assets/images/slides/goldsmiths-high-court.png){fig-alt="Goldsmiths High Court" width="100%"}
