@@ -16,37 +16,157 @@ toc: true
 
 The Stroop task is beautifully simple. You see a word printed in coloured ink and your job is to name the ink colour, not read the word. When the word RED appears in green ink, saying "green" takes measurably longer than when the word GREEN appears in green ink. That delay — typically 80 to 120 ms — is the Stroop effect, and it reveals something fundamental about how automatic reading interferes with controlled colour naming.
 
-Rather than summarise a single paper, this post lets you play with the parameters of a simulated Stroop experiment and see how the data respond.
+## Experience the interference
 
-## Build your own Stroop experiment
+The words below cycle through Stroop-like stimuli. Notice how your brain stumbles on the **incongruent** trials — where the word and the ink colour clash — compared to the **congruent** ones.
 
-Use the sliders to change the experiment. **Interference strength** controls how much slower the incongruent condition is. **Number of participants** changes the sample size. **Individual variability** controls how different people are from each other. Watch the histogram and summary statistics update as you move each slider.
+```{=html}
+<div id="stroop-demo" style="
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 1.5em 0;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+">
+  <div id="stroop-label" style="
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    font-family: 'Fira Code', monospace;
+    transition: color 0.3s;
+  ">congruent</div>
+  <div id="stroop-word" style="
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    font-family: 'Source Sans 3', sans-serif;
+    transition: color 0.15s, opacity 0.15s;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  ">RED</div>
+  <div id="stroop-hint" style="
+    font-size: 0.8rem;
+    color: #555;
+    font-family: 'Source Sans 3', sans-serif;
+    margin-top: 4px;
+  ">Try to name the <em>ink colour</em>, not read the word</div>
+</div>
+
+<script>
+(function() {
+  const colours = [
+    { name: "RED",    hex: "#e53935" },
+    { name: "GREEN",  hex: "#43a047" },
+    { name: "BLUE",   hex: "#1e88e5" },
+    { name: "YELLOW", hex: "#fdd835" },
+    { name: "PURPLE", hex: "#8e24aa" }
+  ];
+
+  const wordEl = document.getElementById("stroop-word");
+  const labelEl = document.getElementById("stroop-label");
+  let step = 0;
+
+  function nextTrial() {
+    // Alternate congruent / incongruent
+    const isCongruent = step % 2 === 0;
+    const wordIdx = step % colours.length;
+    const word = colours[wordIdx];
+
+    let ink;
+    if (isCongruent) {
+      ink = word;
+    } else {
+      // Pick a different colour for the ink
+      let inkIdx = (wordIdx + 1 + Math.floor(step / 2)) % colours.length;
+      if (inkIdx === wordIdx) inkIdx = (inkIdx + 1) % colours.length;
+      ink = colours[inkIdx];
+    }
+
+    // Quick fade
+    wordEl.style.opacity = "0";
+    setTimeout(() => {
+      wordEl.textContent = word.name;
+      wordEl.style.color = ink.hex;
+      labelEl.textContent = isCongruent ? "congruent" : "incongruent";
+      labelEl.style.color = isCongruent ? "#43a047" : "#e53935";
+      wordEl.style.opacity = "1";
+    }, 150);
+
+    step++;
+  }
+
+  nextTrial();
+  setInterval(nextTrial, 1800);
+})();
+</script>
+```
+
+Rather than summarise a single paper, this post lets you play with the parameters of a simulated experiment and see how the underlying distributions respond.
+
+## Seeing distributions shift
+
+The plot below shows two probability density curves — one for each condition. Use the sliders to change the separation between them, the spread of each distribution, and the sample size. Watch the curves slide apart, overlap, and sharpen as you adjust.
 
 ```{ojs}
 //| echo: false
 //| panel: input
 
-viewof interferenceStrength = Inputs.range(
+viewof separation = Inputs.range(
   [0, 250],
-  { value: 120, step: 5, label: "Interference strength (ms)" }
+  { value: 120, step: 5, label: "Effect size (ms separation)" }
 )
 
-viewof nParticipants = Inputs.range(
-  [10, 100],
-  { value: 40, step: 5, label: "Number of participants" }
+viewof spread = Inputs.range(
+  [30, 150],
+  { value: 70, step: 5, label: "Variability (SD)" }
 )
 
-viewof individualVariability = Inputs.range(
-  [10, 120],
-  { value: 40, step: 5, label: "Individual variability (SD, ms)" }
+viewof sampleN = Inputs.range(
+  [10, 200],
+  { value: 80, step: 5, label: "Sample size per condition" }
 )
 ```
 
 ```{ojs}
 //| echo: false
 
-// Regenerate data reactively when sliders change
-simData = {
+// Generate density curve points for a normal distribution
+densityCurves = {
+  const baseMean = 620;
+  const congruentMean = baseMean;
+  const incongruentMean = baseMean + separation;
+  const sd = spread;
+
+  function gaussian(x, mu, sigma) {
+    return (1 / (sigma * Math.sqrt(2 * Math.PI))) *
+      Math.exp(-0.5 * ((x - mu) / sigma) ** 2);
+  }
+
+  const lo = Math.min(congruentMean, incongruentMean) - 4 * sd;
+  const hi = Math.max(congruentMean, incongruentMean) + 4 * sd;
+  const step = (hi - lo) / 200;
+
+  const points = [];
+  for (let x = lo; x <= hi; x += step) {
+    points.push({ x: Math.round(x), y: gaussian(x, congruentMean, sd), condition: "Congruent" });
+    points.push({ x: Math.round(x), y: gaussian(x, incongruentMean, sd), condition: "Incongruent" });
+  }
+  return points;
+}
+```
+
+```{ojs}
+//| echo: false
+
+// Generate sampled data points for the rug plot
+sampledData = {
   function mulberry32(a) {
     return function() {
       a |= 0; a = a + 0x6D2B79F5 | 0;
@@ -55,9 +175,7 @@ simData = {
       return ((t ^ t >>> 14) >>> 0) / 4294967296;
     }
   }
-
   const rand = mulberry32(42);
-
   function randn() {
     let u = 0, v = 0;
     while (u === 0) u = rand();
@@ -66,30 +184,11 @@ simData = {
   }
 
   const baseMean = 620;
-  const conditions = ["Congruent", "Incongruent"];
-  const means = {
-    "Congruent": baseMean,
-    "Incongruent": baseMean + interferenceStrength
-  };
-  const withinSD = 80;
-
   const rows = [];
-  let idx = 0;
-  for (let pid = 1; pid <= nParticipants; pid++) {
-    const offset = randn() * individualVariability;
-    for (const cond of conditions) {
-      const trialRTs = [];
-      for (let t = 0; t < 20; t++) {
-        trialRTs.push(Math.max(200, Math.round(means[cond] + offset + randn() * withinSD)));
-      }
-      const meanRT = Math.round(trialRTs.reduce((a, b) => a + b, 0) / trialRTs.length);
-      // Deterministic jitter from index so dots don't overlap
-      const jitter = Math.sin(idx * 2.39996) * 15;
-      rows.push({ participant: pid, condition: cond, meanRT: meanRT, jitter: jitter });
-      idx++;
-    }
+  for (let i = 0; i < sampleN; i++) {
+    rows.push({ x: Math.round(baseMean + randn() * spread), condition: "Congruent" });
+    rows.push({ x: Math.round(baseMean + separation + randn() * spread), condition: "Incongruent" });
   }
-
   return rows;
 }
 ```
@@ -97,45 +196,10 @@ simData = {
 ```{ojs}
 //| echo: false
 
-// Compute per-participant interference scores
-scores = {
-  const byP = new Map();
-  for (const d of simData) {
-    if (!byP.has(d.participant)) byP.set(d.participant, {});
-    byP.get(d.participant)[d.condition] = d.meanRT;
-  }
-  return Array.from(byP.values())
-    .map(v => ({ interference: v.Incongruent - v.Congruent }))
-    .sort((a, b) => a.interference - b.interference);
-}
-```
-
-### Distribution of reaction times by condition
-
-```{ojs}
-//| echo: false
-
-// Compute condition medians for the crossbar
-conditionMedians = {
-  const out = [];
-  for (const cond of ["Congruent", "Incongruent"]) {
-    const rts = simData.filter(d => d.condition === cond).map(d => d.meanRT).sort((a, b) => a - b);
-    const mid = Math.floor(rts.length / 2);
-    const median = rts.length % 2 ? rts[mid] : Math.round((rts[mid - 1] + rts[mid]) / 2);
-    out.push({ condition: cond, median: median });
-  }
-  return out;
-}
-```
-
-```{ojs}
-//| echo: false
-
 Plot.plot({
-  height: 380,
-  marginLeft: 60,
-  marginBottom: 45,
-  marginRight: 20,
+  height: 400,
+  marginLeft: 50,
+  marginBottom: 50,
   style: { fontSize: "13px", fontFamily: "Source Sans 3, sans-serif" },
   color: {
     domain: ["Congruent", "Incongruent"],
@@ -143,63 +207,35 @@ Plot.plot({
     legend: true
   },
   x: {
-    label: "Condition",
-    domain: ["Congruent", "Incongruent"]
-  },
-  y: { label: "Mean reaction time (ms)", grid: true },
-  marks: [
-    Plot.dot(simData, {
-      x: "condition",
-      y: "meanRT",
-      fill: "condition",
-      fillOpacity: 0.5,
-      r: 5,
-      dx: "jitter",
-      tip: true,
-      title: d => `P${d.participant}: ${d.meanRT} ms`
-    }),
-    Plot.tickX(conditionMedians, {
-      x: "condition",
-      y: "median",
-      stroke: "black",
-      strokeWidth: 3,
-      strokeOpacity: 0.8
-    })
-  ]
-})
-```
-
-### Interference effect per participant
-
-Each bar shows one participant's interference score (Incongruent minus Congruent RT). Bars above the dashed line mean the Stroop effect worked as expected. Try dragging the interference slider to zero — can you eliminate the effect entirely?
-
-```{ojs}
-//| echo: false
-
-Plot.plot({
-  height: 300,
-  marginLeft: 60,
-  marginBottom: 45,
-  style: { fontSize: "13px", fontFamily: "Source Sans 3, sans-serif" },
-  x: {
-    label: "Participant (sorted)",
-    ticks: []
+    label: "Reaction time (ms)"
   },
   y: {
-    label: "Interference (ms)",
+    label: "Density",
     grid: true
   },
   marks: [
-    Plot.ruleY([0], { stroke: "#999", strokeDasharray: "4,4" }),
-    Plot.barY(scores.map((d, i) => ({...d, i})), {
-      x: "i",
-      y: "interference",
-      fill: d => d.interference >= 0 ? "#9B1B30" : "#28a745",
-      fillOpacity: 0.7,
-      insetLeft: 0.5,
-      insetRight: 0.5,
-      tip: true,
-      title: d => `${d.interference > 0 ? "+" : ""}${d.interference} ms`
+    // Filled area under each curve
+    Plot.areaY(densityCurves, {
+      x: "x",
+      y: "y",
+      fill: "condition",
+      fillOpacity: 0.2,
+      curve: "basis"
+    }),
+    // Curve outlines
+    Plot.lineY(densityCurves, {
+      x: "x",
+      y: "y",
+      stroke: "condition",
+      strokeWidth: 2.5,
+      curve: "basis"
+    }),
+    // Rug plot of sampled data
+    Plot.tickX(sampledData, {
+      x: "x",
+      stroke: "condition",
+      strokeOpacity: 0.3,
+      y: 0
     })
   ]
 })
@@ -208,28 +244,33 @@ Plot.plot({
 ```{ojs}
 //| echo: false
 
-// Live summary statistics
-summaryStats = {
-  const conds = ["Congruent", "Incongruent"];
-  const out = conds.map(cond => {
-    const rts = simData.filter(d => d.condition === cond).map(d => d.meanRT);
-    const mean = rts.reduce((a, b) => a + b, 0) / rts.length;
-    const sd = Math.sqrt(rts.map(x => (x - mean) ** 2).reduce((a, b) => a + b, 0) / (rts.length - 1));
-    return { condition: cond, mean: Math.round(mean), sd: Math.round(sd), min: Math.min(...rts), max: Math.max(...rts), n: rts.length };
-  });
+// Compute overlap and live stats
+overlapStats = {
+  const baseMean = 620;
+  const mu1 = baseMean;
+  const mu2 = baseMean + separation;
+  const sd = spread;
+  const d = separation / sd;
 
-  const ints = scores.map(d => d.interference);
-  const intMean = ints.reduce((a, b) => a + b, 0) / ints.length;
-  const intSD = Math.sqrt(ints.map(x => (x - intMean) ** 2).reduce((a, b) => a + b, 0) / (ints.length - 1));
-  const tStat = (intMean / (intSD / Math.sqrt(ints.length))).toFixed(2);
-  const positive = ints.filter(d => d > 0).length;
-  const pctPositive = ((positive / ints.length) * 100).toFixed(0);
+  // Overlap coefficient (approximate via normal CDF)
+  function normalCDF(x) {
+    const t = 1 / (1 + 0.2316419 * Math.abs(x));
+    const d = 0.3989422804014327;
+    const p = d * Math.exp(-x * x / 2) * (t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.8212560 + t * 1.3302744)))));
+    return x > 0 ? 1 - p : p;
+  }
 
-  return { conditions: out, intMean: Math.round(intMean), intSD: Math.round(intSD), tStat, pctPositive, n: ints.length };
+  // OVL for two normals with equal variance
+  const ovl = 2 * normalCDF(-Math.abs(mu2 - mu1) / (2 * sd));
+  const ovlPct = (ovl * 100).toFixed(0);
+
+  // SE and t-stat
+  const se = sd * Math.sqrt(2 / sampleN);
+  const tStat = (separation / se).toFixed(2);
+
+  return { d: d.toFixed(2), ovlPct, tStat, mu1, mu2, sd, n: sampleN };
 }
 ```
-
-## Condition means at a glance
 
 ```{ojs}
 //| echo: false
@@ -237,32 +278,31 @@ summaryStats = {
 html`<table class="fancy-table">
   <thead>
     <tr>
-      <th>Condition</th>
-      <th>Mean RT (ms)</th>
-      <th>SD (ms)</th>
-      <th>Range (ms)</th>
-      <th>N</th>
+      <th>Statistic</th>
+      <th>Value</th>
+      <th>What it means</th>
     </tr>
   </thead>
   <tbody>
-    ${summaryStats.conditions.map(d => html`<tr class="${d.condition.toLowerCase()}">
-      <td><strong>${d.condition}</strong></td>
-      <td>${d.mean}</td>
-      <td>${d.sd}</td>
-      <td>${d.min}–${d.max}</td>
-      <td>${d.n}</td>
-    </tr>`)}
-    <tr style="border-top: 2px solid #9B1B30;">
-      <td><strong>Interference</strong></td>
-      <td>${summaryStats.intMean}</td>
-      <td>${summaryStats.intSD}</td>
-      <td colspan="1"><em>t</em> = ${summaryStats.tStat}</td>
-      <td>${summaryStats.pctPositive}% positive</td>
+    <tr class="congruent">
+      <td><strong>Cohen's <em>d</em></strong></td>
+      <td>${overlapStats.d}</td>
+      <td>${overlapStats.d < 0.2 ? "Negligible" : overlapStats.d < 0.5 ? "Small effect" : overlapStats.d < 0.8 ? "Medium effect" : "Large effect"} — the distance between means in SD units</td>
+    </tr>
+    <tr class="incongruent">
+      <td><strong>Overlap</strong></td>
+      <td>${overlapStats.ovlPct}%</td>
+      <td>How much the two distributions share common ground</td>
+    </tr>
+    <tr class="neutral">
+      <td><strong><em>t</em>-statistic</strong></td>
+      <td>${overlapStats.tStat}</td>
+      <td>${Math.abs(overlapStats.tStat) > 1.96 ? "Significant at p < .05" : "Not significant"} — signal relative to noise</td>
     </tr>
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="5"><em>Simulated data: ${summaryStats.n} participants, 20 trials per condition. All values update live.</em></td>
+      <td colspan="3"><em>All values update live. N = ${overlapStats.n} per condition, SD = ${overlapStats.sd} ms.</em></td>
     </tr>
   </tfoot>
 </table>`
@@ -270,10 +310,10 @@ html`<table class="fancy-table">
 
 ::: {.callout-tip}
 ## Things to try
-- **Set interference to 0** — the bar chart should scatter roughly evenly above and below zero, and the *t*-statistic should drop toward zero. This is what "no effect" looks like.
-- **Crank interference to 250** — nearly every bar should be positive and the two dot clouds should separate clearly.
-- **Increase individual variability** — the dots spread out and the effect gets harder to detect, even if the interference strength stays the same. This is why noisy data need larger samples.
-- **Drop participants to 10, then raise to 100** — watch the *t*-statistic stabilise as the sample grows. This is statistical power in action.
+- **Set effect size to 0** — the two curves sit right on top of each other. Overlap is 100%. The *t*-statistic hovers around zero. This is what "no difference" looks like.
+- **Crank effect size to 250** — the curves pull apart and the overlap shrinks. Cohen's *d* climbs past 1.0.
+- **Increase variability** — even with a large separation, wide distributions overlap more. The signal drowns in the noise.
+- **Raise sample size to 200** — the *t*-statistic climbs even though the curves do not move. More data means more certainty, not a bigger effect.
 :::
 
 ::: {.pullquote}

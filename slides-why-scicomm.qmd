@@ -599,7 +599,7 @@ But: "Can I make *you* understand it — and care?"
 
 ---
 
-## The brief, one more time
+## Your coursework brief...
 
 | | |
 |---|---|
@@ -609,7 +609,9 @@ But: "Can I make *you* understand it — and care?"
 | **Deadline** | Monday 11 May, 12 noon |
 | **Submit via** | [Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744) |
 
----
+## You may consider using R for your blog post...
+
+INSERT LOOM OF GORDON CREATING A NEW BLOG POST
 
 ## {.center background-color="#1a1a1a"}
 
