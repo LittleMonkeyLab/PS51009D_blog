@@ -363,7 +363,7 @@ Science communication is not something I teach from a distance. It is something 
 ::: {.column width="33%"}
 ![TikTok — 1 million views with Dougal the dog](assets/images/slides/tiktok-famous.jpg){fig-alt="TikTok famous" width="100%"}
 
-![With Beth Loftus — memory researcher, courtroom expert, science communicator](assets/images/slides/gordon-beth.jpg){fig-alt="Gordon and Beth Loftus" width="100%"}
+![With Beth Loftus — memory researcher, courtroom expert, science communicator, my bestie!](assets/images/slides/gordon-beth.jpg){fig-alt="Gordon and Beth Loftus" width="100%"}
 :::
 ::::
 
@@ -427,7 +427,7 @@ Real psychology. Real evidence. Real audience participation. Hundreds of members
 ::: {.column width="50%"}
 ![Period costumes, courtroom drama, and genuine forensic psychology — Goldsmiths High Court](assets/images/slides/goldsmiths-high-court.png){fig-alt="Goldsmiths High Court" width="100%"}
 
-![The cast of Cold Case: Missing Persons — our last murder mystery event](assets/images/slides/darren_brain.png){fig-alt="Darren Brain cast" width="100%"}
+![The cast of Cold Case: Missing Persons — our last murder mystery event](assets/images/slides/darren_brain.png){fig-alt="Cold Case cast" width="100%"}
 :::
 ::::
 
@@ -480,9 +480,9 @@ This module is not the destination. It is the first rung.
 ```{mermaid}
 %%| fig-width: 10
 flowchart LR
-    A["🎓 <b>Year 1</b><br>Science Communication<br><i>Blog Post</i>"] ==> B["📊 <b>Year 2</b><br>Science Fair<br><i>Poster & Presentation</i>"]
-    B ==> C["🎤 <b>Year 3</b><br>Science Conference<br><i>Research Talk</i>"]
-    C ==> D["🌍 <b>Beyond</b><br>Ownership<br><i>Your Voice, Your Platform</i>"]
+    A["<b>Year 1</b><br>Science Communication<br><i>Blog Post</i>"] ==> B["<b>Year 2</b><br>Science Fair<br><i>Poster & Presentation</i>"]
+    B ==> C["<b>Year 3</b><br>Science Conference<br><i>Research Talk</i>"]
+    C ==> D["<b>Beyond</b><br>Ownership<br><i>Your Voice, Your Platform</i>"]
 
     style A fill:#9B1B30,color:#fff,stroke:#fff,stroke-width:2px
     style B fill:#61589C,color:#fff,stroke:#fff,stroke-width:2px
