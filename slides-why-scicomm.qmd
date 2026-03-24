@@ -3,7 +3,7 @@ title: "Why Science Communication<br>Is a Superpower"
 subtitle: "PS51009D — Applications of Psychological Research"
 author: "Dr Gordon Wright"
 institute: "Department of Psychology, Goldsmiths, University of London"
-date: "2026-03-24"
+date: "25 March 2026"
 format:
   revealjs:
     theme: [default, custom.scss]
@@ -22,7 +22,7 @@ format:
     smaller: true
 ---
 
-## {background-color="#9B1B30"}
+## {background-image="assets/images/slides/honesty-experiment.png" background-size="cover" background-opacity="0.3" background-color="#9B1B30"}
 
 ::: {.r-fit-text style="color: white;"}
 Nobody ever got hired<br>for being unable to explain<br>what they know.
@@ -36,27 +36,37 @@ Open bold. Let this land. This is the whole argument in one sentence.
 
 ## Let's get something out of the way {.center}
 
-This is not about becoming a blogger.
+::: {.incremental}
+- This is not about becoming a blogger.
+- This is not about writing about psychology forever.
+- This is about the **single most transferable skill** you will develop at university:
+:::
 
-This is not about writing about psychology forever.
+. . .
 
-This is about the **single most transferable skill** you will develop at university:
-
-**The ability to take something complex and make it land.**
+::: {style="font-size: 1.3em; text-align: center; margin-top: 0.5em; color: #9B1B30; font-weight: 700;"}
+The ability to take something complex and make it land.
+:::
 
 ---
 
-## What "Science Communication" actually means
+## What "Science Communication" actually means {.smaller}
 
 It is not one skill. It is a stack.
 
 | Layer | What it is | Where it shows up |
 |-------|-----------|-------------------|
-| **Comprehension** | Understanding something deeply enough to simplify it | Every job, every meeting, every pitch |
-| **Audience awareness** | Knowing what your reader knows and does not know | Marketing, UX, teaching, consulting, therapy |
-| **Narrative structure** | Telling a story with a beginning, middle, and end | Proposals, presentations, fundraising, journalism |
-| **Visual thinking** | Choosing the right image, chart, or diagram | Design, data science, social media, publishing |
-| **Editing** | Cutting what does not earn its place | Writing, management, strategy, any form of leadership |
+| **Comprehension** | Understanding deeply enough to simplify | Every job, meeting, pitch |
+| **Audience awareness** | Knowing what your reader does not know | Marketing, UX, consulting, therapy |
+| **Narrative structure** | A story with beginning, middle, end | Proposals, fundraising, journalism |
+| **Visual thinking** | The right image, chart, or diagram | Design, data science, publishing |
+| **Editing** | Cutting what does not earn its place | Management, strategy, leadership |
+
+---
+
+## The Skillful Psychology Student {.center}
+
+![The APA's vision of the skills employers value in psychology graduates](assets/images/slides/apa-skilled.png){fig-alt="APA Skillful Psychology Student infographic" fig-align="center" width="55%"}
 
 ---
 
@@ -156,7 +166,7 @@ He also proves that science communication is not just for scientists. Attenborou
 {{< video https://www.youtube.com/watch?v=8c7NEf6qFlc width="100%" height="300" >}}
 
 ::: {style="font-size: 0.7em; color: #666; text-align: center;"}
-Little monkeys making mischief! 
+A little monkey trying to make his way in the world.
 :::
 :::
 ::::
@@ -167,13 +177,13 @@ Little monkeys making mischief!
 
 :::: {.columns}
 ::: {.column width="55%"}
-**Jane Goodall** (b. 1934)
+**Jane Goodall** (1934--2025)
 
-Primatologist, conservationist, and one of the most recognisable scientists alive.
+Primatologist, conservationist, and one of the most recognisable scientists of our time.
 
-Goodall's genius was not just the fieldwork — it was making people *care*. She gave the chimps names. She told their stories as individuals. She broke the rules of detached scientific reporting and, in doing so, built a global movement.
+Goodall's genius was not just the fieldwork — it was making people *care*. She gave the chimps names. She broke the rules of detached scientific reporting and built a global movement.
 
-Her late career is entirely science communication: talks, books, the Jane Goodall Institute, Roots & Shoots. The research became the platform. The communication became the mission.
+Her late career was entirely science communication: talks, books, the Jane Goodall Institute. The research became the platform. The communication became the mission.
 
 **The Goodall lesson:** Science communication is not what you do after the research. Sometimes it *is* the point.
 :::
@@ -181,7 +191,7 @@ Her late career is entirely science communication: talks, books, the Jane Goodal
 {{< video https://www.youtube.com/watch?v=lfLKHY52ERc width="100%" height="300" >}}
 
 ::: {style="font-size: 0.7em; color: #666; text-align: center;"}
-"What you do makes a difference, and you have to decide what kind of difference you want to make."
+"You have to decide what kind of difference you want to make."
 :::
 :::
 ::::
@@ -226,6 +236,8 @@ The ad did not just change attitudes. It **rewrote memories**.
 ::: {.callout-note}
 ## Why this is great science communication
 Loftus did not need to explain signal detection theory or source monitoring frameworks. She told a story about a cartoon rabbit and a handshake. Everyone gets it. The finding communicates itself because the example is perfectly chosen.
+
+*This study was the first time I ever encountered real psychological data — as a marketing professional, not a psychologist. It changed the direction of my career.*
 :::
 
 ---
@@ -313,25 +325,6 @@ Rosling proved that a chart is not a chart. It is a **narrative device**. The sa
 
 ---
 
-## On social media: Hank Green {.smaller}
-
-:::: {.columns}
-::: {.column width="65%"}
-**Hank Green** — creator of SciShow, CrashCourse, and Complexly
-
-Green builds science communication empires on YouTube and TikTok. SciShow has over 8 million subscribers. CrashCourse is used in classrooms worldwide.
-
-He understood before almost anyone that the medium matters. A 12-minute explainer video is a different art form from a journal article, a lecture, or a tweet. Each demands different skills. All of them are science communication.
-
-**The lesson:** The platform changes. The core skill does not. Understand your audience, choose your medium, deliver with clarity.
-:::
-::: {.column width="35%"}
-*"Being excited about science is not unprofessional. It is the whole point."*
-:::
-::::
-
----
-
 ## And also: the power of gesture {.smaller}
 
 Communication is not just words. It is **body language, gesture, and performance**.
@@ -357,13 +350,18 @@ OK but what about<br>closer to home?
 Science communication is not something I teach from a distance. It is something I do.
 
 :::: {.columns}
-::: {.column width="50%"}
-![BBC Horizon: A Week Without Lying — The Honesty Experiment](assets/images/slides/honesty-experiment.png){fig-alt="Horizon honesty experiment" width="100%"}
+::: {.column width="33%"}
+![BBC Horizon — running an experiment on deception, live on camera](assets/images/slides/honesty-experiment.png){fig-alt="Horizon honesty experiment" width="100%"}
 
-![The One Show — live BBC studio, explaining deception research](assets/images/slides/oneshow.jpg){fig-alt="Gordon on The One Show" width="100%"}
+![BBC Breakfast — live national television](assets/images/slides/bbc_breakfast.jpeg){fig-alt="BBC Breakfast" width="100%"}
 :::
-::: {.column width="50%"}
-![TikTok — 1 million views explaining psychology of profiling with Dougal the dog](assets/images/slides/tiktok-famous.jpg){fig-alt="TikTok famous" width="100%"}
+::: {.column width="33%"}
+![BBC Radio tour — explaining psychology across local and national stations](assets/images/slides/bbc_radio_tour.jpeg){fig-alt="BBC Radio tour" width="100%"}
+
+![CREST — Centre for Research and Evidence on Security Threats](assets/images/slides/CRESTGordon.png){fig-alt="CREST Gordon" width="100%"}
+:::
+::: {.column width="33%"}
+![TikTok — 1 million views with Dougal the dog](assets/images/slides/tiktok-famous.jpg){fig-alt="TikTok famous" width="100%"}
 
 ![With Beth Loftus — memory researcher, courtroom expert, science communicator](assets/images/slides/gordon-beth.jpg){fig-alt="Gordon and Beth Loftus" width="100%"}
 :::
@@ -376,9 +374,9 @@ Science communication is not something I teach from a distance. It is something 
 :::: {.columns}
 ::: {.column width="50%"}
 
-**BBC Horizon** — 60 minute documentary. Millions of viewers. I had to explain the psychology of deception to a general audience while participating in an experiment on camera.
+**BBC Horizon** — 60-minute documentary. Millions of viewers. I was running an experiment on the psychology of deception, on camera, for a general audience.
 
-**The One Show** — Live BBC studio. 4 minutes. No second takes. You either communicate clearly or you do not.
+**BBC Breakfast / Radio** — Live national broadcasting. No second takes. You either communicate clearly or you do not.
 
 **TikTok** — 60 seconds. A dog. 1 million views. The platform is absurd. The communication skill is identical.
 
@@ -390,7 +388,7 @@ Each of these required the same core competencies you are building in this modul
 
 **Courtrooms** — as an expert witness, explaining psychological concepts to juries.
 
-**Journalism** — quoted in newspapers, on radio, in podcasts.
+**CREST** — the Centre for Research and Evidence on Security Threats. Translating security research for government and practitioners.
 
 The medium changes. The skill does not.
 :::
@@ -400,7 +398,7 @@ The medium changes. The skill does not.
 
 ## Science communication as immersive theatre {.smaller}
 
-At Goldsmiths, the Forensic Psychology Unit turned science communication into something nobody expected: **immersive crime events**.
+At Goldsmiths, the Forensic Psychology Unit turned science communication into something nobody expected: **student-led immersive crime events**.
 
 :::: {.columns}
 ::: {.column width="33%"}
@@ -422,16 +420,18 @@ Real psychology. Real evidence. Real audience participation. Hundreds of members
 
 :::: {.columns}
 ::: {.column width="50%"}
-![The Goldsmiths Great Hall became a courtroom, St. James a crime scene, and an 80s disco](assets/images/slides/fpu-80s-event.png){fig-alt="FPU 80s event" width="100%"}
+![We turned the Great Hall into a courtroom with a dance floor](assets/images/slides/fpu-80s-event.png){fig-alt="FPU 80s event" width="100%"}
+
+![Best Communications by a Public Sector Organisation — for *The Death of Jane Doe*](assets/images/slides/corporate_comms_award.jpeg){fig-alt="Corporate Comms Award" width="100%"}
 :::
 ::: {.column width="50%"}
 ![Period costumes, courtroom drama, and genuine forensic psychology — Goldsmiths High Court](assets/images/slides/goldsmiths-high-court.png){fig-alt="Goldsmiths High Court" width="100%"}
+
+![The cast of Cold Case: Missing Persons — our last murder mystery event](assets/images/slides/darren_brain.png){fig-alt="Darren Brain cast" width="100%"}
 :::
 ::::
 
-These events were created by **psychology staff and students**. The research was real. The communication was theatrical. The audience learned without realising they were being taught.
-
-**That is science communication at its most ambitious.**
+These events were **student-led**. Staff just acted like idiots. The research was real. The communication was theatrical. The audience learned without realising they were being taught.
 
 ---
 
@@ -478,16 +478,20 @@ The skill is the same.<br>The stage changes.
 This module is not the destination. It is the first rung.
 
 ```{mermaid}
-%%| fig-width: 9
+%%| fig-width: 10
 flowchart LR
-    A["<b>Year 1</b><br>Science Communication<br>Blog Post"] --> B["<b>Year 2</b><br>Science Fair<br>Poster & Presentation"]
-    B --> C["<b>Year 3</b><br>Science Conference<br>Research Talk"]
-    C --> D["<b>Beyond</b><br>Ownership<br>Your Voice, Your Platform"]
+    A["🎓 <b>Year 1</b><br>Science Communication<br><i>Blog Post</i>"] ==> B["📊 <b>Year 2</b><br>Science Fair<br><i>Poster & Presentation</i>"]
+    B ==> C["🎤 <b>Year 3</b><br>Science Conference<br><i>Research Talk</i>"]
+    C ==> D["🌍 <b>Beyond</b><br>Ownership<br><i>Your Voice, Your Platform</i>"]
 
-    style A fill:#9B1B30,color:#fff,stroke:none
-    style B fill:#61589C,color:#fff,stroke:none
-    style C fill:#008080,color:#fff,stroke:none
-    style D fill:#1a1a1a,color:#fff,stroke:none
+    style A fill:#9B1B30,color:#fff,stroke:#fff,stroke-width:2px
+    style B fill:#61589C,color:#fff,stroke:#fff,stroke-width:2px
+    style C fill:#008080,color:#fff,stroke:#fff,stroke-width:2px
+    style D fill:#1a1a1a,color:#fff,stroke:#fff,stroke-width:2px
+
+    linkStyle 0 stroke:#9B1B30,stroke-width:4px
+    linkStyle 1 stroke:#61589C,stroke-width:4px
+    linkStyle 2 stroke:#008080,stroke-width:4px
 ```
 
 ---
@@ -587,7 +591,7 @@ It is not fame. It is not charisma.
 
 It is **the refusal to hide behind jargon**.
 
-Feynman used a glass of ice water. Sagan used a photograph of Earth. Attenborough used a robot monkey. Loftus used Bugs Bunny. We used a courtroom in the Great Hall.
+Feynman used a glass of ice water. Sagan used a photograph of Earth. Attenborough showed us a little monkey trying to make his way in the world. Loftus used Bugs Bunny. We turned the Great Hall into a courtroom with a dance floor.
 
 They each decided that if the audience did not understand, the failure was theirs, not the audience's.
 
@@ -609,16 +613,28 @@ But: "Can I make *you* understand it — and care?"
 | **Deadline** | Monday 11 May, 12 noon |
 | **Submit via** | [Moodle](https://learn.gold.ac.uk/mod/coursework/view.php?id=1794744) |
 
-## You may consider using R for your blog post...
+---
 
-<!-- TODO: Replace LOOM_VIDEO_ID with the actual Loom share ID once recorded.
-     Uncomment the slide below to enable the full-page video embed.
+## A blog in 2 minutes {background-iframe="https://www.loom.com/embed/db78e21169c64f3aaa4d18aa9d0ebb9a" background-interactive="true"}
 
 ---
 
-## Watch: creating and publishing a blog post {background-iframe="https://www.loom.com/embed/LOOM_VIDEO_ID" background-interactive="true"}
+## Everything you need is on the blog {.center}
 
--->
+::: {style="font-size: 1.1em;"}
+**[littlemonkeylab.github.io/PS51009D_blog](https://littlemonkeylab.github.io/PS51009D_blog/)**
+:::
+
+| Resource | What it covers |
+|----------|---------------|
+| [How to Publish](https://littlemonkeylab.github.io/PS51009D_blog/contributing.html) | Step-by-step from RStudio Server to Moodle submission |
+| [Formatting Guide](https://littlemonkeylab.github.io/PS51009D_blog/posts/formatting-guide/) | Copy-paste code for every Quarto feature |
+| [Example Post](https://littlemonkeylab.github.io/PS51009D_blog/posts/example-post/) | A complete worked example of the required style |
+| [Showcase](https://littlemonkeylab.github.io/PS51009D_blog/showcase/poster.html) | Dashboards, APA papers, interactive R, data art |
+
+::: {style="text-align: center; margin-top: 1em; font-size: 0.9em; color: #666;"}
+From no blog to new blog in minutes.
+:::
 
 ---
 
