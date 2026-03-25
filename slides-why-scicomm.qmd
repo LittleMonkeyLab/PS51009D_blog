@@ -22,7 +22,7 @@ format:
     smaller: true
 ---
 
-## {background-image="assets/images/slides/honesty-experiment.png" background-size="cover" background-opacity="0.3" background-color="#9B1B30"}
+## {background-color="#9B1B30"}
 
 ::: {.r-fit-text style="color: white;"}
 Nobody ever got hired<br>for being unable to explain<br>what they know.
